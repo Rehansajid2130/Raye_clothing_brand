@@ -5,8 +5,7 @@
   "description": "Rayé — Coastal Cotton-Linen Striped Shirts E-Commerce Store",
   "scripts": {
     "start": "npx serve .",
-    "dev": "npx serve . -l 3000",
-    "build": "node -e \"console.log('Build complete: static storefront ready for deployment')\""
+    "dev": "npx serve . -l 3000"
   },
   "keywords": [
     "raye",
@@ -19,4 +18,3 @@
   "author": "Rayé",
   "license": "MIT"
 }
-

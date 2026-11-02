@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "routes": [
@@ -21,4 +22,3 @@
     }
   ]
 }
-
