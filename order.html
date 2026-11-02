@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation — Rayé | Striped Shirts</title>
+
+  <!-- Google Fonts: Instrument Serif + Instrument Sans + Archivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 1. Exact Shadows (Layer 2) */
+      --shadow-low: rgba(14, 79, 75, 0.18) 0px 0px 0px 3px;
+      --shadow-low-2: rgba(0, 0, 0, 0.35) 4px 4px 0px;
+      --shadow-low-3: rgb(255, 255, 255) 0px 0px 0px 7px;
+      --shadow-low-4: rgb(23, 19, 15) 8px 8px 0px 0px;
+      --shadow-low-5: rgb(255, 107, 74) 10px 10px 0px 0px;
+      --shadow-low-6: rgb(23, 19, 15) 3px 3px 0px 0px;
+      --shadow-low-7: rgba(0, 0, 0, 0.35) 4px 4px 0px 0px;
+      --shadow-high: rgba(23, 19, 15, 0.18) 0px 8px 18px;
+      --shadow-high-2: rgba(23, 19, 15, 0.18) 0px 0px 40px;
+      --shadow-high-3: rgba(23, 19, 15, 0.25) 0px 10px 30px;
+
+      /* 2. 18 Reference Colors */
+      --color-white: #ffffff;
+      --color-linen: #f4ecdf;
+      --color-floral-white: #fbf6ee;
+      --color-wheat: #ffe7a3;
+      --color-light-steel-blue: #9fc3e0;
+      --color-khaki: #ffd66b;
+      --color-tomato: #ff5c3d;
+      --color-tomato-1: #ff6b4a;
+      --color-burnt-orange: #e5512f;
+      --color-indian-red: #b8553a;
+      --color-charcoal: #4a423a;
+      --color-dark-slate-gray: #0e4f4b;
+      --color-dark-slate-gray-1: #1f2f4f;
+      --color-dark-slate-gray-2: #14675f;
+      --color-dark-gray: #2a2724;
+      --color-black: #000000;
+      --color-black-1: #17130f;
+      --color-black-2: #161616;
+
+      /* 3. 1 Reference Gradient */
+      --gradient-repeating-linear: repeating-linear-gradient(45deg, #14675f 0px, #14675f 14.14px, #000000 14.14px, #000000 28.28px);
+
+      /* Semantic Mappings */
+      --coral: var(--color-tomato-1);
+      --coral-deep: var(--color-burnt-orange);
+      --teal: var(--color-dark-slate-gray);
+      --teal-2: var(--color-dark-slate-gray-2);
+      --butter: var(--color-khaki);
+      --butter-soft: var(--color-wheat);
+      --cream: var(--color-floral-white);
+      --paper: var(--color-linen);
+      --ink: var(--color-black-1);
+      --ink-2: var(--color-charcoal);
+      --line: #17130f29;
+
+      /* Backwards-compatible aliases */
+      --color-coral: var(--coral);
+      --color-coral-dark: var(--coral-deep);
+      --color-pine: var(--teal);
+      --color-forest: var(--teal-2);
+      --color-butter: var(--butter);
+      --color-butter-light: var(--butter-soft);
+      --color-cream: var(--cream);
+      --color-jet: var(--ink);
+      --color-sky: var(--color-light-steel-blue);
+
+      /* 4. Typography Raw Tokens (Layer 2) */
+      --font-instrument-serif: 'Instrument Serif', Georgia, serif;
+      --font-archivo: Archivo, "Arial Narrow", sans-serif;
+      --font-instrument-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      --font-ui-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+      --font-display: var(--font-archivo);
+      --font-serif: var(--font-instrument-serif);
+      --font-body: var(--font-instrument-sans);
+      --font-sans: var(--font-body);
+
+      --text-11: 11px;
+      --text-12: 12px;
+      --text-13: 13px;
+      --text-15: 15px;
+      --text-16: 16px;
+      --text-20: 20px;
+      --text-32: 32px;
+      --text-55: 55px;
+      --text-59: 59px;
+      --text-73: 73px;
+      --text-79: 79px;
+      --text-80: 80px;
+      --text-104: 104px;
+      --text-112: 112px;
+      --text-211: 211px;
+
+      --tracking-neg-6-336: -6.336px;
+      --tracking-neg-2-25331: -2.25331px;
+      --tracking-neg-2-608: -2.608px;
+      --tracking-neg-1-58976: -1.58976px;
+      --tracking-neg-1-84: -1.84px;
+      --tracking-neg-1-18886: -1.18886px;
+      --tracking-neg-1-376: -1.376px;
+      --tracking-neg-0-64: -0.64px;
+      --tracking-0-9: 0.9px;
+      --tracking-0-72: 0.72px;
+      --tracking-1-6128: 1.6128px;
+      --tracking-0-88: 0.88px;
+      --tracking-1-152: 1.152px;
+      --tracking-1-3824: 1.3824px;
+      --tracking-0-9216: 0.9216px;
+
+      --radius: 18px;
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* Typography – Semantic type styles (Layer 1) */
+    .type-body { font-family: var(--font-instrument-serif); font-size: var(--text-211); font-weight: 400; line-height: 0.80; letter-spacing: var(--tracking-neg-6-336); }
+    .type-large-title { font-family: var(--font-instrument-serif); font-size: var(--text-112); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-2-25331); }
+    .type-h1 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-104 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-80 { font-family: var(--font-instrument-serif); font-size: var(--text-80); font-weight: 400; line-height: 0.60; }
+    .type-large-title-79 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-large-title-79-400 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-h2 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-h2-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73-800 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-59 { font-family: var(--font-instrument-serif); font-size: var(--text-59); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-18886); }
+    .type-h2-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-large-title-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-link { font-family: var(--font-instrument-serif); font-size: var(--text-32); font-weight: 400; line-height: 1.00; letter-spacing: var(--tracking-neg-0-64); }
+    .type-body-20 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.40; }
+    .type-body-20-400 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.45; }
+    .type-h3 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-h3-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-link-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.50; }
+    .type-header { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-body-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-subheading { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-subheading-15 { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-button { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-link-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-caption { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 500; line-height: 1.06; }
+    .type-caption-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.59; }
+    .type-body-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.53; }
+    .type-link-12 { font-family: var(--font-ui-monospace); font-size: var(--text-12); font-weight: 600; line-height: 1.00; letter-spacing: var(--tracking-0-72); }
+    .type-button-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-small { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-h2-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-small-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; letter-spacing: var(--tracking-0-88); }
+    .type-small-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.57; letter-spacing: var(--tracking-1-152); }
+    .type-button-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-body-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-3824); }
+    .type-small-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; }
+    .type-body-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-body-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; }
+    .type-small-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+    .type-link-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+
+    :focus-visible {
+      outline: 2px solid var(--color-dark-slate-gray);
+      outline-offset: 2px;
+      box-shadow: var(--shadow-low);
+      border-radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      height: 64px;
+      padding: 0 clamp(16px, 4vw, 56px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid var(--ink);
+      background: var(--cream);
+    }
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 32px;
+      color: var(--coral);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .order-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 32px);
+      width: 100%;
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Animated Checkmark */
+    .order-tick-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      margin: 0 auto 20px;
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      animation: popIn 0.5s var(--ease-out);
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.4); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .order-eyebrow {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--coral-deep);
+      margin-bottom: 8px;
+    }
+
+    .order-title {
+      font-size: clamp(2.6rem, 1.6rem + 4vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .order-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--coral);
+    }
+
+    .order-lede {
+      font-size: 16px;
+      color: var(--ink-2);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* Courier Track Progress Timeline */
+    .track-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      list-style: none;
+      background: #fff;
+      border: 1.5px solid var(--ink);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .track-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      position: relative;
+    }
+    .track-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      margin-bottom: 8px;
+    }
+    .track-step.is-on {
+      color: var(--teal);
+    }
+    .track-step.is-on .track-dot {
+      background: var(--coral);
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px var(--butter);
+    }
+
+    /* Order Details Box */
+    .order-panel {
+      background: #fff;
+      border: 1.5px solid var(--ink);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 6px 6px 0 var(--ink);
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .order-panel h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--line);
+    }
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    .items-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .items-table td:last-child {
+      text-align: right;
+      font-weight: 800;
+      font-family: var(--font-display);
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1.5px solid var(--line);
+      font-size: 13px;
+    }
+    .meta-row strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 4px;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: var(--coral);
+      color: #fff;
+      border: 2px solid var(--ink);
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    @media (max-width: 600px) {
+      .track-timeline { grid-template-columns: 1fr; gap: 16px; }
+      .meta-row { grid-template-columns: 1fr; }
+    }
+  
+    /* ==========================================================================
+       Page Change Text & Content Fade-In Transitions
+       ========================================================================== */
+    @keyframes rayeTextFadeIn {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    body {
+      opacity: 1;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.page-transitioning {
+      opacity: 0 !important;
+      transform: translate3d(0, -8px, 0) !important;
+    }
+
+    .fade-text,
+    .shop-kicker, .shop-title, .shop-subhead, .category-pills,
+    .hero-kicker, .hero-title, .hero-desc, .hero-actions,
+    .pdp-kicker, .pdp-title, .pdp-price, .pdp-desc,
+    .section-kicker, .section-title,
+    .about-kicker, .about-title, .about-lead,
+    .journal-kicker, .journal-title, .journal-subhead,
+    .saved-kicker, .saved-title, .saved-count-lede,
+    .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation: rayeTextFadeIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-kicker, .shop-kicker, .pdp-kicker, .section-kicker, .about-kicker, .journal-kicker, .saved-kicker {
+      animation-delay: 0.10s;
+    }
+    .hero-title, .shop-title, .pdp-title, .section-title, .about-title, .journal-title, .saved-title, .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation-delay: 0.24s;
+    }
+    .hero-desc, .shop-subhead, .pdp-price, .about-lead, .journal-subhead, .saved-count-lede {
+      animation-delay: 0.40s;
+    }
+    .hero-actions, .category-pills, .pdp-desc, .color-swatches-row {
+      animation-delay: 0.56s;
+    }
+</style>
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="index.html" class="nav-brand">Rayé</a>
+    <a href="shop.html" style="font-weight: 800; font-size: 13px; color: var(--ink); text-decoration: none;">Continue shopping →</a>
+  </header>
+
+  <main class="order-wrap">
+    <div class="order-tick-circle">✓</div>
+    <div class="order-eyebrow" id="orderEyebrow">Order confirmed</div>
+    <h1 class="order-title">Thank you, <em id="orderFirstName">there.</em></h1>
+    <p class="order-lede" id="orderLede">
+      Your order is confirmed. We’ve sent a confirmation to your email and we’ll text you when your courier is out for delivery.
+    </p>
+
+    <!-- Track Timeline -->
+    <ol class="track-timeline">
+      <li class="track-step is-on">
+        <span class="track-dot"></span>
+        Order placed
+      </li>
+      <li class="track-step">
+        <span class="track-dot"></span>
+        Packed
+      </li>
+      <li class="track-step">
+        <span class="track-dot"></span>
+        On its way
+      </li>
+      <li class="track-step">
+        <span class="track-dot"></span>
+        Delivered
+      </li>
+    </ol>
+
+    <!-- Details Breakdown -->
+    <div class="order-panel">
+      <h2>Order breakdown</h2>
+      <table class="items-table" id="orderItemsTable">
+        <!-- Injected via JS -->
+      </table>
+
+      <div class="meta-row">
+        <div>
+          <strong>Shipping address</strong>
+          <span id="orderAddress">House 42, Banani, Dhaka</span>
+        </div>
+        <div>
+          <strong>Delivery & Payment</strong>
+          <span id="orderDeliveryPay">Inside Dhaka · Cash on delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <a href="index.html" class="btn-home">Return to homepage →</a>
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get('id') || 'RY-2026';
+
+    const orders = JSON.parse(localStorage.getItem('raye_orders') || '[]');
+    const order = orders.find(o => o.id === orderId) || orders[0] || {
+      id: orderId,
+      name: 'Friend',
+      email: 'you@example.com',
+      phone: '01700000000',
+      address: 'Dhaka, Bangladesh',
+      deliveryMethod: 'Inside Dhaka',
+      paymentMethod: 'Cash on delivery',
+      items: [{ name: 'Lido Stripe', size: 'M', qty: 1, price: 2890 }],
+      total: 2890 + 80
+    };
+
+    document.getElementById('orderEyebrow').textContent = `Order ${order.id}`;
+    document.getElementById('orderFirstName').textContent = (order.name.split(' ')[0] || 'friend') + '.';
+    document.getElementById('orderLede').innerHTML = `Your order is in. We’ve sent a confirmation to <strong>${order.email}</strong> and we’ll text <strong>${order.phone}</strong> when it’s on its way.`;
+    document.getElementById('orderAddress').textContent = order.address;
+    document.getElementById('orderDeliveryPay').textContent = `${order.deliveryMethod} · ${order.paymentMethod}`;
+
+    const table = document.getElementById('orderItemsTable');
+    table.innerHTML = (order.items || []).map(item => `
+      <tr>
+        <td>${item.name} (${item.size || 'M'}) × ${item.qty || 1}</td>
+        <td>৳${(item.price * (item.qty || 1)).toLocaleString('en-IN')}</td>
+      </tr>
+    `).join('') + `
+      <tr style="border-top: 2px solid var(--ink);">
+        <td><strong>Total Paid / Due</strong></td>
+        <td><strong>৳${(order.total || 0).toLocaleString('en-IN')}</strong></td>
+      </tr>
+    `;
+  </script>
+
+  <script>
+  // Page Transition & Smooth Text Fade-In on Page Change
+  (function() {
+    function initTransitions() {
+      document.body.classList.remove('page-transitioning');
+      document.querySelectorAll('a[href]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = link.getAttribute('href');
+          if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:') &&
+            !href.startsWith('http') &&
+            !link.hasAttribute('target') &&
+            !e.ctrlKey && !e.metaKey && !e.shiftKey
+          ) {
+            e.preventDefault();
+            document.body.classList.add('page-transitioning');
+            setTimeout(function() {
+              window.location.href = href;
+            }, 280);
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTransitions);
+    } else {
+      initTransitions();
+    }
+
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) {
+        document.body.classList.remove('page-transitioning');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
+

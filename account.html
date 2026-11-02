@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account — Rayé | Striped Shirts</title>
+
+  <!-- Google Fonts: Instrument Serif + Instrument Sans + Archivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 1. Exact Shadows (Layer 2) */
+      --shadow-low: rgba(14, 79, 75, 0.18) 0px 0px 0px 3px;
+      --shadow-low-2: rgba(0, 0, 0, 0.35) 4px 4px 0px;
+      --shadow-low-3: rgb(255, 255, 255) 0px 0px 0px 7px;
+      --shadow-low-4: rgb(23, 19, 15) 8px 8px 0px 0px;
+      --shadow-low-5: rgb(255, 107, 74) 10px 10px 0px 0px;
+      --shadow-low-6: rgb(23, 19, 15) 3px 3px 0px 0px;
+      --shadow-low-7: rgba(0, 0, 0, 0.35) 4px 4px 0px 0px;
+      --shadow-high: rgba(23, 19, 15, 0.18) 0px 8px 18px;
+      --shadow-high-2: rgba(23, 19, 15, 0.18) 0px 0px 40px;
+      --shadow-high-3: rgba(23, 19, 15, 0.25) 0px 10px 30px;
+
+      /* 2. 18 Reference Colors */
+      --color-white: #ffffff;
+      --color-linen: #f4ecdf;
+      --color-floral-white: #fbf6ee;
+      --color-wheat: #ffe7a3;
+      --color-light-steel-blue: #9fc3e0;
+      --color-khaki: #ffd66b;
+      --color-tomato: #ff5c3d;
+      --color-tomato-1: #ff6b4a;
+      --color-burnt-orange: #e5512f;
+      --color-indian-red: #b8553a;
+      --color-charcoal: #4a423a;
+      --color-dark-slate-gray: #0e4f4b;
+      --color-dark-slate-gray-1: #1f2f4f;
+      --color-dark-slate-gray-2: #14675f;
+      --color-dark-gray: #2a2724;
+      --color-black: #000000;
+      --color-black-1: #17130f;
+      --color-black-2: #161616;
+
+      /* 3. 1 Reference Gradient */
+      --gradient-repeating-linear: repeating-linear-gradient(45deg, #14675f 0px, #14675f 14.14px, #000000 14.14px, #000000 28.28px);
+
+      /* Semantic Mappings */
+      --coral: var(--color-tomato-1);
+      --coral-deep: var(--color-burnt-orange);
+      --teal: var(--color-dark-slate-gray);
+      --teal-2: var(--color-dark-slate-gray-2);
+      --butter: var(--color-khaki);
+      --butter-soft: var(--color-wheat);
+      --cream: var(--color-floral-white);
+      --paper: var(--color-linen);
+      --ink: var(--color-black-1);
+      --ink-2: var(--color-charcoal);
+      --line: #17130f29;
+
+      /* Backwards-compatible aliases */
+      --color-coral: var(--coral);
+      --color-coral-dark: var(--coral-deep);
+      --color-pine: var(--teal);
+      --color-forest: var(--teal-2);
+      --color-butter: var(--butter);
+      --color-butter-light: var(--butter-soft);
+      --color-cream: var(--cream);
+      --color-jet: var(--ink);
+      --color-sky: var(--color-light-steel-blue);
+
+      /* 4. Typography Raw Tokens (Layer 2) */
+      --font-instrument-serif: 'Instrument Serif', Georgia, serif;
+      --font-archivo: Archivo, "Arial Narrow", sans-serif;
+      --font-instrument-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      --font-ui-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+      --font-display: var(--font-archivo);
+      --font-serif: var(--font-instrument-serif);
+      --font-body: var(--font-instrument-sans);
+      --font-sans: var(--font-body);
+
+      --text-11: 11px;
+      --text-12: 12px;
+      --text-13: 13px;
+      --text-15: 15px;
+      --text-16: 16px;
+      --text-20: 20px;
+      --text-32: 32px;
+      --text-55: 55px;
+      --text-59: 59px;
+      --text-73: 73px;
+      --text-79: 79px;
+      --text-80: 80px;
+      --text-104: 104px;
+      --text-112: 112px;
+      --text-211: 211px;
+
+      --tracking-neg-6-336: -6.336px;
+      --tracking-neg-2-25331: -2.25331px;
+      --tracking-neg-2-608: -2.608px;
+      --tracking-neg-1-58976: -1.58976px;
+      --tracking-neg-1-84: -1.84px;
+      --tracking-neg-1-18886: -1.18886px;
+      --tracking-neg-1-376: -1.376px;
+      --tracking-neg-0-64: -0.64px;
+      --tracking-0-9: 0.9px;
+      --tracking-0-72: 0.72px;
+      --tracking-1-6128: 1.6128px;
+      --tracking-0-88: 0.88px;
+      --tracking-1-152: 1.152px;
+      --tracking-1-3824: 1.3824px;
+      --tracking-0-9216: 0.9216px;
+
+      --radius: 18px;
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* Typography – Semantic type styles (Layer 1) */
+    .type-body { font-family: var(--font-instrument-serif); font-size: var(--text-211); font-weight: 400; line-height: 0.80; letter-spacing: var(--tracking-neg-6-336); }
+    .type-large-title { font-family: var(--font-instrument-serif); font-size: var(--text-112); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-2-25331); }
+    .type-h1 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-104 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-80 { font-family: var(--font-instrument-serif); font-size: var(--text-80); font-weight: 400; line-height: 0.60; }
+    .type-large-title-79 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-large-title-79-400 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-h2 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-h2-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73-800 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-59 { font-family: var(--font-instrument-serif); font-size: var(--text-59); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-18886); }
+    .type-h2-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-large-title-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-link { font-family: var(--font-instrument-serif); font-size: var(--text-32); font-weight: 400; line-height: 1.00; letter-spacing: var(--tracking-neg-0-64); }
+    .type-body-20 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.40; }
+    .type-body-20-400 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.45; }
+    .type-h3 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-h3-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-link-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.50; }
+    .type-header { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-body-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-subheading { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-subheading-15 { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-button { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-link-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-caption { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 500; line-height: 1.06; }
+    .type-caption-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.59; }
+    .type-body-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.53; }
+    .type-link-12 { font-family: var(--font-ui-monospace); font-size: var(--text-12); font-weight: 600; line-height: 1.00; letter-spacing: var(--tracking-0-72); }
+    .type-button-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-small { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-h2-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-small-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; letter-spacing: var(--tracking-0-88); }
+    .type-small-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.57; letter-spacing: var(--tracking-1-152); }
+    .type-button-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-body-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-3824); }
+    .type-small-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; }
+    .type-body-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-body-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; }
+    .type-small-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+    .type-link-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+
+    :focus-visible {
+      outline: 2px solid var(--color-dark-slate-gray);
+      outline-offset: 2px;
+      box-shadow: var(--shadow-low);
+      border-radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .announce {
+      background: var(--ink);
+      height: 34px;
+      color: var(--cream);
+      font: 600 11px/1 var(--font-body);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: grid;
+      place-items: center;
+      border-bottom: 1.5px solid var(--ink);
+    }
+
+    .navbar {
+      height: 64px;
+      padding: 0 clamp(16px, 4vw, 56px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid var(--ink);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 32px;
+      color: var(--coral);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .round-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1.5px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .account-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 40px);
+      width: 100%;
+      flex: 1;
+    }
+
+    .crumbs {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-2);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+    .crumbs a { text-decoration: none; color: inherit; }
+
+    .account-title {
+      font-size: clamp(2.4rem, 1.4rem + 3.5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .account-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--coral);
+    }
+    .account-lede {
+      font-size: 15px;
+      color: var(--ink-2);
+      margin-bottom: 40px;
+    }
+
+    /* Account Grid */
+    .account-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .panel {
+      background: #fff;
+      border: 1.5px solid var(--ink);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .panel h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    /* Orders List */
+    .orders-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .order-item-card {
+      border: 1.5px solid var(--ink);
+      border-radius: 10px;
+      padding: 16px;
+      background: var(--cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .order-item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 3px 3px 0 var(--ink);
+      background: #fff;
+    }
+    .order-meta strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+    .order-meta small {
+      font-size: 12px;
+      color: var(--ink-2);
+      font-weight: 600;
+    }
+    .order-status {
+      background: var(--butter);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      border: 1px solid var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .order-price {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* Side Links */
+    .side-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .side-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border: 1.5px solid var(--ink);
+      border-radius: 10px;
+      background: var(--cream);
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .side-link:hover {
+      background: #fff;
+    }
+
+    /* Auth Form */
+    .auth-tabs {
+      display: flex;
+      border: 1.5px solid var(--ink);
+      border-radius: 9999px;
+      padding: 4px;
+      background: var(--cream);
+      margin-bottom: 24px;
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      border-radius: 9999px;
+    }
+    .auth-tab.active {
+      background: var(--ink);
+      color: #fff;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .auth-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+    .auth-field input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--ink);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      background: var(--cream);
+    }
+    .btn-auth {
+      padding: 14px;
+      background: var(--coral);
+      color: #fff;
+      border: 1.5px solid var(--ink);
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .account-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  
+    /* ==========================================================================
+       Page Change Text & Content Fade-In Transitions
+       ========================================================================== */
+    @keyframes rayeTextFadeIn {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    body {
+      opacity: 1;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.page-transitioning {
+      opacity: 0 !important;
+      transform: translate3d(0, -8px, 0) !important;
+    }
+
+    .fade-text,
+    .shop-kicker, .shop-title, .shop-subhead, .category-pills,
+    .hero-kicker, .hero-title, .hero-desc, .hero-actions,
+    .pdp-kicker, .pdp-title, .pdp-price, .pdp-desc,
+    .section-kicker, .section-title,
+    .about-kicker, .about-title, .about-lead,
+    .journal-kicker, .journal-title, .journal-subhead,
+    .saved-kicker, .saved-title, .saved-count-lede,
+    .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation: rayeTextFadeIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-kicker, .shop-kicker, .pdp-kicker, .section-kicker, .about-kicker, .journal-kicker, .saved-kicker {
+      animation-delay: 0.10s;
+    }
+    .hero-title, .shop-title, .pdp-title, .section-title, .about-title, .journal-title, .saved-title, .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation-delay: 0.24s;
+    }
+    .hero-desc, .shop-subhead, .pdp-price, .about-lead, .journal-subhead, .saved-count-lede {
+      animation-delay: 0.40s;
+    }
+    .hero-actions, .category-pills, .pdp-desc, .color-swatches-row {
+      animation-delay: 0.56s;
+    }
+</style>
+</head>
+
+<body>
+  <!-- Announcement Bar -->
+  <aside class="announce" role="region" aria-label="Announcement">
+    <p>Free delivery on orders over ৳3,000 across Bangladesh</p>
+  </aside>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="nav-brand">Rayé</a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-tools">
+      <a href="account.html" class="round-btn" aria-label="Account" title="Account">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+        </svg>
+      </a>
+      <a href="wishlist.html" class="round-btn" aria-label="Saved shirts" title="Saved shirts">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+      </a>
+      <a href="cart.html" class="round-btn" style="background: var(--ink); color: var(--cream);" aria-label="Shopping bag" title="Shopping bag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="account-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Account</span>
+    </nav>
+
+    <div id="accountContent">
+      <!-- Injected via JS based on login state -->
+    </div>
+  </main>
+
+  <script>
+    let user = JSON.parse(localStorage.getItem('raye_user') || '{"name": "Hasib Chowdhury", "email": "hasib@example.com"}');
+    let orders = JSON.parse(localStorage.getItem('raye_orders') || '[]');
+
+    function renderAccount() {
+      const container = document.getElementById('accountContent');
+
+      if (!user) {
+        // Sign in / Sign up form
+        container.innerHTML = `
+          <h1 class="account-title">Welcome <em>back.</em></h1>
+          <p class="account-lede">Sign in to see your past orders, or create an account to check out faster.</p>
+
+          <div style="max-width: 480px; margin: 0 auto;" class="panel">
+            <div class="auth-tabs">
+              <button class="auth-tab active" onclick="switchAuthMode('in', this)">Sign in</button>
+              <button class="auth-tab" onclick="switchAuthMode('up', this)">Create account</button>
+            </div>
+
+            <form class="auth-form" onsubmit="handleAuthSubmit(event)">
+              <div class="auth-field" id="nameField" style="display: none;">
+                <label for="uName">Full Name</label>
+                <input type="text" id="uName" placeholder="e.g. Hasib Chowdhury">
+              </div>
+
+              <div class="auth-field">
+                <label for="uEmail">Email Address</label>
+                <input type="email" id="uEmail" required placeholder="you@example.com">
+              </div>
+
+              <div class="auth-field">
+                <label for="uPass">Password</label>
+                <input type="password" id="uPass" required placeholder="••••••••">
+              </div>
+
+              <button type="submit" class="btn-auth" id="authSubmitBtn">Sign in →</button>
+            </form>
+          </div>
+        `;
+      } else {
+        // Logged-in profile & orders
+        const firstName = user.name.split(' ')[0] || 'Friend';
+        container.innerHTML = `
+          <h1 class="account-title">Hello, <em>${firstName}.</em></h1>
+          <p class="account-lede">${user.email}</p>
+
+          <div class="account-grid">
+            <!-- Left: Orders -->
+            <section class="panel">
+              <h2>Your orders (${orders.length})</h2>
+              ${orders.length === 0 ? `
+                <div style="text-align: center; padding: 36px 12px;">
+                  <div style="font-size: 32px; margin-bottom: 10px;">📦</div>
+                  <h3 style="font-size: 17px; font-weight: 800; margin-bottom: 6px;">No orders placed yet</h3>
+                  <p style="font-size: 13px; color: var(--ink-2); margin-bottom: 20px;">When you place an order it will show up here.</p>
+                  <a href="shop.html" style="font-size: 13px; font-weight: 800; color: var(--coral); text-decoration: none;">Shop the collection →</a>
+                </div>
+              ` : `
+                <ul class="orders-list">
+                  ${orders.map(o => `
+                    <li>
+                      <a href="order.html?id=${o.id}" class="order-item-card">
+                        <div class="order-meta">
+                          <strong>Order ${o.id}</strong>
+                          <small>${new Date(o.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} · ${(o.items || []).reduce((a, b) => a + (b.qty || 1), 0)} items</small>
+                        </div>
+                        <span class="order-status">Placed</span>
+                        <span class="order-price">৳${(o.total || 0).toLocaleString('en-IN')}</span>
+                        <span style="font-size: 16px;">→</span>
+                      </a>
+                    </li>
+                  `).join('')}
+                </ul>
+              `}
+            </section>
+
+            <!-- Right: Settings & Links -->
+            <aside class="panel">
+              <h2>Quick actions</h2>
+              <div class="side-links">
+                <a href="wishlist.html" class="side-link">
+                  <span>♡ Saved shirts</span>
+                  <span>→</span>
+                </a>
+                <a href="help.html" class="side-link">
+                  <span>❓ Help & shipping info</span>
+                  <span>→</span>
+                </a>
+                <button onclick="handleSignOut()" class="side-link" style="width: 100%; border: 1.5px solid var(--line); color: var(--coral-deep); cursor: pointer; text-align: left;">
+                  <span>🚪 Sign out</span>
+                  <span>✕</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+        `;
+      }
+    }
+
+    let authMode = 'in';
+    function switchAuthMode(mode, btn) {
+      authMode = mode;
+      document.querySelectorAll('.auth-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('nameField').style.display = mode === 'up' ? 'block' : 'none';
+      document.getElementById('authSubmitBtn').textContent = mode === 'up' ? 'Create account →' : 'Sign in →';
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('uEmail').value;
+      const name = authMode === 'up' ? document.getElementById('uName').value : email.split('@')[0];
+      user = { name, email };
+      localStorage.setItem('raye_user', JSON.stringify(user));
+      renderAccount();
+    }
+
+    function handleSignOut() {
+      user = null;
+      localStorage.removeItem('raye_user');
+      renderAccount();
+    }
+
+    renderAccount();
+  </script>
+
+  <script>
+  // Page Transition & Smooth Text Fade-In on Page Change
+  (function() {
+    function initTransitions() {
+      document.body.classList.remove('page-transitioning');
+      document.querySelectorAll('a[href]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = link.getAttribute('href');
+          if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:') &&
+            !href.startsWith('http') &&
+            !link.hasAttribute('target') &&
+            !e.ctrlKey && !e.metaKey && !e.shiftKey
+          ) {
+            e.preventDefault();
+            document.body.classList.add('page-transitioning');
+            setTimeout(function() {
+              window.location.href = href;
+            }, 280);
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTransitions);
+    } else {
+      initTransitions();
+    }
+
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) {
+        document.body.classList.remove('page-transitioning');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
+

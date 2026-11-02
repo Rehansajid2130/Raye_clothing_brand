@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lido Stripe — Short Sleeve Cotton-Linen Shirt | Rayé</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 1. Exact Shadows (Layer 2) */
+      --shadow-low: rgba(14, 79, 75, 0.18) 0px 0px 0px 3px;
+      --shadow-low-2: rgba(0, 0, 0, 0.35) 4px 4px 0px;
+      --shadow-low-3: rgb(255, 255, 255) 0px 0px 0px 7px;
+      --shadow-low-4: rgb(23, 19, 15) 8px 8px 0px 0px;
+      --shadow-low-5: rgb(255, 107, 74) 10px 10px 0px 0px;
+      --shadow-low-6: rgb(23, 19, 15) 3px 3px 0px 0px;
+      --shadow-low-7: rgba(0, 0, 0, 0.35) 4px 4px 0px 0px;
+      --shadow-high: rgba(23, 19, 15, 0.18) 0px 8px 18px;
+      --shadow-high-2: rgba(23, 19, 15, 0.18) 0px 0px 40px;
+      --shadow-high-3: rgba(23, 19, 15, 0.25) 0px 10px 30px;
+
+      /* 2. 18 Reference Colors */
+      --color-white: #ffffff;
+      --color-linen: #f4ecdf;
+      --color-floral-white: #fbf6ee;
+      --color-wheat: #ffe7a3;
+      --color-light-steel-blue: #9fc3e0;
+      --color-khaki: #ffd66b;
+      --color-tomato: #ff5c3d;
+      --color-tomato-1: #ff6b4a;
+      --color-burnt-orange: #e5512f;
+      --color-indian-red: #b8553a;
+      --color-charcoal: #4a423a;
+      --color-dark-slate-gray: #0e4f4b;
+      --color-dark-slate-gray-1: #1f2f4f;
+      --color-dark-slate-gray-2: #14675f;
+      --color-dark-gray: #2a2724;
+      --color-black: #000000;
+      --color-black-1: #17130f;
+      --color-black-2: #161616;
+
+      /* 3. 1 Reference Gradient */
+      --gradient-repeating-linear: repeating-linear-gradient(45deg, #14675f 0px, #14675f 14.14px, #000000 14.14px, #000000 28.28px);
+
+      /* Semantic Mappings */
+      --coral: var(--color-tomato-1);
+      --coral-deep: var(--color-burnt-orange);
+      --teal: var(--color-dark-slate-gray);
+      --teal-2: var(--color-dark-slate-gray-2);
+      --butter: var(--color-khaki);
+      --butter-soft: var(--color-wheat);
+      --cream: var(--color-floral-white);
+      --paper: var(--color-linen);
+      --ink: var(--color-black-1);
+      --ink-2: var(--color-charcoal);
+      --line: #17130f29;
+
+      /* Backwards-compatible aliases */
+      --color-coral: var(--coral);
+      --color-coral-dark: var(--coral-deep);
+      --color-pine: var(--teal);
+      --color-forest: var(--teal-2);
+      --color-butter: var(--butter);
+      --color-butter-light: var(--butter-soft);
+      --color-cream: var(--cream);
+      --color-jet: var(--ink);
+      --color-sky: var(--color-light-steel-blue);
+
+      /* 4. Typography Raw Tokens (Layer 2) */
+      --font-instrument-serif: 'Instrument Serif', Georgia, serif;
+      --font-archivo: Archivo, "Arial Narrow", sans-serif;
+      --font-instrument-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      --font-ui-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+      --font-display: var(--font-archivo);
+      --font-serif: var(--font-instrument-serif);
+      --font-body: var(--font-instrument-sans);
+      --font-sans: var(--font-body);
+
+      --text-11: 11px;
+      --text-12: 12px;
+      --text-13: 13px;
+      --text-15: 15px;
+      --text-16: 16px;
+      --text-20: 20px;
+      --text-32: 32px;
+      --text-55: 55px;
+      --text-59: 59px;
+      --text-73: 73px;
+      --text-79: 79px;
+      --text-80: 80px;
+      --text-104: 104px;
+      --text-112: 112px;
+      --text-211: 211px;
+
+      --tracking-neg-6-336: -6.336px;
+      --tracking-neg-2-25331: -2.25331px;
+      --tracking-neg-2-608: -2.608px;
+      --tracking-neg-1-58976: -1.58976px;
+      --tracking-neg-1-84: -1.84px;
+      --tracking-neg-1-18886: -1.18886px;
+      --tracking-neg-1-376: -1.376px;
+      --tracking-neg-0-64: -0.64px;
+      --tracking-0-9: 0.9px;
+      --tracking-0-72: 0.72px;
+      --tracking-1-6128: 1.6128px;
+      --tracking-0-88: 0.88px;
+      --tracking-1-152: 1.152px;
+      --tracking-1-3824: 1.3824px;
+      --tracking-0-9216: 0.9216px;
+
+      /* Smooth physics & spring easing curves */
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-elastic: cubic-bezier(0.34, 1.45, 0.64, 1);
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Typography – Semantic type styles (Layer 1) */
+    .type-body { font-family: var(--font-instrument-serif); font-size: var(--text-211); font-weight: 400; line-height: 0.80; letter-spacing: var(--tracking-neg-6-336); }
+    .type-large-title { font-family: var(--font-instrument-serif); font-size: var(--text-112); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-2-25331); }
+    .type-h1 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-104 { font-family: var(--font-archivo); font-size: var(--text-104); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-2-608); }
+    .type-large-title-80 { font-family: var(--font-instrument-serif); font-size: var(--text-80); font-weight: 400; line-height: 0.60; }
+    .type-large-title-79 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-large-title-79-400 { font-family: var(--font-instrument-serif); font-size: var(--text-79); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-58976); }
+    .type-h2 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-h2-73 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-73-800 { font-family: var(--font-archivo); font-size: var(--text-73); font-weight: 800; line-height: 0.93; letter-spacing: var(--tracking-neg-1-84); }
+    .type-large-title-59 { font-family: var(--font-instrument-serif); font-size: var(--text-59); font-weight: 400; line-height: 0.91; letter-spacing: var(--tracking-neg-1-18886); }
+    .type-h2-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-large-title-55 { font-family: var(--font-archivo); font-size: var(--text-55); font-weight: 800; line-height: 0.92; letter-spacing: var(--tracking-neg-1-376); }
+    .type-link { font-family: var(--font-instrument-serif); font-size: var(--text-32); font-weight: 400; line-height: 1.00; letter-spacing: var(--tracking-neg-0-64); }
+    .type-body-20 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.40; }
+    .type-body-20-400 { font-family: var(--font-instrument-sans); font-size: var(--text-20); font-weight: 400; line-height: 1.45; }
+    .type-h3 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-h3-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.20; }
+    .type-link-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 600; line-height: 1.50; }
+    .type-header { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-body-16 { font-family: var(--font-instrument-sans); font-size: var(--text-16); font-weight: 400; line-height: 1.50; }
+    .type-subheading { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-subheading-15 { font-family: var(--font-archivo); font-size: var(--text-15); font-weight: 800; line-height: 1.00; letter-spacing: var(--tracking-0-9); }
+    .type-button { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-link-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 600; line-height: 1.06; }
+    .type-caption { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 500; line-height: 1.06; }
+    .type-caption-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.59; }
+    .type-body-13 { font-family: var(--font-instrument-sans); font-size: var(--text-13); font-weight: 400; line-height: 1.53; }
+    .type-link-12 { font-family: var(--font-ui-monospace); font-size: var(--text-12); font-weight: 600; line-height: 1.00; letter-spacing: var(--tracking-0-72); }
+    .type-button-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-small { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-h2-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-small-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; letter-spacing: var(--tracking-0-88); }
+    .type-small-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.57; letter-spacing: var(--tracking-1-152); }
+    .type-button-11-700 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.00; }
+    .type-body-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 700; line-height: 1.05; letter-spacing: var(--tracking-1-3824); }
+    .type-small-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; }
+    .type-body-11-600 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 600; line-height: 1.05; letter-spacing: var(--tracking-1-6128); }
+    .type-body-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; }
+    .type-small-11-400 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+    .type-link-11 { font-family: var(--font-instrument-sans); font-size: var(--text-11); font-weight: 400; line-height: 1.57; letter-spacing: var(--tracking-0-9216); }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--color-cream);
+      color: var(--color-jet);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.4;
+    }
+    ::selection { background-color: var(--color-coral); color: #fff; }
+
+    :focus-visible {
+      outline: 2px solid var(--color-dark-slate-gray);
+      outline-offset: 2px;
+      box-shadow: var(--shadow-low);
+      border-radius: 6px;
+    }
+
+    /* Shell */
+    .announcement-bar {
+      height: 34px; background-color: var(--color-jet); color: var(--color-cream);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 1.5px solid var(--color-jet);
+    }
+    .navbar {
+      position: sticky; top: 0; z-index: 40; height: 64px;
+      background-color: var(--color-coral); border-bottom: 1.5px solid var(--color-jet);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 32px;
+      margin: 0;
+    }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-link { font-size: var(--text-13); font-weight: 600; color: var(--color-jet); text-decoration: none; }
+    .nav-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .nav-logo {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-serif); font-style: italic; font-size: 34px; font-weight: 600;
+      color: var(--color-jet); text-decoration: none;
+    }
+    .bag-pill-btn {
+      height: 34px; padding: 0 16px; border-radius: 9999px;
+      background-color: var(--color-jet); color: var(--color-cream); border: 1.5px solid var(--color-jet);
+      display: flex; align-items: center; gap: 6px; font-size: var(--text-12); font-weight: 800; cursor: pointer;
+      box-shadow: var(--shadow-low-6); transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
+    }
+    .bag-pill-btn:hover {
+      box-shadow: var(--shadow-low-7);
+    }
+    .bag-pill-btn.bounce { animation: bagBounce 0.45s var(--ease-elastic) both; background-color: var(--color-pine); }
+    @keyframes bagBounce {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.24) translateY(-2px); }
+      55% { transform: scale(0.92) translateY(1px); }
+      75% { transform: scale(1.08) translateY(-1px); }
+      100% { transform: scale(1); }
+    }
+
+    /* Product Page Main */
+    .pdp-main {
+      max-width: 1200px; margin: 0 auto; padding: 36px 32px 80px;
+    }
+    .breadcrumbs {
+      font-size: 12px; font-weight: 700; color: var(--color-charcoal); margin-bottom: 32px;
+    }
+    .breadcrumbs a { color: var(--color-charcoal); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    /* 2-Column Showcase */
+    .pdp-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+      padding-bottom: 64px; border-bottom: 1.5px solid rgba(20, 20, 12, 0.15);
+    }
+
+    /* Gallery */
+    .gallery-container { display: flex; gap: 16px; }
+    .thumbnail-strip { display: flex; flex-direction: column; gap: 12px; }
+    .thumb-btn {
+      width: 68px; height: 84px; border-radius: 10px; border: 2px solid transparent;
+      background-color: #FFFFFF; cursor: pointer; overflow: hidden; display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+      transition: all 0.2s var(--ease-spring);
+    }
+    .thumb-btn.active {
+      border-color: var(--color-jet); box-shadow: 3px 3px 0px var(--color-jet);
+    }
+    /* Ghost Shimmer Loading */
+    @keyframes rayeGhostShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .skeleton-shimmer {
+      background: linear-gradient(
+        90deg,
+        rgba(235, 227, 216, 0.65) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(235, 227, 216, 0.65) 100%
+      );
+      background-size: 200% 100%;
+      animation: rayeGhostShimmer 1.5s infinite ease-in-out;
+    }
+
+    .main-stage {
+      flex: 1; aspect-ratio: 4 / 5; background: #FFFFFF; border: 2px solid var(--color-jet);
+      border-radius: 20px; box-shadow: 6px 6px 0px var(--color-jet); position: relative;
+      overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 32px; user-select: none;
+    }
+    .stage-badge {
+      position: absolute; top: 16px; left: 16px; z-index: 10; font-size: 10px; font-weight: 800;
+      background: var(--color-butter); padding: 4px 12px; border-radius: 9999px; border: 1.5px solid var(--color-jet);
+      box-shadow: 2px 2px 0px var(--color-jet); text-transform: uppercase;
+    }
+
+    /* Meta & Actions */
+    .product-meta-col { display: flex; flex-direction: column; }
+    .pdp-kicker { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-charcoal); }
+    .pdp-title { font-size: 38px; font-weight: 800; letter-spacing: -0.02em; margin: 4px 0 8px; }
+    .rating-row { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--color-charcoal); margin-bottom: 16px; }
+    .pdp-price { font-size: 26px; font-weight: 900; color: var(--color-jet); margin-bottom: 20px; }
+    .pdp-desc { font-size: 15px; line-height: 1.6; color: rgba(20, 20, 12, 0.9); font-weight: 500; margin-bottom: 28px; }
+
+    /* Swatches */
+    .selector-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+    .color-swatches-row { display: flex; gap: 10px; margin-bottom: 24px; }
+    .color-btn {
+      width: 32px; height: 32px; border-radius: 50%; border: 2px solid transparent; cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .color-btn.active {
+      border-color: var(--color-jet); box-shadow: 2px 2px 0px var(--color-jet); transform: scale(1.1);
+    }
+
+    /* Size Selector & Find My Size trigger */
+    .size-label-row {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+    }
+    .find-size-btn {
+      background: none; border: none; font-size: 12px; font-weight: 800; color: var(--color-pine);
+      text-decoration: underline; cursor: pointer; display: flex; align-items: center; gap: 4px;
+      transition: color 0.15s;
+    }
+    .find-size-btn:hover { color: var(--color-coral); }
+    .sizes-row { display: flex; gap: 8px; margin-bottom: 32px; }
+    .size-pill-btn {
+      width: 48px; height: 42px; border-radius: 10px; border: 1.5px solid var(--color-jet);
+      background: #FFFFFF; font-size: 12px; font-weight: 800; cursor: pointer;
+      transition: all 0.18s var(--ease-spring);
+    }
+    .size-pill-btn:hover { background-color: var(--color-butter); }
+    .size-pill-btn.active {
+      background-color: var(--color-jet); color: #FFFFFF; box-shadow: 2px 2px 0px var(--color-jet);
+    }
+
+    /* Cart Action Group */
+    .action-group { display: flex; gap: 14px; margin-bottom: 28px; }
+    .qty-stepper {
+      display: flex; align-items: center; border: 1.5px solid var(--color-jet); border-radius: 9999px;
+      background: #FFFFFF; padding: 0 14px; box-shadow: 2px 2px 0px var(--color-jet);
+    }
+    .qty-btn { background: none; border: none; font-size: 16px; font-weight: 800; cursor: pointer; padding: 4px 6px; }
+    .qty-display { font-size: 13px; font-weight: 800; padding: 0 8px; }
+    .add-to-bag-btn {
+      flex: 1; padding: 14px 28px; border-radius: 9999px; background-color: var(--color-pine);
+      color: #FFFFFF; font-size: 14px; font-weight: 800; border: 1.5px solid var(--color-jet);
+      box-shadow: 4px 4px 0px var(--color-jet); cursor: pointer;
+      transition: transform 0.2s var(--ease-spring), box-shadow 0.2s;
+    }
+    .add-to-bag-btn:hover { transform: translate3d(0, -2px, 0); box-shadow: 6px 6px 0px var(--color-jet); }
+    .add-to-bag-btn:active { transform: translate3d(2px, 2px, 0); box-shadow: 2px 2px 0px var(--color-jet); }
+
+    /* Perks */
+    .perks-list {
+      border-top: 1px solid rgba(20,20,12,0.15); padding: 18px 0; margin-bottom: 24px;
+      display: flex; flex-direction: column; gap: 8px; font-size: 12px; font-weight: 700;
+    }
+
+    /* Accordions */
+    .accordions { border-top: 1.5px solid rgba(20,20,12,0.15); }
+    .accordion-item { border-bottom: 1.5px solid rgba(20,20,12,0.12); }
+    .accordion-header {
+      width: 100%; padding: 16px 0; background: none; border: none; font-size: 12px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em; display: flex; justify-content: space-between;
+      cursor: pointer; text-align: left;
+    }
+    .accordion-content {
+      padding-bottom: 16px; font-size: 13px; color: var(--color-charcoal); line-height: 1.6; display: none;
+    }
+    .accordion-content.open { display: block; }
+
+    /* Reviews Section */
+    .reviews-section { padding: 60px 0; border-bottom: 1.5px solid rgba(20,20,12,0.15); }
+    .reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card {
+      background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 20px;
+      box-shadow: 3px 3px 0px var(--color-jet);
+    }
+
+    /* Modal Backdrop & Body */
+    .modal-backdrop {
+      position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 12, 0.65);
+      backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      width: 100%; max-width: 480px; background: #FBF8F1; border: 2px solid var(--color-jet);
+      border-radius: 20px; box-shadow: 8px 8px 0px var(--color-forest); padding: 28px;
+      animation: modalPop 0.35s var(--ease-spring);
+    }
+    @keyframes modalPop {
+      0% { opacity: 0; transform: scale(0.92) translate3d(0, 16px, 0); }
+      100% { opacity: 1; transform: scale(1) translate3d(0, 0, 0); }
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .modal-close-btn {
+      width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--color-jet); background: #FFFFFF;
+      font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .modal-close-btn:hover { background-color: var(--color-coral); color: #fff; }
+
+    /* Modal Tabs */
+    .modal-tabs {
+      display: flex; border: 1.5px solid var(--color-jet); border-radius: 9999px; padding: 4px;
+      background: #fff; margin-bottom: 24px;
+    }
+    .modal-tab-btn {
+      flex: 1; padding: 6px; border-radius: 9999px; border: none; font-size: 11px; font-weight: 800;
+      cursor: pointer; background: transparent; transition: all 0.2s;
+    }
+    .modal-tab-btn.active { background: var(--color-jet); color: #fff; }
+
+    /* Modal Sliders Layout */
+    .slider-row { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: center; margin-bottom: 24px; }
+    .mannequin-box {
+      background: var(--color-butter-light); border: 1.5px solid var(--color-jet); border-radius: 12px;
+      padding: 12px 6px; display: flex; flex-direction: column; align-items: center;
+    }
+    .slider-field { margin-bottom: 14px; }
+    .slider-title-row { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
+    .slider-val { font-size: 18px; font-weight: 900; }
+    .slider-ctrls { display: flex; align-items: center; gap: 8px; }
+    .step-btn {
+      width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-jet); background: #fff;
+      font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .step-btn:hover { background-color: var(--color-butter); }
+    .range-input { width: 100%; accent-color: var(--color-coral); cursor: pointer; }
+
+    /* Recommendation Yellow Box */
+    .rec-box {
+      background: var(--color-butter); border: 1.5px solid var(--color-jet); border-radius: 14px;
+      padding: 16px; margin-bottom: 24px; box-shadow: 2px 2px 0px var(--color-jet);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .rec-size-letter { font-size: 38px; font-weight: 900; line-height: 1; }
+
+    .modal-confirm-btn {
+      width: 100%; padding: 14px 24px; border-radius: 9999px; background: var(--color-pine); color: #fff;
+      font-size: 14px; font-weight: 800; border: 1.5px solid var(--color-jet); box-shadow: 3px 3px 0px var(--color-jet);
+      display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+    }
+    .modal-confirm-btn:hover { transform: translate3d(0, -2px, 0); box-shadow: 5px 5px 0px var(--color-jet); }
+
+    /* Floating Toast */
+    .floating-toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translate3d(-50%, 100px, 0);
+      background-color: var(--color-jet); color: var(--color-cream); padding: 10px 20px;
+      border-radius: 9999px; border: 1.5px solid var(--color-jet); box-shadow: 4px 6px 0px var(--color-jet);
+      display: flex; align-items: center; gap: 14px; z-index: 150; transition: transform 0.4s var(--ease-spring), opacity 0.3s;
+      opacity: 0; pointer-events: none;
+    }
+    .floating-toast.show { transform: translate3d(-50%, 0, 0); opacity: 1; pointer-events: auto; }
+
+    /* Navbar Icons & Badges */
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn {
+      width: 34px; height: 34px; border-radius: 50%; background-color: var(--color-pine);
+      border: 1.5px solid var(--color-jet); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: #FFFFFF; position: relative; will-change: transform;
+      transition: transform 0.22s var(--ease-spring), background-color 0.2s ease;
+    }
+    .icon-btn:hover { transform: scale(1.12); background-color: #1D594E; }
+    .icon-btn:active { transform: scale(0.92); }
+    .nav-badge {
+      position: absolute; top: -3px; right: -3px; min-width: 16px; height: 16px; padding: 0 4px;
+      border-radius: 9999px; background-color: var(--color-butter); color: var(--color-jet);
+      border: 1.2px solid var(--color-jet); font-size: 9px; font-weight: 800; display: flex;
+      align-items: center; justify-content: center; pointer-events: none;
+    }
+    .mobile-menu-btn { display: none; }
+
+    /* Drawers & Modals */
+    .drawer-backdrop {
+      position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 12, 0.55);
+      backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .slide-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 420px;
+      background: var(--color-cream); border-left: 2px solid var(--color-jet);
+      box-shadow: -8px 0px 0px rgba(20, 20, 12, 0.15); z-index: 101; display: flex;
+      flex-direction: column; transform: translate3d(100%, 0, 0); will-change: transform;
+      transition: transform 0.35s var(--ease-spring);
+    }
+    .drawer-backdrop.open .slide-drawer { transform: translate3d(0, 0, 0); }
+    .drawer-header {
+      padding: 20px 24px; border-bottom: 1.5px solid var(--color-jet); display: flex;
+      justify-content: space-between; align-items: center; background: #FFFFFF;
+    }
+    .drawer-title { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; }
+    .drawer-close {
+      width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--color-jet);
+      background: #FFFFFF; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-weight: 800; transition: background-color 0.15s;
+    }
+    .drawer-close:hover { background-color: var(--color-coral); color: #FFFFFF; }
+    .drawer-body { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .drawer-footer { padding: 20px 24px; border-top: 1.5px solid var(--color-jet); background: #FFFFFF; }
+    .progress-track {
+      height: 6px; background: #E5E0D8; border-radius: 9999px; margin-top: 8px;
+      overflow: hidden; border: 1px solid var(--color-jet);
+    }
+    .progress-fill { height: 100%; background: var(--color-pine); border-radius: 9999px; transition: width 0.3s ease; }
+    .cart-item-card {
+      display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; padding: 12px;
+      background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px;
+      box-shadow: 2px 2px 0px var(--color-jet); align-items: center;
+    }
+    .cart-item-thumb {
+      width: 56px; height: 68px; border-radius: 8px; border: 1px solid var(--color-jet);
+      background: #F4EFE6; display: flex; align-items: center; justify-content: center;
+    }
+    .qty-stepper { display: inline-flex; align-items: center; border: 1.5px solid var(--color-jet); border-radius: 9999px; background: #FFFFFF; overflow: hidden; }
+    .qty-btn { width: 26px; height: 26px; border: none; background: transparent; font-weight: 800; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: var(--color-butter); }
+    .qty-val { min-width: 24px; text-align: center; font-size: 12px; font-weight: 800; }
+    .item-delete-btn { background: none; border: none; color: #888; cursor: pointer; padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .item-delete-btn:hover { color: var(--color-coral); background-color: #FEECE8; }
+
+    /* Search Dropdown Modal */
+    .search-modal-backdrop {
+      position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 12, 0.6);
+      backdrop-filter: blur(4px); display: none; justify-content: center; align-items: flex-start; padding-top: 80px;
+    }
+    .search-modal-backdrop.open { display: flex; }
+    .search-box-card {
+      width: 100%; max-width: 580px; background: var(--color-cream); border: 2px solid var(--color-jet);
+      border-radius: 16px; box-shadow: 8px 8px 0px var(--color-jet); overflow: hidden;
+    }
+    .search-input-header { padding: 16px 20px; border-bottom: 1.5px solid var(--color-jet); display: flex; align-items: center; gap: 12px; background: #FFFFFF; }
+    .search-field { flex: 1; border: none; outline: none; font-size: 15px; font-weight: 700; color: var(--color-jet); background: transparent; }
+    .search-results-list { max-height: 380px; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .search-result-item {
+      display: flex; align-items: center; justify-content: space-between; padding: 10px 14px;
+      border-radius: 10px; border: 1px solid transparent; text-decoration: none; color: var(--color-jet); transition: all 0.15s;
+    }
+    .search-result-item:hover { background: #FFFFFF; border-color: var(--color-jet); box-shadow: 2px 2px 0px var(--color-jet); transform: translate3d(2px, 0, 0); }
+
+    /* Account & Checkout Modal Backdrops */
+    .account-modal-backdrop, .checkout-modal-backdrop {
+      position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 12, 0.6);
+      backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 16px;
+    }
+    .account-modal-backdrop.open, .checkout-modal-backdrop.open { display: flex; }
+    .account-modal-card, .checkout-modal-card {
+      width: 100%; max-width: 480px; background: var(--color-cream); border: 2px solid var(--color-jet);
+      border-radius: 16px; box-shadow: 6px 6px 0px var(--color-jet); overflow: hidden;
+    }
+    .account-tabs { display: flex; border-bottom: 1.5px solid var(--color-jet); background: #FFFFFF; }
+    .account-tab-btn {
+      flex: 1; padding: 12px; font-size: 12px; font-weight: 800; text-transform: uppercase;
+      border: none; background: transparent; cursor: pointer; color: var(--color-charcoal); border-bottom: 2px solid transparent;
+    }
+    .account-tab-btn.active { color: var(--color-jet); background: var(--color-cream); border-bottom-color: var(--color-coral); }
+    .account-tab-content { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .tracking-card { background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 16px; box-shadow: 2px 2px 0px var(--color-jet); margin-top: 8px; }
+    .stepper-timeline { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; position: relative; padding-left: 20px; }
+    .stepper-timeline::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: #E5E0D8; }
+    .timeline-step { position: relative; font-size: 12px; display: flex; flex-direction: column; gap: 2px; }
+    .timeline-step::before { content: ''; position: absolute; left: -20px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; border: 2px solid var(--color-charcoal); }
+    .timeline-step.completed::before { background: var(--color-pine); border-color: var(--color-pine); }
+    .timeline-step.current::before { background: var(--color-coral); border-color: var(--color-jet); box-shadow: 0 0 0 3px rgba(239, 94, 75, 0.25); }
+    .wishlist-item-card { display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; padding: 12px; background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; box-shadow: 2px 2px 0px var(--color-jet); align-items: center; }
+
+    /* Mobile Drawer */
+    .mobile-menu-drawer {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 320px;
+      background: var(--color-cream); border-right: 2px solid var(--color-jet);
+      box-shadow: 8px 0px 0px rgba(20, 20, 12, 0.15); z-index: 101; display: flex;
+      flex-direction: column; transform: translate3d(-100%, 0, 0); will-change: transform; transition: transform 0.35s var(--ease-spring);
+    }
+    .drawer-backdrop.open .mobile-menu-drawer { transform: translate3d(0, 0, 0); }
+    .mobile-nav-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; font-size: 14px; font-weight: 800; color: var(--color-jet); text-decoration: none; border-bottom: 1.5px solid rgba(20, 20, 12, 0.1); }
+    .mobile-nav-link:hover { background-color: var(--color-butter-light); color: var(--color-coral); }
+
+    @media (max-width: 860px) {
+      .pdp-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .navbar { padding: 0 16px; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: flex; }
+    }
+  
+    /* ==========================================================================
+       Page Change Text & Content Fade-In Transitions
+       ========================================================================== */
+    @keyframes rayeTextFadeIn {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    body {
+      opacity: 1;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.page-transitioning {
+      opacity: 0 !important;
+      transform: translate3d(0, -8px, 0) !important;
+    }
+
+    .fade-text,
+    .shop-kicker, .shop-title, .shop-subhead, .category-pills,
+    .hero-kicker, .hero-title, .hero-desc, .hero-actions,
+    .pdp-kicker, .pdp-title, .pdp-price, .pdp-desc,
+    .section-kicker, .section-title,
+    .about-kicker, .about-title, .about-lead,
+    .journal-kicker, .journal-title, .journal-subhead,
+    .saved-kicker, .saved-title, .saved-count-lede,
+    .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation: rayeTextFadeIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-kicker, .shop-kicker, .pdp-kicker, .section-kicker, .about-kicker, .journal-kicker, .saved-kicker {
+      animation-delay: 0.10s;
+    }
+    .hero-title, .shop-title, .pdp-title, .section-title, .about-title, .journal-title, .saved-title, .cart-title, .checkout-title, .order-title, .account-title, .help-title {
+      animation-delay: 0.24s;
+    }
+    .hero-desc, .shop-subhead, .pdp-price, .about-lead, .journal-subhead, .saved-count-lede {
+      animation-delay: 0.40s;
+    }
+    .hero-actions, .category-pills, .pdp-desc, .color-swatches-row {
+      animation-delay: 0.56s;
+    }
+</style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    FREE DELIVERY ON ORDERS OVER ৳3,000 ✦ CASH ON DELIVERY ACROSS BANGLADESH
+  </div>
+
+  <header class="navbar">
+    <!-- Mobile Hamburger Button -->
+    <button class="icon-btn mobile-menu-btn" onclick="openMobileMenu()" aria-label="Open mobile menu">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="nav-links" aria-label="Navigation">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="journal.html" class="nav-link">Journal</a>
+        <a href="help.html" class="nav-link">Help</a>
+      </nav>
+
+    <!-- Center Brand Mark -->
+    <a href="index.html" class="nav-logo">Rayé</a>
+
+    <!-- Right Actions -->
+    <div class="nav-actions">
+      <!-- Search Button -->
+      <button class="icon-btn" onclick="openSearch()" aria-label="Search catalog" title="Search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="16.5" y1="16.5" x2="21" y2="21" />
+        </svg>
+      </button>
+
+      <!-- Account Button -->
+      <button class="icon-btn" onclick="openAccount()" aria-label="Account & orders" title="Account">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+        </svg>
+      </button>
+
+      <!-- Wishlist / Saved Shirts Page Link with Badge -->
+      <a href="wishlist.html" class="icon-btn" aria-label="Saved shirts" title="Saved shirts" id="wishlistNavBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+        <span id="wishlistBadge" class="nav-badge" style="display: none;">0</span>
+      </a>
+
+      <!-- Dynamic Bag Pill Button -->
+      <button id="bagBtn" class="bag-pill-btn" onclick="openCart()" aria-label="Shopping bag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span id="bagCount">Bag (0)</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="pdp-main">
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &gt; <a href="shop.html">Shop</a> &gt; <a href="shop.html?sleeve=short">Short sleeve</a> &gt; <span>Lido Stripe</span>
+    </div>
+
+    <!-- 2-Column Showcase -->
+    <div class="pdp-grid">
+      <!-- Gallery Column -->
+      <div class="gallery-container">
+        <div class="thumbnail-strip">
+          <button class="thumb-btn active" onclick="switchStage('hanger', this)">
+            <img id="thumbFlatImg" src="images/shirt-lido.jpg" alt="Flat view" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </button>
+          <button class="thumb-btn" onclick="switchStage('model', this)">
+            <img id="thumbModelImg" src="images/shirt-lido-model.jpg" alt="Model view" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </button>
+        </div>
+
+        <div class="main-stage" style="padding: 0; overflow: hidden; background: #F4EFE6;">
+          <span class="stage-badge">NEW</span>
+
+          <!-- View 1: Flat Lay -->
+          <div id="stageHanger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; overflow: hidden;">
+            <img id="stageFlatImg" src="images/shirt-lido.jpg" alt="Flat lay" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+
+          <!-- View 2: On Model -->
+          <div id="stageModel" style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%; overflow: hidden;">
+            <img id="stageModelImg" src="images/shirt-lido-model.jpg" alt="On model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Meta Column -->
+      <div class="product-meta-col">
+        <span class="pdp-kicker">SHORT SLEEVE</span>
+        <h1 class="pdp-title">Lido Stripe</h1>
+        
+        <div class="rating-row">
+          <span style="color: var(--color-jet);">★★★★★</span>
+          <span>4.9 · 168 reviews</span>
+        </div>
+
+        <div class="pdp-price">৳2,890</div>
+
+        <p class="pdp-desc">
+          Candy stripes in deep teal, cut short in the sleeve and easy everywhere else. Throw it open over a tee for easy coastal breeze.
+        </p>
+
+        <!-- Color -->
+        <p class="selector-label">Colour: <span id="colorNameText" style="color: var(--color-charcoal)">Teal / White</span></p>
+        <div class="color-swatches-row">
+          <button class="color-btn active" style="background-color: #1D594E;" onclick="selectColor('#1D594E', 'Teal / White', this)" title="Teal"></button>
+          <button class="color-btn" style="background-color: #EF5E4B;" onclick="selectColor('#EF5E4B', 'Coral / White', this)" title="Coral"></button>
+        </div>
+
+        <!-- Size -->
+        <div class="size-label-row">
+          <span class="selector-label">Size</span>
+          <button class="find-size-btn" onclick="openSizeModal()">
+            <span>📏 Find my size</span>
+          </button>
+        </div>
+        <div class="sizes-row" id="pdpSizesRow">
+          <button class="size-pill-btn" onclick="selectPdpSize('XS', this)">XS</button>
+          <button class="size-pill-btn" onclick="selectPdpSize('S', this)">S</button>
+          <button class="size-pill-btn active" onclick="selectPdpSize('M', this)">M</button>
+          <button class="size-pill-btn" onclick="selectPdpSize('L', this)">L</button>
+          <button class="size-pill-btn" onclick="selectPdpSize('XL', this)">XL</button>
+          <button class="size-pill-btn" onclick="selectPdpSize('XXL', this)">XXL</button>
+        </div>
+
+        <!-- Add To Bag Stepper & CTA -->
+        <div class="action-group">
+          <div class="qty-stepper">
+            <button class="qty-btn" onclick="adjustQty(-1)">-</button>
+            <span class="qty-display" id="qtyText">1</span>
+            <button class="qty-btn" onclick="adjustQty(1)">+</button>
+          </div>
+          <button class="add-to-bag-btn" onclick="addToBag()">
+            Add to bag · <span id="btnPriceText">৳2,890</span>
+          </button>
+        </div>
+
+        <!-- Perks -->
+        <div class="perks-list">
+          <div>🚚 Free delivery over ৳3,000, next day in Dhaka</div>
+          <div>🔄 Free size exchanges within 14 days</div>
+          <div>🛡️ Cash on delivery across Bangladesh</div>
+        </div>
+
+        <!-- Accordions -->
+        <div class="accordions">
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion('acc1', this)">
+              <span>Details</span>
+              <span>−</span>
+            </button>
+            <div id="acc1" class="accordion-content open">
+              • Camp collar (Cuban open neck)<br>
+              • Relaxed, boxy cut with dropped shoulders<br>
+              • Side hem vents for easy movement<br>
+              • Real carved ocean shell buttons
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion('acc2', this)">
+              <span>Fabric & Care</span>
+              <span>+</span>
+            </button>
+            <div id="acc2" class="accordion-content">
+              • 70% combed cotton, 30% Belgian flax linen<br>
+              • Enzyme pre-washed for soft hand-feel from day one<br>
+              • Machine wash cold (30°C) with similar colours<br>
+              • Line dry in shade to preserve vibrant stripe contrast
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion('acc3', this)">
+              <span>Delivery & Returns</span>
+              <span>+</span>
+            </button>
+            <div id="acc3" class="accordion-content">
+              • Next-day delivery across Dhaka metropolitan area<br>
+              • 2-3 business days nationwide via courier<br>
+              • 14-day hassle-free size exchange window
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Reviews -->
+    <section class="reviews-section">
+      <div class="reviews-header">
+        <h2 style="font-size: 28px; font-weight: 800;">Customer Reviews</h2>
+        <span style="font-size: 13px; font-weight: 800;">★★★★★ 4.9 from 168 reviews</span>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div style="color: var(--color-jet); font-size: 12px; margin-bottom: 6px;">★★★★★</div>
+          <h3 style="font-size: 14px; font-weight: 800; margin-bottom: 4px;">Perfect summer shirt</h3>
+          <p style="font-size: 12px; color: var(--color-charcoal); margin-bottom: 12px;">&ldquo;Wore it on a 36° day in Agrabad and stayed cool. The fit is relaxed without looking sloppy.&rdquo;</p>
+          <span style="font-size: 11px; font-weight: 800;">Rafi A. · Chattogram · ✓ Verified buyer</span>
+        </div>
+        <div class="review-card">
+          <div style="color: var(--color-jet); font-size: 12px; margin-bottom: 6px;">★★★★☆</div>
+          <h3 style="font-size: 14px; font-weight: 800; margin-bottom: 4px;">Size down if between sizes</h3>
+          <p style="font-size: 12px; color: var(--color-charcoal); margin-bottom: 12px;">&ldquo;Lovely fabric. It runs a little roomy, so I swapped my L for an M and it was perfect.&rdquo;</p>
+          <span style="font-size: 11px; font-weight: 800;">Sumaiya T. · Sylhet · ✓ Verified buyer</span>
+        </div>
+        <div class="review-card">
+          <div style="color: var(--color-jet); font-size: 12px; margin-bottom: 6px;">★★★★★</div>
+          <h3 style="font-size: 14px; font-weight: 800; margin-bottom: 4px;">Got compliments all day</h3>
+          <p style="font-size: 12px; color: var(--color-charcoal); margin-bottom: 12px;">&ldquo;Three people asked where it was from before lunch. The colour is even better in person.&rdquo;</p>
+          <span style="font-size: 11px; font-weight: 800;">Imran K. · Khulna · ✓ Verified buyer</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       INTERACTIVE "FIND YOUR SIZE" SIZING CALCULATOR MODAL
+       ======================================================================== -->
+  <div id="sizeModalBackdrop" class="modal-backdrop" onclick="closeSizeModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2 style="font-size: 18px; font-weight: 900;">Find your size</h2>
+        <button class="modal-close-btn" onclick="closeSizeModal()">✕</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active">Height & weight</button>
+        <button class="modal-tab-btn" onclick="alert('Size chart: XS (100cm), S (106cm), M (112cm), L (118cm), XL (124cm), XXL (130cm)')">Size chart</button>
+      </div>
+
+      <!-- Sliders Grid -->
+      <div class="slider-row">
+        <!-- Mannequin -->
+        <div class="mannequin-box">
+          <svg width="44" height="100" viewBox="0 0 50 110" fill="none">
+            <circle cx="25" cy="14" r="8" fill="#F7D66D" stroke="#14140C" stroke-width="2"/>
+            <path d="M12 28 L25 32 L38 28 L44 42 L36 46 L34 70 L16 70 L14 46 L6 42 Z" fill="#EF5E4B" stroke="#14140C" stroke-width="2"/>
+            <line x1="8" y1="48" x2="42" y2="48" stroke="#14140C" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <line x1="20" y1="70" x2="18" y2="102" stroke="#14140C" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="30" y1="70" x2="32" y2="102" stroke="#14140C" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span style="font-size: 9px; font-weight: 800; margin-top: 4px;">RAYÉ FIT</span>
+        </div>
+
+        <div>
+          <!-- Height Slider -->
+          <div class="slider-field">
+            <div class="slider-title-row">
+              <span>Height</span>
+              <span class="slider-val"><span id="heightVal">165</span> <span style="font-size: 11px; font-weight: 600;">cm</span></span>
+            </div>
+            <div class="slider-ctrls">
+              <button class="step-btn" onclick="stepSlider('heightRange', -1)">-</button>
+              <input type="range" id="heightRange" min="150" max="200" value="165" class="range-input" oninput="calculateSize()">
+              <button class="step-btn" onclick="stepSlider('heightRange', 1)">+</button>
+            </div>
+          </div>
+
+          <!-- Weight Slider -->
+          <div class="slider-field">
+            <div class="slider-title-row">
+              <span>Weight</span>
+              <span class="slider-val"><span id="weightVal">60</span> <span style="font-size: 11px; font-weight: 600;">kg</span></span>
+            </div>
+            <div class="slider-ctrls">
+              <button class="step-btn" onclick="stepSlider('weightRange', -1)">-</button>
+              <input type="range" id="weightRange" min="45" max="115" value="60" class="range-input" oninput="calculateSize()">
+              <button class="step-btn" onclick="stepSlider('weightRange', 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fit Preference -->
+      <div style="margin-bottom: 20px;">
+        <span style="display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">
+          HOW YOU LIKE IT
+        </span>
+        <div style="display: flex; border: 1.5px solid var(--color-jet); border-radius: 9999px; padding: 2px; background: #fff;">
+          <button id="fitClose" class="modal-tab-btn" onclick="setFit('close')">Close</button>
+          <button id="fitAsCut" class="modal-tab-btn active" onclick="setFit('as_cut')">As cut</button>
+          <button id="fitRoomy" class="modal-tab-btn" onclick="setFit('roomy')">Roomy</button>
+        </div>
+      </div>
+
+      <!-- Recommendation Yellow Box -->
+      <div class="rec-box">
+        <div>
+          <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: rgba(20,20,12,0.8);">YOUR SIZE</span>
+          <div class="rec-size-letter" id="recSizeLetter">XS</div>
+          <div style="font-size: 11px; font-weight: 800; margin-top: 4px;" id="recChestText">100 cm across chest</div>
+          <div style="font-size: 10px; color: var(--color-charcoal);" id="recDrapeText">For a ~88 cm chest, relaxed drape</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;" id="modalPillRow">
+          <!-- Injected by script -->
+        </div>
+      </div>
+
+      <!-- Apply Button -->
+      <button class="modal-confirm-btn" onclick="applyCalculatedSize()">
+        <span>Use size <span id="confirmSizeLabel">XS</span></span>
+        <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-coral); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px;">✓</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="floating-toast">
+    <span id="toastMsg">✓ Added Lido Stripe, size M</span>
+    <button class="toast-btn" onclick="openCart()" style="background-color: var(--color-butter); color: var(--color-jet); font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 9999px; border: none; cursor: pointer;">View bag</button>
+  </div>
+
+  <!-- Search Modal Overlay -->
+  <div id="searchModalBackdrop" class="search-modal-backdrop" onclick="handleBackdropClick(event, 'searchModalBackdrop')" role="dialog" aria-modal="true" aria-label="Search catalog">
+    <div class="search-box-card" onclick="event.stopPropagation()">
+      <div class="search-input-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="16.5" y1="16.5" x2="21" y2="21" />
+        </svg>
+        <input type="text" id="searchInput" class="search-field" placeholder="Search 12 striped shirts, colors, sleeves..." oninput="handleSearch(this.value)" autocomplete="off">
+        <button class="drawer-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+      </div>
+      <div style="padding: 10px 16px; display: flex; gap: 6px; flex-wrap: wrap; background: #FAF7F0; border-bottom: 1.5px solid rgba(20,20,12,0.08);">
+        <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; align-self: center; margin-right: 4px; color: var(--color-charcoal);">Trending:</span>
+        <button class="swatch-btn" onclick="setSearchQuery('Lido')">Lido</button>
+        <button class="swatch-btn" onclick="setSearchQuery('Teal')">Teal</button>
+        <button class="swatch-btn" onclick="setSearchQuery('Short sleeve')">Short sleeve</button>
+        <button class="swatch-btn" onclick="setSearchQuery('Long sleeve')">Long sleeve</button>
+        <button class="swatch-btn" onclick="setSearchQuery('Sale')">Sale</button>
+      </div>
+      <div id="searchResultsList" class="search-results-list"></div>
+    </div>
+  </div>
+
+  <!-- Account & Tracking Modal -->
+  <div id="accountModalBackdrop" class="account-modal-backdrop" onclick="handleBackdropClick(event, 'accountModalBackdrop')" role="dialog" aria-modal="true" aria-label="Account and orders">
+    <div class="account-modal-card" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h2 class="drawer-title" style="font-family: var(--font-serif); font-style: italic; font-size: 22px;">Rayé Account & Orders</h2>
+        <button class="drawer-close" onclick="closeAccount()" aria-label="Close account modal">✕</button>
+      </div>
+      <div class="account-tabs">
+        <button id="tabTrackBtn" class="account-tab-btn active" onclick="switchAccountTab('track')">Track Order</button>
+        <button id="tabSignInBtn" class="account-tab-btn" onclick="switchAccountTab('signin')">Sign In</button>
+      </div>
+      <div id="accountTrackTab" class="account-tab-content">
+        <p style="font-size: 12px; color: var(--color-charcoal); line-height: 1.5;">
+          Enter your order number to track parcel dispatch with Steadfast Express courier across Bangladesh.
+        </p>
+        <form onsubmit="handleTrackOrder(event)">
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;">
+            <label style="font-size: 11px; font-weight: 800; text-transform: uppercase;">Order Number</label>
+            <input type="text" id="trackOrderInput" value="RY-84920" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 800; font-size: 13px; background: #fff;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+            <label style="font-size: 11px; font-weight: 800; text-transform: uppercase;">Phone Number</label>
+            <input type="tel" id="trackPhoneInput" value="+880 1711 000000" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
+          </div>
+          <button type="submit" style="width: 100%; height: 42px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer;">
+            Track My Package →
+          </button>
+        </form>
+        <div id="trackingResult" class="tracking-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #eee; padding-bottom: 8px;">
+            <div>
+              <span style="font-size: 10px; font-weight: 800; color: #777; text-transform: uppercase;">Tracking #RY-84920</span>
+              <p style="font-size: 13px; font-weight: 800; color: var(--color-jet); margin-top: 2px;">1× Lido Stripe (M)</p>
+            </div>
+            <span style="background: var(--color-butter); border: 1.2px solid var(--color-jet); font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">IN TRANSIT</span>
+          </div>
+          <div class="stepper-timeline">
+            <div class="timeline-step completed"><strong>Order Placed & Confirmed</strong><span style="font-size: 11px; color: #666;">Studio Narayanganj · 10:30 AM</span></div>
+            <div class="timeline-step completed"><strong>Pre-Washed & Quality Checked</strong><span style="font-size: 11px; color: #666;">Garment washed for true fit · 2:15 PM</span></div>
+            <div class="timeline-step current"><strong>Steadfast Courier Delivery Hub</strong><span style="font-size: 11px; color: var(--color-coral); font-weight: 800;">Dhaka Central Hub · Out for Delivery Tomorrow</span></div>
+            <div class="timeline-step"><strong>Delivered to Your Doorstep</strong><span style="font-size: 11px; color: #888;">Dhanmondi, Dhaka · Cash on Delivery</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="accountSignInTab" class="account-tab-content" style="display: none;">
+        <div id="signInFormContainer">
+          <p style="font-size: 12px; color: var(--color-charcoal); line-height: 1.5;">
+            Sign in to check saved sizing profiles, order history, and faster checkout.
+          </p>
+          <form onsubmit="handleSignIn(event)" style="margin-top: 8px;">
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;">
+              <label style="font-size: 11px; font-weight: 800; text-transform: uppercase;">Email or Phone</label>
+              <input type="text" id="loginEmail" value="rahat@example.com" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <label style="font-size: 11px; font-weight: 800; text-transform: uppercase;">Password</label>
+              <input type="password" id="loginPassword" value="password123" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-size: 13px; background: #fff;">
+            </div>
+            <button type="submit" style="width: 100%; height: 42px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer;">
+              Sign In to Rayé
+            </button>
+          </form>
+        </div>
+        <div id="profileContainer" style="display: none; background: #fff; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 18px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-butter); border: 1.5px solid var(--color-jet); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px;">RC</div>
+            <div>
+              <p style="font-size: 14px; font-weight: 800;">Rahat Chowdhury</p>
+              <span style="font-size: 11px; color: var(--color-charcoal);">VIP Rayé Member ✦ Dhaka</span>
+            </div>
+          </div>
+          <div style="font-size: 12px; display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: 1px solid #eee;">
+            <p><strong>Saved Sizing:</strong> Size L (Relaxed Fit)</p>
+            <p><strong>Primary Address:</strong> Flat 4B, Dhanmondi 27, Dhaka</p>
+          </div>
+          <button onclick="handleSignOut()" style="margin-top: 16px; width: 100%; padding: 8px; border: 1.5px solid var(--color-jet); border-radius: 8px; background: #FAF7F0; font-weight: 800; font-size: 11px; cursor: pointer;">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist Slide-Over Drawer -->
+  <div id="wishlistBackdrop" class="drawer-backdrop" onclick="handleBackdropClick(event, 'wishlistBackdrop')" role="dialog" aria-modal="true" aria-label="Saved shirts">
+    <aside class="slide-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Saved Shirts (<span id="wishlistTitleCount">0</span>)</h2>
+        <button class="drawer-close" onclick="closeWishlist()" aria-label="Close wishlist">✕</button>
+      </div>
+      <div id="wishlistItemsBody" class="drawer-body"></div>
+      <div class="drawer-footer" id="wishlistFooter">
+        <a href="wishlist.html" style="display: block; text-align: center; font-size: 12px; font-weight: 800; color: var(--color-jet); margin-bottom: 12px; text-decoration: underline;">
+          View dedicated saved page →
+        </a>
+        <button onclick="moveAllWishlistToCart()" style="width: 100%; height: 42px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer; margin-bottom: 8px;">
+          Move All to Bag
+        </button>
+        <button onclick="clearWishlist()" style="width: 100%; background: none; border: none; font-size: 11px; font-weight: 800; color: var(--color-charcoal); text-decoration: underline; cursor: pointer; text-align: center; padding: 4px;">
+          Clear Wishlist
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Shopping Cart Slide-Over Drawer -->
+  <div id="cartBackdrop" class="drawer-backdrop" onclick="handleBackdropClick(event, 'cartBackdrop')" role="dialog" aria-modal="true" aria-label="Shopping bag">
+    <aside class="slide-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Shopping Bag (<span id="cartTitleCount">0</span>)</h2>
+        <button class="drawer-close" onclick="closeCart()" aria-label="Close bag">✕</button>
+      </div>
+      <div style="padding: 14px 20px 6px; background: #FFFFFF; border-bottom: 1px solid rgba(20,20,12,0.1);">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 800;">
+          <span id="freeShippingNotice">Add ৳3,000 for FREE Shipping</span>
+          <span id="freeShippingTarget">৳3,000 goal</span>
+        </div>
+        <div class="progress-track">
+          <div id="freeShippingBar" class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+      <div id="cartItemsBody" class="drawer-body"></div>
+      <div class="drawer-footer" id="cartFooter">
+        <a href="cart.html" style="display: block; text-align: center; font-size: 12px; font-weight: 800; color: var(--color-jet); margin-bottom: 12px; text-decoration: underline;">
+          View dedicated bag page →
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+            <span style="color: var(--color-charcoal);">Subtotal</span>
+            <span id="cartSubtotal" style="font-weight: 800;">৳0</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+            <span style="color: var(--color-charcoal);">Delivery (Bangladesh)</span>
+            <span id="cartShipping" style="font-weight: 800; color: var(--color-pine);">Calculated</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 900; border-top: 1.5px dashed rgba(20,20,12,0.2); padding-top: 8px;">
+            <span>Estimated Total</span>
+            <span id="cartTotal">৳0</span>
+          </div>
+        </div>
+        <button id="checkoutBtn" onclick="openCheckout()" style="width: 100%; height: 44px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>Proceed to Checkout</span> →
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Checkout Confirmation Modal -->
+  <div id="checkoutBackdrop" class="checkout-modal-backdrop" onclick="handleBackdropClick(event, 'checkoutBackdrop')" role="dialog" aria-modal="true" aria-label="Checkout">
+    <div class="checkout-modal-card" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h2 class="drawer-title" style="font-family: var(--font-serif); font-style: italic; font-size: 22px;">Fast Checkout</h2>
+        <button class="drawer-close" onclick="closeCheckout()" aria-label="Close checkout">✕</button>
+      </div>
+      <div style="padding: 24px; max-height: 80vh; overflow-y: auto;">
+        <div id="checkoutFormContainer">
+          <div style="background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 14px; margin-bottom: 16px; box-shadow: 2px 2px 0px var(--color-jet);">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; margin-bottom: 4px;">
+              <span>Total to Pay:</span>
+              <span id="checkoutOrderTotal" style="font-size: 15px; font-weight: 900; color: var(--color-coral);">৳0</span>
+            </div>
+            <span id="checkoutItemsBrief" style="font-size: 11px; color: #666;">Order summary loading...</span>
+          </div>
+          <form onsubmit="handlePlaceOrder(event)">
+            <h3 style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">1. Delivery Details</h3>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+              <input type="text" id="custName" placeholder="Full Name" value="Rahat Chowdhury" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
+              <input type="tel" id="custPhone" placeholder="Mobile Number (+880...)" value="+880 1712 345678" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
+              <input type="text" id="custAddress" placeholder="Street Address, Area" value="House 14, Road 7, Sector 3, Uttara" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
+              <select id="custCity" onchange="calculateCart()" style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 800; font-size: 13px; background: #fff; cursor: pointer;">
+                <option value="dhaka">Inside Dhaka (Steadfast Express · ৳60 or Free over ৳3,000)</option>
+                <option value="outside">Outside Dhaka (All 64 Districts · ৳100 or Free over ৳3,000)</option>
+              </select>
+            </div>
+            <h3 style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">2. Payment Method</h3>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+              <label style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fff; border: 1.5px solid var(--color-jet); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 800;">
+                <input type="radio" name="paymentMethod" value="cod" checked style="accent-color: var(--color-coral);">
+                <span>💵 Cash on Delivery (COD) — Inspect upon receipt</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fff; border: 1.5px solid var(--color-jet); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 800;">
+                <input type="radio" name="paymentMethod" value="bkash" style="accent-color: var(--color-coral);">
+                <span>📱 bKash / Nagad Instant Mobile Banking</span>
+              </label>
+            </div>
+            <button type="submit" style="width: 100%; height: 44px; border-radius: 9999px; background: var(--color-coral); color: #fff; font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer;">
+              Confirm Order ✓
+            </button>
+          </form>
+        </div>
+        <div id="checkoutSuccessContainer" style="display: none; text-align: center; padding: 20px 10px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-butter); border: 2px solid var(--color-jet); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 14px;">🎉</div>
+          <h3 style="font-family: var(--font-serif); font-size: 24px; font-style: italic; margin-bottom: 6px;">Order Confirmed!</h3>
+          <p style="font-size: 12px; color: var(--color-charcoal); line-height: 1.5; margin-bottom: 16px;">
+            Thank you, Rahat! Your order reference is <strong style="color: var(--color-jet); background: var(--color-butter); padding: 1px 6px; border-radius: 4px;">#RY-84920</strong>.<br>
+            We're packaging your striped shirts in Narayanganj. Delivery within 24-48 hours.
+          </p>
+          <button onclick="closeCheckout(); openAccount('track');" style="width: 100%; height: 42px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer; margin-bottom: 8px;">
+            Track Order #RY-84920
+          </button>
+          <button onclick="closeCheckout()" style="width: 100%; height: 42px; border-radius: 9999px; background: #FFFFFF; color: var(--color-jet); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer;">
+            Continue Browsing
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobileMenuBackdrop" class="drawer-backdrop" onclick="handleBackdropClick(event, 'mobileMenuBackdrop')" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <aside class="mobile-menu-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header" style="background: var(--color-coral); border-bottom: 2px solid var(--color-jet);">
+        <span style="font-family: var(--font-serif); font-style: italic; font-size: 26px; font-weight: 700; color: var(--color-jet);">Rayé</span>
+        <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
+      </div>
+      <nav style="display: flex; flex-direction: column;">
+        <a href="shop.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>The Shop (12 Shirts)</span> →</a>
+        <a href="shop.html?badge=new" class="mobile-nav-link" onclick="closeMobileMenu()"><span>New in (The Edit 02)</span> <span style="font-size: 10px; font-weight: 800; background: var(--color-pine); color: #fff; padding: 2px 6px; border-radius: 9999px;">NEW</span></a>
+        <a href="wishlist.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Saved Shirts (Favorites)</span> <span id="mobileWishCount" style="font-size: 10px; font-weight: 800; background: var(--color-coral); color: #fff; padding: 2px 7px; border-radius: 9999px;">0</span></a>
+        <a href="product.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Featured: Lido Stripe</span> →</a>
+        <a href="product.html#sizing" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Find Your Size</span> <span style="font-size: 11px; color: var(--color-coral); font-weight: 800;">Calculator</span></a>
+        <a href="index.html#why-raye" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Why Rayé (Cotton-Linen)</span> →</a>
+        <a href="index.html#polaroids" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Journal & Gallery</span> →</a>
+      </nav>
+      <div style="margin-top: auto; padding: 20px; border-top: 1.5px solid var(--color-jet); background: #FFFFFF;">
+        <p style="font-size: 11px; font-weight: 800; color: var(--color-charcoal); margin-bottom: 6px;">NEED SIZING ADVICE?</p>
+        <a href="https://wa.me/8801700000000" target="_blank" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; color: var(--color-pine); text-decoration: none;">
+          <span>💬 WhatsApp: +880 1700 000000</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    let currentSize = 'M';
+    let currentQty = 1;
+    let basePrice = 2890;
+    let fitPref = 'as_cut';
+    let recommendedSize = 'XS';
+    let toastTimeout = null;
+
+    // 12-Shirt Catalog for Search
+    const ALL_PRODUCTS = [
+      { id: 'raye-01', slug: 'lido-stripe', name: 'Lido Stripe', kicker: 'SHORT SLEEVE', price: 2890, badge: 'NEW', stripeColor: '#1D594E', sleeve: 'short', hex: '#1D594E' },
+      { id: 'raye-02', slug: 'sunday-stripe', name: 'Sunday Stripe', kicker: 'SHORT SLEEVE', price: 2890, badge: 'POPULAR', stripeColor: '#EF5E4B', sleeve: 'short', hex: '#EF5E4B' },
+      { id: 'raye-03', slug: 'harbour-stripe', name: 'Harbour Stripe', kicker: 'SHORT SLEEVE', price: 2690, badge: 'POPULAR', stripeColor: '#5B8FB9', sleeve: 'short', hex: '#5B8FB9' },
+      { id: 'raye-04', slug: 'clay-stripe', name: 'Clay Stripe', kicker: 'LONG SLEEVE', price: 2690, badge: 'NEW', stripeColor: '#A0522D', sleeve: 'long', hex: '#A0522D' },
+      { id: 'raye-05', slug: 'butter-stripe', name: 'Butter Stripe', kicker: 'SHORT SLEEVE', price: 2590, badge: 'NEW', stripeColor: '#F6D365', sleeve: 'short', hex: '#F6D365' },
+      { id: 'raye-06', slug: 'marina-stripe', name: 'Marina Stripe', kicker: 'SHORT SLEEVE', price: 2590, originalPrice: 2890, badge: 'SALE', stripeColor: '#4A90E2', sleeve: 'short', hex: '#4A90E2' },
+      { id: 'raye-07', slug: 'biarritz-stripe', name: 'Biarritz Stripe', kicker: 'LONG SLEEVE', price: 2890, badge: '', stripeColor: '#722F37', sleeve: 'long', hex: '#722F37' },
+      { id: 'raye-08', slug: 'positano-stripe', name: 'Positano Stripe', kicker: 'SHORT SLEEVE', price: 2890, badge: '', stripeColor: '#FF5A36', sleeve: 'short', hex: '#FF5A36' },
+      { id: 'raye-09', slug: 'capri-stripe', name: 'Capri Stripe', kicker: 'SHORT SLEEVE', price: 2690, badge: '', stripeColor: '#F5DF4D', sleeve: 'short', hex: '#F5DF4D' },
+      { id: 'raye-10', slug: 'amalfi-stripe', name: 'Amalfi Stripe', kicker: 'OVERSIZED', price: 2890, badge: 'NEW', stripeColor: '#7BAFD4', sleeve: 'oversized', hex: '#7BAFD4' },
+      { id: 'raye-11', slug: 'antibes-stripe', name: 'Antibes Stripe', kicker: 'LONG SLEEVE', price: 2990, badge: '', stripeColor: '#1E4D2B', sleeve: 'long', hex: '#1E4D2B' },
+      { id: 'raye-12', slug: 'monaco-stripe', name: 'Monaco Stripe', kicker: 'LONG SLEEVE', price: 2990, badge: '', stripeColor: '#1C1C1C', sleeve: 'long', hex: '#1C1C1C' }
+    ];
+
+    // LocalStorage Persistent State
+    function normalizeId(id) {
+      const map = {
+        'lido': 'raye-01', 'sunday': 'raye-02', 'harbour': 'raye-03', 'clay': 'raye-04',
+        'butter': 'raye-05', 'marina': 'raye-06', 'pistachio': 'raye-07', 'rust': 'raye-08',
+        'seafoam': 'raye-09', 'midnight': 'raye-10', 'tangerine': 'raye-11', 'ink': 'raye-12'
+      };
+      return map[id] || id;
+    }
+
+    let cartItems = [];
+    try {
+      const saved = localStorage.getItem('raye_cart');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) cartItems = parsed;
+      }
+    } catch(e) {}
+
+    if (cartItems.length === 0) {
+      cartItems = [
+        { id: 'raye-01', slug: 'lido', name: 'Lido Stripe', size: 'M', price: 2890, stripeColor: '#1D594E', qty: 1 },
+        { id: 'raye-02', slug: 'sunday', name: 'Sunday Stripe', size: 'L', price: 2890, stripeColor: '#EF5E4B', qty: 1 }
+      ];
+      localStorage.setItem('raye_cart', JSON.stringify(cartItems));
+    }
+
+    let wishlistItems = ['raye-01', 'raye-02', 'raye-04'];
+    try {
+      const savedWish = localStorage.getItem('raye_wishlist');
+      if (savedWish) {
+        const parsed = JSON.parse(savedWish);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          wishlistItems = parsed.map(normalizeId);
+        }
+      }
+    } catch(e) {}
+    localStorage.setItem('raye_wishlist', JSON.stringify(wishlistItems));
+
+    function updateNavbar() {
+      const totalQty = cartItems.reduce((acc, item) => acc + item.qty, 0);
+      const bagCountEl = document.getElementById('bagCount');
+      if (bagCountEl) bagCountEl.textContent = `Bag (${totalQty})`;
+
+      const wishBadgeEl = document.getElementById('wishlistBadge');
+      if (wishBadgeEl) {
+        if (wishlistItems.length > 0) {
+          wishBadgeEl.textContent = wishlistItems.length;
+          wishBadgeEl.style.display = 'flex';
+        } else {
+          wishBadgeEl.style.display = 'none';
+        }
+      }
+      const mobWish = document.getElementById('mobileWishCount');
+      if (mobWish) mobWish.textContent = wishlistItems.length;
+
+      try {
+        localStorage.setItem('raye_cart', JSON.stringify(cartItems));
+        localStorage.setItem('raye_wishlist', JSON.stringify(wishlistItems));
+      } catch(e) {}
+    }
+
+    function switchStage(view, btn) {
+      document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('stageHanger').style.display = view === 'hanger' ? 'flex' : 'none';
+      document.getElementById('stageModel').style.display = view === 'model' ? 'flex' : 'none';
+    }
+
+    function selectColor(hex, name, btn) {
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const textEl = document.getElementById('colorNameText');
+      if (textEl) textEl.textContent = name;
+      const g = document.getElementById('stageGarment');
+      if (g) g.style.backgroundColor = hex;
+      const ms = document.getElementById('stageModelShirt');
+      if (ms) ms.style.backgroundColor = hex;
+    }
+
+    function selectPdpSize(s, btn) {
+      currentSize = s;
+      document.querySelectorAll('#pdpSizesRow .size-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function adjustQty(delta) {
+      currentQty = Math.max(1, currentQty + delta);
+      document.getElementById('qtyText').textContent = currentQty;
+      document.getElementById('btnPriceText').textContent = '৳' + (basePrice * currentQty).toLocaleString();
+    }
+
+    function toggleAccordion(id, btn) {
+      const el = document.getElementById(id);
+      const isOpen = el.classList.contains('open');
+      el.classList.toggle('open');
+      btn.querySelector('span:last-child').textContent = isOpen ? '+' : '−';
+    }
+
+    function addToBag() {
+      const existing = cartItems.find(item => item.id === 'raye-01' && item.size === currentSize);
+      if (existing) {
+        existing.qty += currentQty;
+      } else {
+        cartItems.push({
+          id: 'raye-01',
+          name: 'Lido Stripe',
+          size: currentSize,
+          price: basePrice,
+          stripeColor: '#1D594E',
+          qty: currentQty
+        });
+      }
+
+      updateNavbar();
+
+      const bag = document.getElementById('bagBtn');
+      if (bag) {
+        bag.classList.remove('bounce');
+        void bag.offsetWidth;
+        bag.classList.add('bounce');
+      }
+
+      showToast(`✓ Added Lido Stripe (${currentQty}), size ${currentSize}`);
+      renderCart();
+    }
+
+    // Modal Sizing Logic
+    const SIZES_CHART = [
+      { size: 'XS', chest: 100, ideal: 88 },
+      { size: 'S',  chest: 106, ideal: 91 },
+      { size: 'M',  chest: 112, ideal: 96 },
+      { size: 'L',  chest: 118, ideal: 102 },
+      { size: 'XL', chest: 124, ideal: 108 },
+      { size: 'XXL', chest: 130, ideal: 114 }
+    ];
+
+    function openSizeModal() {
+      document.getElementById('sizeModalBackdrop').classList.add('open');
+      calculateSize();
+    }
+
+    function closeSizeModal() {
+      document.getElementById('sizeModalBackdrop').classList.remove('open');
+    }
+
+    function stepSlider(id, step) {
+      const el = document.getElementById(id);
+      el.value = Number(el.value) + step;
+      calculateSize();
+    }
+
+    function setFit(mode) {
+      fitPref = mode;
+      ['fitClose', 'fitAsCut', 'fitRoomy'].forEach(id => document.getElementById(id).classList.remove('active'));
+      if (mode === 'close') document.getElementById('fitClose').classList.add('active');
+      if (mode === 'as_cut') document.getElementById('fitAsCut').classList.add('active');
+      if (mode === 'roomy') document.getElementById('fitRoomy').classList.add('active');
+      calculateSize();
+    }
+
+    function calculateSize() {
+      const h = Number(document.getElementById('heightRange').value);
+      const w = Number(document.getElementById('weightRange').value);
+
+      document.getElementById('heightVal').textContent = h;
+      document.getElementById('weightVal').textContent = w;
+
+      const bmi = w / Math.pow(h / 100, 2);
+      const estBodyChest = Math.round(w * 0.92 + (h - 100) * 0.22 + (bmi > 25 ? (bmi - 25) * 1.2 : 0));
+
+      let ease = 16;
+      if (fitPref === 'close') ease = 8;
+      if (fitPref === 'roomy') ease = 22;
+
+      const targetGarmentChest = estBodyChest + ease;
+
+      let best = SIZES_CHART[0];
+      let minDiff = Infinity;
+      SIZES_CHART.forEach(item => {
+        const diff = Math.abs(item.chest - targetGarmentChest);
+        if (diff < minDiff) {
+          minDiff = diff;
+          best = item;
+        }
+      });
+
+      recommendedSize = best.size;
+      document.getElementById('recSizeLetter').textContent = best.size;
+      document.getElementById('recChestText').textContent = `${best.chest} cm across chest`;
+      document.getElementById('recDrapeText').textContent = `For a ~${best.ideal} cm chest, with the relaxed drape.`;
+      document.getElementById('confirmSizeLabel').textContent = best.size;
+
+      document.getElementById('modalPillRow').innerHTML = SIZES_CHART.map(item => `
+        <button style="padding: 3px 6px; font-size: 10px; font-weight: 800; border-radius: 4px; border: 1px solid var(--color-jet); cursor: pointer; background: ${item.size === recommendedSize ? 'var(--color-jet)' : '#fff'}; color: ${item.size === recommendedSize ? '#fff' : 'var(--color-jet)'};" onclick="overrideSize('${item.size}')">
+          ${item.size}
+        </button>
+      `).join('');
+    }
+
+    function overrideSize(s) {
+      recommendedSize = s;
+      document.getElementById('recSizeLetter').textContent = s;
+      document.getElementById('confirmSizeLabel').textContent = s;
+      calculateSize();
+    }
+
+    function applyCalculatedSize() {
+      currentSize = recommendedSize;
+      document.querySelectorAll('#pdpSizesRow .size-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim() === currentSize);
+      });
+      closeSizeModal();
+      showToast(`✓ Size ${currentSize} picked for you`);
+    }
+
+    // Cart Management
+    function openCart() {
+      renderCart();
+      document.getElementById('cartBackdrop').classList.add('open');
+    }
+
+    function closeCart() {
+      document.getElementById('cartBackdrop').classList.remove('open');
+    }
+
+    function renderCart() {
+      const body = document.getElementById('cartItemsBody');
+      const titleCount = document.getElementById('cartTitleCount');
+      const freeBar = document.getElementById('freeShippingBar');
+      const freeNotice = document.getElementById('freeShippingNotice');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const shippingEl = document.getElementById('cartShipping');
+      const totalEl = document.getElementById('cartTotal');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+
+      const totalQty = cartItems.reduce((acc, item) => acc + item.qty, 0);
+      if (titleCount) titleCount.textContent = totalQty;
+
+      const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const threshold = 3000;
+
+      if (subtotal >= threshold && subtotal > 0) {
+        if (freeBar) { freeBar.style.width = '100%'; freeBar.style.backgroundColor = 'var(--color-pine)'; }
+        if (freeNotice) freeNotice.innerHTML = '🎉 <strong style="color: var(--color-pine);">You unlocked FREE Shipping across Bangladesh!</strong>';
+      } else {
+        const remaining = threshold - subtotal;
+        const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+        if (freeBar) { freeBar.style.width = pct + '%'; freeBar.style.backgroundColor = 'var(--color-pine)'; }
+        if (freeNotice) freeNotice.textContent = `Add ৳${remaining.toLocaleString()} for FREE Delivery`;
+      }
+
+      if (cartItems.length === 0) {
+        if (body) {
+          body.innerHTML = `
+            <div style="text-align: center; padding: 48px 12px; color: var(--color-charcoal);">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-butter-light); border: 1.5px solid var(--color-jet); display: inline-flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px;">🧺</div>
+              <p style="font-weight: 800; font-size: 15px; color: var(--color-jet);">Your bag is empty</p>
+              <p style="font-size: 12px; margin-top: 4px;">Choose from our 12 striped cotton-linen shirts.</p>
+            </div>
+          `;
+        }
+        if (subtotalEl) subtotalEl.textContent = '৳0';
+        if (shippingEl) shippingEl.textContent = '৳0';
+        if (totalEl) totalEl.textContent = '৳0';
+        if (checkoutBtn) checkoutBtn.disabled = true;
+        return;
+      }
+
+      if (checkoutBtn) checkoutBtn.disabled = false;
+
+      if (body) {
+        body.innerHTML = cartItems.map((item, idx) => `
+          <div class="cart-item-card">
+            <div class="cart-item-thumb" style="background-image: repeating-linear-gradient(90deg, ${item.stripeColor || '#1D594E'} 0px, ${item.stripeColor || '#1D594E'} 4px, transparent 4px, transparent 10px);">
+              <span style="background: rgba(255,255,255,0.9); padding: 2px 4px; border-radius: 4px; border: 1px solid var(--color-jet); font-size: 8px;">${item.size}</span>
+            </div>
+            <div>
+              <p style="font-weight: 800; font-size: 13px; color: var(--color-jet);">${item.name}</p>
+              <p style="font-size: 11px; color: var(--color-charcoal); margin-top: 2px;">Size ${item.size} · ৳${item.price.toLocaleString()}</p>
+              <div style="margin-top: 8px;">
+                <div class="qty-stepper">
+                  <button class="qty-btn" onclick="updateCartQty(${idx}, -1)">−</button>
+                  <span class="qty-val">${item.qty}</span>
+                  <button class="qty-btn" onclick="updateCartQty(${idx}, 1)">+</button>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+              <span style="font-weight: 900; font-size: 13px;">৳${(item.price * item.qty).toLocaleString()}</span>
+              <button class="item-delete-btn" onclick="removeFromCart(${idx})">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
+      const shippingCost = subtotal >= threshold ? 0 : (city === 'dhaka' ? 60 : 100);
+      const total = subtotal + shippingCost;
+
+      if (subtotalEl) subtotalEl.textContent = `৳${subtotal.toLocaleString()}`;
+      if (shippingEl) shippingEl.textContent = shippingCost === 0 ? 'FREE' : `৳${shippingCost}`;
+      if (totalEl) totalEl.textContent = `৳${total.toLocaleString()}`;
+    }
+
+    function updateCartQty(idx, delta) {
+      if (!cartItems[idx]) return;
+      cartItems[idx].qty += delta;
+      if (cartItems[idx].qty <= 0) cartItems.splice(idx, 1);
+      updateNavbar();
+      renderCart();
+    }
+
+    function removeFromCart(idx) {
+      if (!cartItems[idx]) return;
+      cartItems.splice(idx, 1);
+      updateNavbar();
+      renderCart();
+    }
+
+    // Wishlist Methods
+    function openWishlist() {
+      renderWishlist();
+      document.getElementById('wishlistBackdrop').classList.add('open');
+    }
+
+    function closeWishlist() {
+      document.getElementById('wishlistBackdrop').classList.remove('open');
+    }
+
+    function toggleWishlist(e, productId) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      const idx = wishlistItems.indexOf(productId);
+      if (idx > -1) {
+        wishlistItems.splice(idx, 1);
+        showToast('Removed from wishlist');
+      } else {
+        wishlistItems.push(productId);
+        showToast('♥ Saved to wishlist');
+      }
+      updateNavbar();
+      renderWishlist();
+    }
+
+    function renderWishlist() {
+      const body = document.getElementById('wishlistItemsBody');
+      const titleCount = document.getElementById('wishlistTitleCount');
+      if (titleCount) titleCount.textContent = wishlistItems.length;
+      if (!body) return;
+
+      if (wishlistItems.length === 0) {
+        body.innerHTML = `
+          <div style="text-align: center; padding: 48px 12px; color: var(--color-charcoal);">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-butter-light); border: 1.5px solid var(--color-jet); display: inline-flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px;">♡</div>
+            <p style="font-weight: 800; font-size: 15px; color: var(--color-jet);">No saved shirts yet</p>
+            <p style="font-size: 12px; margin-top: 4px;">Tap the heart on any striped shirt to save it.</p>
+          </div>
+        `;
+        const footer = document.getElementById('wishlistFooter');
+        if (footer) footer.style.display = 'none';
+        return;
+      }
+
+      const footer = document.getElementById('wishlistFooter');
+      if (footer) footer.style.display = 'block';
+
+      const items = ALL_PRODUCTS.filter(p => wishlistItems.includes(p.id));
+
+      body.innerHTML = items.map(shirt => `
+        <div class="wishlist-item-card">
+          <div class="cart-item-thumb" style="background-image: repeating-linear-gradient(90deg, ${shirt.hex} 0px, ${shirt.hex} 4px, transparent 4px, transparent 10px);"></div>
+          <div>
+            <p style="font-weight: 800; font-size: 13px; color: var(--color-jet);">${shirt.name}</p>
+            <p style="font-size: 11px; font-weight: 700; color: var(--color-coral); margin-top: 2px;">৳${shirt.price.toLocaleString()}</p>
+            <button onclick="quickAddWishlistItem('${shirt.id}', '${shirt.name}', ${shirt.price}, '${shirt.hex}')" style="margin-top: 8px; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; background: var(--color-butter); border: 1.2px solid var(--color-jet); cursor: pointer;">
+              + Move to Bag (M)
+            </button>
+          </div>
+          <button class="item-delete-btn" onclick="toggleWishlist(event, '${shirt.id}')">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function quickAddWishlistItem(id, name, price, hex) {
+      const existing = cartItems.find(c => c.id === id && c.size === 'M');
+      if (existing) existing.qty += 1;
+      else cartItems.push({ id, name, size: 'M', price, stripeColor: hex, qty: 1 });
+      updateNavbar();
+      renderCart();
+      showToast(`✓ Added ${name} to bag`);
+    }
+
+    function moveAllWishlistToCart() {
+      const items = ALL_PRODUCTS.filter(p => wishlistItems.includes(p.id));
+      items.forEach(shirt => {
+        const existing = cartItems.find(c => c.id === shirt.id && c.size === 'M');
+        if (existing) existing.qty += 1;
+        else cartItems.push({ id: shirt.id, name: shirt.name, size: 'M', price: shirt.price, stripeColor: shirt.hex, qty: 1 });
+      });
+      wishlistItems = [];
+      updateNavbar();
+      renderWishlist();
+      closeWishlist();
+      openCart();
+      showToast('Moved all saved shirts to bag!');
+    }
+
+    function clearWishlist() {
+      wishlistItems = [];
+      updateNavbar();
+      renderWishlist();
+      showToast('Wishlist cleared');
+    }
+
+    // Search Methods
+    function openSearch() {
+      document.getElementById('searchModalBackdrop').classList.add('open');
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      input.focus();
+      handleSearch('');
+    }
+
+    function closeSearch() {
+      document.getElementById('searchModalBackdrop').classList.remove('open');
+    }
+
+    function setSearchQuery(q) {
+      const input = document.getElementById('searchInput');
+      input.value = q;
+      input.focus();
+      handleSearch(q);
+    }
+
+    function handleSearch(query) {
+      const clean = query.trim().toLowerCase();
+      const list = document.getElementById('searchResultsList');
+
+      let matches = ALL_PRODUCTS;
+      if (clean) {
+        matches = ALL_PRODUCTS.filter(p =>
+          p.name.toLowerCase().includes(clean) ||
+          p.kicker.toLowerCase().includes(clean) ||
+          (p.badge && p.badge.toLowerCase().includes(clean))
+        );
+      }
+
+      if (matches.length === 0) {
+        list.innerHTML = `<div style="text-align: center; padding: 32px 16px; font-size: 13px; color: var(--color-charcoal);">No shirts found matching "<strong>${query}</strong>".</div>`;
+        return;
+      }
+
+      list.innerHTML = matches.map(shirt => `
+        <a href="product.html?slug=${shirt.id}" class="search-result-item" onclick="closeSearch()">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 42px; border-radius: 6px; border: 1.5px solid var(--color-jet); background-image: repeating-linear-gradient(90deg, ${shirt.hex} 0px, ${shirt.hex} 3px, transparent 3px, transparent 7px);"></div>
+            <div>
+              <p style="font-size: 13px; font-weight: 800; color: var(--color-jet);">${shirt.name}</p>
+              <span style="font-size: 10px; font-weight: 800; color: var(--color-charcoal); text-transform: uppercase;">${shirt.kicker}</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            ${shirt.badge ? `<span style="font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 9999px; background: var(--color-butter); border: 1px solid var(--color-jet);">${shirt.badge}</span>` : ''}
+            <span style="font-size: 13px; font-weight: 800;">৳${shirt.price.toLocaleString()}</span>
+            →
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // Account & Tracking Methods
+    function openAccount(tab = 'track') {
+      switchAccountTab(tab);
+      document.getElementById('accountModalBackdrop').classList.add('open');
+    }
+
+    function closeAccount() {
+      document.getElementById('accountModalBackdrop').classList.remove('open');
+    }
+
+    function switchAccountTab(tab) {
+      const trackBtn = document.getElementById('tabTrackBtn');
+      const signinBtn = document.getElementById('tabSignInBtn');
+      const trackTab = document.getElementById('accountTrackTab');
+      const signinTab = document.getElementById('accountSignInTab');
+
+      if (tab === 'track') {
+        trackBtn.classList.add('active'); signinBtn.classList.remove('active');
+        trackTab.style.display = 'flex'; signinTab.style.display = 'none';
+      } else {
+        signinBtn.classList.add('active'); trackBtn.classList.remove('active');
+        signinTab.style.display = 'flex'; trackTab.style.display = 'none';
+      }
+    }
+
+    function handleTrackOrder(event) {
+      event.preventDefault();
+      const orderNum = document.getElementById('trackOrderInput').value;
+      document.getElementById('trackingResult').style.display = 'block';
+      showToast(`Showing live Steadfast status for #${orderNum}`);
+    }
+
+    function handleSignIn(event) {
+      event.preventDefault();
+      document.getElementById('signInFormContainer').style.display = 'none';
+      document.getElementById('profileContainer').style.display = 'block';
+      showToast('Welcome back, Rahat!');
+    }
+
+    function handleSignOut() {
+      document.getElementById('profileContainer').style.display = 'none';
+      document.getElementById('signInFormContainer').style.display = 'block';
+      showToast('Signed out of Rayé');
+    }
+
+    // Checkout Methods
+    function openCheckout() {
+      closeCart();
+      const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
+      const shipping = subtotal >= 3000 ? 0 : (city === 'dhaka' ? 60 : 100);
+      const total = subtotal + shipping;
+
+      document.getElementById('checkoutOrderTotal').textContent = `৳${total.toLocaleString()}`;
+      document.getElementById('checkoutItemsBrief').textContent = `${cartItems.length} shirt item(s) · Delivery: ${shipping === 0 ? 'FREE' : '৳' + shipping}`;
+
+      document.getElementById('checkoutFormContainer').style.display = 'block';
+      document.getElementById('checkoutSuccessContainer').style.display = 'none';
+      document.getElementById('checkoutBackdrop').classList.add('open');
+    }
+
+    function closeCheckout() {
+      document.getElementById('checkoutBackdrop').classList.remove('open');
+    }
+
+    function handlePlaceOrder(event) {
+      event.preventDefault();
+      document.getElementById('checkoutFormContainer').style.display = 'none';
+      document.getElementById('checkoutSuccessContainer').style.display = 'block';
+      cartItems = [];
+      updateNavbar();
+      renderCart();
+    }
+
+    function calculateCart() {
+      renderCart();
+      const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
+      const shipping = subtotal >= 3000 ? 0 : (city === 'dhaka' ? 60 : 100);
+      const total = subtotal + shipping;
+      const out = document.getElementById('checkoutOrderTotal');
+      if (out) out.textContent = `৳${total.toLocaleString()}`;
+    }
+
+    // Mobile Menu
+    function openMobileMenu() {
+      document.getElementById('mobileMenuBackdrop').classList.add('open');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenuBackdrop').classList.remove('open');
+    }
+
+    function handleBackdropClick(event, backdropId) {
+      if (event.target.id === backdropId) {
+        document.getElementById(backdropId).classList.remove('open');
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeSearch(); closeAccount(); closeWishlist(); closeCart(); closeCheckout(); closeMobileMenu();
+      }
+    });
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    updateNavbar();
+  </script>
+  <script>
+  // ========================================================================
+  // DYNAMIC 12-SHIRT CATALOG LOADER VIA URL (?slug=sunday, ?slug=rust, etc.)
+  // // ponytail: Lightweight client-side router, 100% self-contained
+  // ========================================================================
+  
+  const PRODUCT_IMG_MAP = {
+    'sunday': { img: 'images/shirt-sunday.jpg', model: 'images/shirt-sunday-model.jpg' },
+    'lido': { img: 'images/shirt-lido.jpg', model: 'images/shirt-lido-model.jpg' },
+    'harbour': { img: 'images/shirt-harbour.jpg', model: 'images/shirt-harbour-model.jpg' },
+    'clay': { img: 'images/shirt-clay.jpg', model: 'images/shirt-clay-model.jpg' },
+    'butter': { img: 'images/shirt-butter.jpg', model: 'images/shirt-butter-model.jpg' },
+    'ink': { img: 'images/shirt-ink.jpg', model: 'images/shirt-ink-model.jpg' },
+    'marina': { img: 'images/shirt-marina.jpg', model: 'images/shirt-marina.jpg' },
+    'pistachio': { img: 'images/shirt-pistachio.jpg', model: 'images/shirt-pistachio-model.jpg' },
+    'rust': { img: 'images/shirt-rust.jpg', model: 'images/shirt-rust-model.jpg' },
+    'seafoam': { img: 'images/shirt-seafoam-model.jpg', model: 'images/shirt-seafoam-model.jpg' },
+    'midnight': { img: 'images/shirt-midnight.jpg', model: 'images/shirt-midnight-model.jpg' },
+    'tangerine': { img: 'images/shirt-sunday.jpg', model: 'images/shirt-sunday-model.jpg' }
+  };
+
+  const PDP_PRODUCTS = {
+    sunday: {
+      name: 'Sunday Stripe',
+      cat: 'SHORT SLEEVE',
+      price: 2890,
+      rating: 4.6,
+      reviews: 214,
+      desc: 'Our signature camp-collar shirt in wide coral-and-cream stripes. Boxy, breezy, made for long lunches.',
+      fabric: '55% linen, 45% cotton · 140 GSM · yarn-dyed',
+      colorName: 'Coral / Cream',
+      hex: '#ff6b4a'
+    },
+    lido: {
+      name: 'Lido Stripe',
+      cat: 'SHORT SLEEVE',
+      price: 2890,
+      rating: 4.9,
+      reviews: 168,
+      desc: 'Candy stripes in deep teal, cut short in the sleeve and easy everywhere else. Throw it open over a tee for easy coastal breeze.',
+      fabric: '55% linen, 45% cotton · 140 GSM · yarn-dyed',
+      colorName: 'Teal / Cream',
+      hex: '#0e4f4b'
+    },
+    harbour: {
+      name: 'Harbour Stripe',
+      cat: 'LONG SLEEVE',
+      price: 2690,
+      rating: 4.9,
+      reviews: 94,
+      desc: 'Classic blue-and-white butcher stripe with roll-up cuffs and a clean point collar. Woven for morning coffee and lake breeze.',
+      fabric: '60% cotton, 40% linen · 145 GSM · yarn-dyed',
+      colorName: 'Blue / Cream',
+      hex: '#5B8FB9'
+    },
+    clay: {
+      name: 'Clay Stripe',
+      cat: 'LONG SLEEVE',
+      price: 2690,
+      rating: 5.0,
+      reviews: 62,
+      desc: 'Terracotta and warm ecru in an understated pencil stripe. Long sleeves that roll easy when midday heat kicks in.',
+      fabric: '55% linen, 45% cotton · 140 GSM · yarn-dyed',
+      colorName: 'Earth / Cream',
+      hex: '#A0522D'
+    },
+    butter: {
+      name: 'Butter Stripe',
+      cat: 'SHORT SLEEVE',
+      price: 2590,
+      rating: 4.8,
+      reviews: 81,
+      desc: 'Soft yellow meets warm cream. Subtle, cheerful, and light enough to feel like almost nothing against the skin.',
+      fabric: '55% linen, 45% cotton · 135 GSM · yarn-dyed',
+      colorName: 'Yellow / Cream',
+      hex: '#ffd66b'
+    },
+    ink: {
+      name: 'Ink Stripe',
+      cat: 'OVERSIZED',
+      price: 2790,
+      rating: 4.7,
+      reviews: 110,
+      desc: 'Deep washed-black stripe on raw cream. Cut generously through the shoulders for that deliberate slouch.',
+      fabric: '55% linen, 45% cotton · 150 GSM · yarn-dyed',
+      colorName: 'Mono / Cream',
+      hex: '#17130f'
+    },
+    marina: {
+      name: 'Marina Stripe',
+      cat: 'SHORT SLEEVE',
+      price: 2590,
+      rating: 4.7,
+      reviews: 53,
+      desc: 'Fine nautical stripes in sea glass teal. Lightweight drape for high humidity and sunset walks.',
+      fabric: '55% linen, 45% cotton · 140 GSM · yarn-dyed',
+      colorName: 'Teal / Cream',
+      hex: '#14675f'
+    },
+    pistachio: {
+      name: 'Pistachio Stripe',
+      cat: 'LONG SLEEVE',
+      price: 2790,
+      rating: 4.9,
+      reviews: 47,
+      desc: 'Muted olive and pale celery stripes with pearlescent shell buttons. Crisp yet forgiving.',
+      fabric: '55% linen, 45% cotton · 145 GSM · yarn-dyed',
+      colorName: 'Green / Cream',
+      hex: '#7A9A78'
+    },
+    rust: {
+      name: 'Rust Bengal',
+      cat: 'OVERSIZED • DROP 03',
+      price: 3190,
+      rating: 5.0,
+      reviews: 89,
+      desc: 'Limited batch / Drop 03: Bold Bengal stripes in rich terracotta rust. The stripe everyone asked about, cut roomy and pre-washed.',
+      fabric: '55% linen, 45% cotton · 150 GSM · yarn-dyed small batch',
+      colorName: 'Coral / Earth',
+      hex: '#e5512f'
+    },
+    seafoam: {
+      name: 'Seafoam Stripe',
+      cat: 'SHORT SLEEVE',
+      price: 2590,
+      rating: 4.8,
+      reviews: 36,
+      desc: 'Breezy pale green and white pinstripes designed for salt spray and sun-warmed docks.',
+      fabric: '55% linen, 45% cotton · 138 GSM · yarn-dyed',
+      colorName: 'Green / White',
+      hex: '#A2C2B5'
+    },
+    midnight: {
+      name: 'Midnight Pinstripe',
+      cat: 'LONG SLEEVE',
+      price: 2890,
+      rating: 4.9,
+      reviews: 74,
+      desc: 'Inky navy pinstripes set on warm off-white. The stripe that easily transitions from beach cafe to evening supper.',
+      fabric: '60% cotton, 40% linen · 145 GSM · yarn-dyed',
+      colorName: 'Blue / Mono',
+      hex: '#1B2A4A'
+    },
+    tangerine: {
+      name: 'Tangerine Candy',
+      cat: 'OVERSIZED',
+      price: 2790,
+      rating: 4.6,
+      reviews: 41,
+      desc: 'Bright citrus stripes with playful width variance. Built to stand out and keep cool.',
+      fabric: '55% linen, 45% cotton · 142 GSM · yarn-dyed',
+      colorName: 'Yellow / Coral',
+      hex: '#FF8C42'
+    }
+  };
+
+  (function initPDPFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug') || 'lido';
+    const p = PDP_PRODUCTS[slug];
+    if (!p) return;
+
+    const kickerEl = document.querySelector('.pdp-kicker');
+    const titleEl = document.querySelector('.pdp-title');
+    const ratingEl = document.querySelector('.rating-row span:last-child');
+    const priceEl = document.querySelector('.pdp-price');
+    const descEl = document.querySelector('.pdp-desc');
+    const flatImgEl = document.getElementById('stageFlatImg');
+    const modelImgEl = document.getElementById('stageModelImg');
+    const thumbFlatEl = document.getElementById('thumbFlatImg');
+    const thumbModelEl = document.getElementById('thumbModelImg');
+
+    const productImages = PRODUCT_IMG_MAP[slug] || PRODUCT_IMG_MAP[slug.replace('-stripe', '')] || PRODUCT_IMG_MAP['lido'];
+    if (flatImgEl) flatImgEl.src = productImages.img;
+    if (modelImgEl) modelImgEl.src = productImages.model || productImages.img;
+    if (thumbFlatEl) thumbFlatEl.src = productImages.img;
+    if (thumbModelEl) thumbModelEl.src = productImages.model || productImages.img;
+    const colorTextEl = document.getElementById('colorNameText');
+
+    if (kickerEl) kickerEl.textContent = p.cat;
+    if (titleEl) titleEl.textContent = p.name;
+    if (ratingEl) ratingEl.textContent = `${p.rating} · ${p.reviews} reviews`;
+    if (priceEl) priceEl.textContent = '৳' + p.price.toLocaleString('en-IN');
+    if (descEl) descEl.textContent = p.desc;
+    if (colorTextEl) colorTextEl.textContent = p.colorName;
+    document.title = `${p.name} — Rayé Striped Shirts`;
+  })();
+  </script>
+
+  <script>
+  // Page Transition & Smooth Text Fade-In on Page Change
+  (function() {
+    function initTransitions() {
+      document.body.classList.remove('page-transitioning');
+      document.querySelectorAll('a[href]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = link.getAttribute('href');
+          if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:') &&
+            !href.startsWith('http') &&
+            !link.hasAttribute('target') &&
+            !e.ctrlKey && !e.metaKey && !e.shiftKey
+          ) {
+            e.preventDefault();
+            document.body.classList.add('page-transitioning');
+            setTimeout(function() {
+              window.location.href = href;
+            }, 280);
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTransitions);
+    } else {
+      initTransitions();
+    }
+
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) {
+        document.body.classList.remove('page-transitioning');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
+
