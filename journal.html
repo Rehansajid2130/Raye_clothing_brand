@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Journal — Rayé | Striped Shirts</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <!-- Google Fonts: Instrument Serif + Instrument Sans + Archivo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,11 +453,16 @@
     @keyframes rayeTextFadeIn {
       0% {
         opacity: 0;
-        transform: translate3d(0, 18px, 0);
+        transform: translate3d(0, 24px, 0);
+        clip-path: inset(0 0 100% 0);
+      }
+      30% {
+        opacity: 1;
       }
       100% {
         opacity: 1;
         transform: translate3d(0, 0, 0);
+        clip-path: inset(0 0 0 0);
       }
     }
 
@@ -494,6 +500,107 @@
     .hero-actions, .category-pills, .pdp-desc, .color-swatches-row {
       animation-delay: 0.56s;
     }
+
+    /* ==========================================================================
+       RAYÉ SIGNATURE MASKED WORD/LINE REVEAL ("Line where text comes out")
+       ========================================================================== */
+    .title .w,
+    .hero-headline .w,
+    .section-title .w,
+    .page-title .w,
+    .shop-title .w,
+    .about-title .w,
+    .journal-title .w,
+    .saved-title .w,
+    .pdp-title .w,
+    .w {
+      vertical-align: top;
+      margin-bottom: -0.08em;
+      padding-bottom: 0.08em;
+      display: inline-block;
+      overflow: hidden;
+      line-height: inherit;
+    }
+
+    .title .w__i,
+    .hero-headline .w__i,
+    .section-title .w__i,
+    .page-title .w__i,
+    .shop-title .w__i,
+    .about-title .w__i,
+    .journal-title .w__i,
+    .saved-title .w__i,
+    .pdp-title .w__i,
+    .w__i {
+      display: inline-block;
+      will-change: transform, opacity;
+      transform-origin: 0% 100%;
+    }
+
+    @keyframes wordEmergeLine {
+      0% {
+        transform: translate3d(0, 118%, 0) rotate(4deg);
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    /* Scroll & Page-Change Masked Word Reveal for all Titles (.section-title, [data-title], etc.) */
+    [data-title] .w__i,
+    .title .w__i,
+    .section-title .w__i,
+    .shop-title .w__i,
+    .about-title .w__i,
+    .journal-title .w__i,
+    .saved-title .w__i,
+    .pdp-title .w__i {
+      transform: translate3d(0, 118%, 0) rotate(3.5deg);
+      opacity: 0;
+      transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease-out;
+    }
+
+    [data-title].is-revealed .w__i,
+    .title.is-revealed .w__i,
+    .section-title.is-revealed .w__i,
+    .shop-title.is-revealed .w__i,
+    .about-title.is-revealed .w__i,
+    .journal-title.is-revealed .w__i,
+    .saved-title.is-revealed .w__i,
+    .pdp-title.is-revealed .w__i,
+    .hero-headline .w__i {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+      opacity: 1;
+    }
+
+    /* Subheads, kickers, descriptions reveal with smooth upward glide */
+    [data-reveal] {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+      transition: transform 1.0s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease-out;
+    }
+
+    [data-reveal].is-revealed {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .script,
+    span.script,
+    .em {
+      font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      font-size: 1.08em;
+      letter-spacing: -0.02em;
+      padding-right: 0.04em;
+    }
+
 </style>
 </head>
 
@@ -674,7 +781,55 @@
   <script>
   // Page Transition & Smooth Text Fade-In on Page Change
   (function() {
+    
+        // RAYÉ SIGNATURE MASKED TEXT REVEAL ("Line where text comes out")
+    function initMaskedTextReveal() {
+      // 1. Tag-safe word wrapper that never corrupts HTML elements or attributes
+      var targets = document.querySelectorAll('[data-title]');
+      targets.forEach(function(el) {
+        if (!el.querySelector('.w') && el.textContent.trim().length > 0) {
+          el.innerHTML = el.innerHTML.replace(/(<[^>]+>)|([^\s<]+)/g, function(match, tag, word) {
+            if (tag) return tag; // preserve existing HTML tags and styles intact
+            return '<span class="w"><span class="w__i">' + word + '</span></span>';
+          });
+        }
+      });
+
+      // 2. Set staggered transition delay on each word
+      document.querySelectorAll('[data-title], .title, .hero-headline').forEach(function(title) {
+        var words = title.querySelectorAll('.w__i');
+        words.forEach(function(w, i) {
+          w.style.transitionDelay = (i * 0.065) + 's';
+        });
+      });
+
+      // 3. Reveal elements in viewport via IntersectionObserver
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('[data-title], .title, [data-reveal]').forEach(function(el) {
+          if (!el.closest('.hero-container') && !el.closest('.hero-left')) {
+            revealObserver.observe(el);
+          } else {
+            el.classList.add('is-revealed');
+          }
+        });
+      } else {
+        document.querySelectorAll('[data-title], .title, [data-reveal]').forEach(function(el) {
+          el.classList.add('is-revealed');
+        });
+      }
+    }
+
     function initTransitions() {
+      initMaskedTextReveal();
       document.body.classList.remove('page-transitioning');
       document.querySelectorAll('a[href]').forEach(function(link) {
         link.addEventListener('click', function(e) {
