@@ -675,8 +675,12 @@
        RAYÉ GLOBAL MOBILE & RESPONSIVE ENGINE (TOUCH, VIEWPORT & SAFE-AREAS)
        ========================================================================== */
     html, body {
-      overflow-x: clip;
-      max-width: 100vw;
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: transparent;
     }
@@ -805,6 +809,8 @@
 
       .nav-logo, .nav-brand {
         position: static !important;
+        left: auto !important;
+        top: auto !important;
         transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
@@ -825,6 +831,7 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
+        padding-right: 6px !important;
       }
 
       .nav-actions .icon-btn,
@@ -856,12 +863,13 @@
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
       }
 
-      /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-      @media (max-width: 640px) {
-        .nav-search-btn,
-        .nav-account-btn {
-          display: none !important;
-        }
+      }
+
+    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
+    @media (max-width: 640px) {
+      .nav-search-btn,
+      .nav-account-btn {
+        display: none !important;
       }
     }
 
@@ -871,7 +879,7 @@
         padding: 16px 12px !important;
         box-sizing: border-box !important;
         width: 100% !important;
-        max-width: 100vw !important;
+        max-width: 100% !important; width: 100% !important; box-sizing: border-box !important;
       }
       .cart-grid, .checkout-grid {
         grid-template-columns: 1fr !important;
