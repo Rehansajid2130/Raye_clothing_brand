@@ -630,6 +630,157 @@
       padding-right: 0.04em;
     }
 
+
+    /* Mobile Menu Drawer Styling */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(20, 20, 12, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .drawer-backdrop.open {
+      display: block;
+    }
+    .mobile-menu-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 320px;
+      background: var(--color-cream, var(--cream, #FBF6EE));
+      border-right: 2px solid var(--color-jet, var(--ink, #17130F));
+      box-shadow: 8px 0px 0px rgba(20, 20, 12, 0.15);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      transform: translate3d(-100%, 0, 0);
+      will-change: transform;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .drawer-backdrop.open .mobile-menu-drawer {
+      transform: translate3d(0, 0, 0);
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--color-jet, var(--ink, #17130F));
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(20, 20, 12, 0.1);
+      transition: background-color 0.15s;
+    }
+    .mobile-nav-link:hover {
+      background-color: #FFF3CC;
+      color: var(--color-coral, var(--coral, #FF6B4A));
+    }
+    .mobile-menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-jet, var(--ink, #17130F));
+      background: var(--color-cream, var(--cream, #FBF6EE));
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 860px) {
+      .mobile-menu-btn {
+        display: inline-flex !important;
+      }
+      .nav-links {
+        display: none !important;
+      }
+    }
+
+
+    /* ==========================================================================
+       RAYÉ GLOBAL MOBILE & RESPONSIVE ENGINE (TOUCH, VIEWPORT & SAFE-AREAS)
+       ========================================================================== */
+    html, body {
+      overflow-x: clip;
+      max-width: 100vw;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button, a, label, select, input {
+      touch-action: manipulation;
+    }
+
+    /* iOS Safari Auto-Zoom Prevention: min 16px on mobile form inputs */
+    @media (max-width: 820px), (pointer: coarse) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+
+    /* Mobile Touch Targets: Minimum 44x44px for thumb accessibility */
+    @media (max-width: 820px), (pointer: coarse) {
+      .icon-btn, .round-btn, .round, .mobile-menu-btn, .drawer-close,
+      .qty button, .size-btn, .color-btn, .swatch-btn, .category-pill,
+      .toast-btn, .bag-pill-btn, .btn-home, .btn-filter, .nav-brand {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn, .btn-primary, .btn-secondary, .btn-checkout, .btn-submit, .btn-add-bag {
+        min-height: 48px;
+        font-size: 14px;
+      }
+
+      .mobile-nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    /* Safe Area Insets for iPhones with Dynamic Island / Home Indicator Bar */
+    .mobile-menu-drawer, .search-box-card, .cart-drawer, .account-box-card,
+    .floating-toast, .mobile-buybar, footer, .footer-inner {
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+
+    /* Bottom Sheet Modals on Mobile */
+    @media (max-width: 640px) {
+      .search-modal-backdrop, .account-modal-backdrop, .size-modal-backdrop,
+      .checkout-modal-backdrop {
+        align-items: flex-end !important;
+        padding: 0 !important;
+      }
+      .search-box-card, .account-box-card, .size-modal-box,
+      .account-modal-card, .checkout-modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 88dvh !important;
+        border-radius: 20px 20px 0 0 !important;
+        padding-bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+        box-shadow: 0 -8px 30px rgba(23, 19, 15, 0.25) !important;
+      }
+    }
+
+
+    /* Help Mobile Optimization */
+    @media (max-width: 768px) {
+      .help-main {
+        padding: 32px 16px !important;
+      }
+      .faq-grid, .contact-cards {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+    }
+
 </style>
 </head>
 
@@ -641,6 +792,16 @@
 
   <!-- Sticky Navbar -->
   <header class="navbar">
+    
+    <!-- Mobile Hamburger Button -->
+    <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Open mobile menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+
     <a href="index.html" class="nav-brand">Rayé</a>
 
     <nav aria-label="Main Navigation">
@@ -958,6 +1119,79 @@
     });
   })();
   </script>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileMenuBackdrop" class="drawer-backdrop" onclick="handleBackdropClick(event, 'mobileMenuBackdrop')" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <aside class="mobile-menu-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header" style="background: var(--color-coral, var(--coral, #FF6B4A)); border-bottom: 2px solid var(--color-jet, var(--ink, #17130F)); display: flex; align-items: center; justify-content: space-between; padding: 16px 20px;">
+        <span style="font-family: var(--font-serif, serif); font-style: italic; font-size: 26px; font-weight: 700; color: var(--color-jet, var(--ink, #17130F));">Rayé</span>
+        <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Close menu" style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--color-jet, var(--ink, #17130F)); background: var(--color-cream, var(--cream, #FBF6EE)); font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
+      </div>
+
+      <nav style="display: flex; flex-direction: column; overflow-y: auto;">
+        <a href="shop.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>The Shop (12 Shirts)</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="shop.html?badge=new" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>New in (The Edit 02)</span>
+          <span style="font-size: 10px; font-weight: 800; background: var(--color-teal, var(--teal, #0E4F4B)); color: #fff; padding: 2px 6px; border-radius: 9999px;">NEW</span>
+        </a>
+        <a href="wishlist.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Saved Shirts (Favorites)</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="cart.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Shopping Bag</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="product.html?slug=lido" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Featured: Lido Stripe</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Our Story & Craft</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="journal.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Journal (Behind the Weave)</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="account.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Account & Orders</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="help.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span>Help & Delivery FAQs</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </nav>
+
+      <div style="margin-top: auto; padding: 20px; border-top: 1.5px solid rgba(23, 19, 15, 0.15); background: var(--color-paper, var(--paper, #F4ECDF));">
+        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN IN BANGLADESH</p>
+        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Dhaka · Chittagong · Sylhet</span>
+      </div>
+    </aside>
+  </div>
+  
+
+  <script>
+    function openMobileMenu() {
+      const el = document.getElementById('mobileMenuBackdrop');
+      if (el) el.classList.add('open');
+    }
+    function closeMobileMenu() {
+      const el = document.getElementById('mobileMenuBackdrop');
+      if (el) el.classList.remove('open');
+    }
+    function handleBackdropClick(e, backdropId) {
+      if (e.target.id === backdropId) {
+        const el = document.getElementById(backdropId);
+        if (el) el.classList.remove('open');
+      }
+    }
+  </script>
+  
 </body>
 </html>
 
