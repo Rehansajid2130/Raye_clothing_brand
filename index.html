@@ -1221,7 +1221,7 @@
     /* Product Grid: 3 columns x 2 rows */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 32px;
     }
 
@@ -1821,7 +1821,7 @@
 
     .polaroids-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 36px;
       margin-top: 48px;
     }
@@ -1952,7 +1952,7 @@
 
     .footer-nav-cols {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 32px;
       padding: 48px 0;
       border-bottom: 1px solid rgba(248, 244, 233, 0.15);
@@ -2435,7 +2435,7 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      max-width: 320px;
+      max-width: min(320px, 86vw);
       background: var(--color-cream);
       border-right: 2px solid var(--color-jet);
       box-shadow: 8px 0px 0px rgba(20, 20, 12, 0.15);
@@ -2519,7 +2519,7 @@
       }
 
       .footer-nav-cols {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -2615,7 +2615,7 @@
 
     .feel-specs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
       margin: 28px 0;
       border-top: 1.5px solid var(--line);
@@ -2908,7 +2908,7 @@
     /* Index Landing Page Mobile Refinements */
     @media (max-width: 960px) {
       .steps-row {
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         gap: 20px !important;
       }
       .steps-track-line {
@@ -2917,7 +2917,7 @@
     }
     @media (max-width: 640px) {
       .product-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 12px !important;
       }
       .steps-row {
@@ -3451,7 +3451,7 @@
           stroke-linecap="round" />
       </svg>
       <p
-        style="font-size: 15px; line-height: 1.6; color: rgba(20,20,12,0.9); font-weight: 500; margin-bottom: 28px; max-width: 320px;">
+        style="font-size: 15px; line-height: 1.6; color: rgba(20,20,12,0.9); font-weight: 500; margin-bottom: 28px; max-width: min(320px, 86vw);">
         A good shirt gets better with every wash. Ours are cut loose, sewn tight, and made to be worn on repeat.
       </p>
       <a href="shop.html"
@@ -3467,7 +3467,7 @@
     <!-- Center Model on Boulder Landscape -->
     <div class="why-col-center" style="padding: 24px; position: relative;">
       <div
-        style="width: 100%; max-width: 320px; aspect-ratio: 3/4; border-radius: 16px; border: 2px solid var(--color-jet); overflow: hidden; box-shadow: 6px 6px 0px var(--color-jet); position: relative;">
+        style="width: 100%; max-width: min(320px, 86vw); aspect-ratio: 3/4; border-radius: 16px; border: 2px solid var(--color-jet); overflow: hidden; box-shadow: 6px 6px 0px var(--color-jet); position: relative;">
         <img src="images/flex.jpg" alt="Rayé Model on Boulder Landscape"
           style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
         <div

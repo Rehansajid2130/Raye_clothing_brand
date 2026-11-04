@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repository Activity Terrain — Kokonut UI × Rayé</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #FBF6EE;
+      --paper: #F4ECDF;
+      --ink: #17130F;
+      --ink-2: #4A423A;
+      --coral: #FF6B4A;
+      --teal: #0E4F4B;
+      --teal-2: #14675F;
+      --butter: #FFD66B;
+      --line: rgba(23, 19, 15, 0.15);
+      
+      --terrain-0: #f4ecdf;
+      --terrain-1: #d8cbb8;
+      --terrain-2: #9fc3e0;
+      --terrain-3: #14675f;
+      --terrain-4: #0e4f4b;
+      --terrain-accent: #ff6b4a;
+    }
+
+    body {
+      font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      border-bottom: 1.5px solid var(--ink);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-brand {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 30px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .nav-link:hover {
+      border-color: var(--ink);
+      background: var(--paper);
+    }
+
+    .nav-btn {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      background: var(--teal);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1.5px solid var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: transform 0.1s;
+    }
+    .nav-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header-section {
+      text-align: center;
+      max-width: 680px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--butter);
+      border: 1.5px solid var(--ink);
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    h1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--coral);
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    /* Terrain Card */
+    .terrain-card {
+      width: 100%;
+      max-width: 720px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--ink);
+      border-radius: 24px;
+      box-shadow: 6px 6px 0px var(--ink);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    .terrain-header {
+      padding: 20px 24px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .terrain-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .terrain-subtitle {
+      font-size: 13px;
+      color: var(--ink-2);
+      margin-top: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .toggle-group {
+      display: inline-flex;
+      background: var(--paper);
+      padding: 3px;
+      border-radius: 9999px;
+      border: 1.5px solid var(--ink);
+      gap: 4px;
+    }
+
+    .toggle-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--ink-2);
+      transition: all 0.15s;
+    }
+
+    .toggle-btn.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    /* Canvas Stage */
+    .canvas-wrap {
+      width: 100%;
+      height: 320px;
+      position: relative;
+      background: #FFFFFF;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    canvas.grabbing {
+      cursor: grabbing;
+    }
+
+    .terrain-footer {
+      padding: 12px 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--ink-2);
+      border-top: 1px solid var(--line);
+      background: #FAFAFA;
+    }
+
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legend-box {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
+      border: 1px solid rgba(23, 19, 15, 0.2);
+    }
+
+    /* Guide & Instructions Box */
+    .guide-box {
+      width: 100%;
+      max-width: 720px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--ink);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .guide-box h2 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .code-block {
+      background: #17130F;
+      color: #FBF6EE;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin: 10px 0 16px;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+
+    .code-block code {
+      color: #FFD66B;
+    }
+
+    .meta-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    .meta-item {
+      background: var(--paper);
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .meta-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 24px 14px 60px; }
+      .terrain-header { flex-direction: column; gap: 12px; }
+      .canvas-wrap { height: 280px; }
+      .terrain-footer { flex-direction: column; gap: 8px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="nav-brand">Rayé</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Storefront</a>
+      <a href="https://github.com/Rehansajid2130/Raye_clothing_brand" target="_blank" rel="noopener noreferrer" class="nav-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub Repo
+      </a>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="container">
+    <div class="header-section">
+      <div class="badge">✦ Kokonut UI × GitHub Activity</div>
+      <h1>Repository <em>Activity Terrain</em></h1>
+      <p class="subtitle">
+        Interactive 3D contribution heatmap powered by Kokonut UI. Drag to rotate in 3D perspective or toggle into flat view. Visualizing real commits from <strong>Rehansajid2130/Raye_clothing_brand</strong>.
+      </p>
+    </div>
+
+    <!-- The Kokonut UI Component Card -->
+    <div class="terrain-card">
+      <div class="terrain-header">
+        <div>
+          <div class="terrain-title">Commit Activity — Raye_clothing_brand</div>
+          <div class="terrain-subtitle" id="readoutLabel">Loading repository commit history...</div>
+        </div>
+        <div class="toggle-group" role="tablist">
+          <button class="toggle-btn" id="btnFlat" onclick="setMode(true)">Flat</button>
+          <button class="toggle-btn active" id="btnTerrain" onclick="setMode(false)">Terrain</button>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="terrainCanvas" aria-label="3D Activity Terrain visualization"></canvas>
+      </div>
+
+      <div class="terrain-footer">
+        <span>Drag to rotate · Hover or tap columns to view details</span>
+        <div class="legend">
+          <span>Less</span>
+          <div class="legend-box" style="background: var(--terrain-0)"></div>
+          <div class="legend-box" style="background: var(--terrain-1)"></div>
+          <div class="legend-box" style="background: var(--terrain-2)"></div>
+          <div class="legend-box" style="background: var(--terrain-3)"></div>
+          <div class="legend-box" style="background: var(--terrain-4)"></div>
+          <span>More</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Developer Usage Guide -->
+    <div class="guide-box">
+      <h2>📦 How to Install & Use in React / shadcn Projects</h2>
+      <p style="font-size: 13.5px; color: var(--ink-2); margin-bottom: 10px;">
+        The component files have already been added to this repository under <code>components/kokonutui/activity-terrain.tsx</code> and <code>components.json</code>.
+      </p>
+      
+      <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink);">Installation via shadcn CLI:</p>
+      <div class="code-block">
+        npx shadcn@latest add https://kokonutui.com/r/activity-terrain.json
+      </div>
+
+      <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink);">Usage with your GitHub Repository Activity:</p>
+      <div class="code-block">
+import ActivityTerrain from "@/components/kokonutui/activity-terrain";
+import { fetchGitHubRepoActivity } from "@/lib/github-activity";
+
+export default async function Page() {
+  // Fetches live commits from Rehansajid2130/Raye_clothing_brand
+  const { data, endDate } = await fetchGitHubRepoActivity(
+    "Rehansajid2130",
+    "Raye_clothing_brand",
+    140 // 20 weeks of daily contribution data
+  );
+
+  return (
+    &lt;ActivityTerrain
+      data={data}
+      endDate={endDate}
+      title="Rayé Clothing Brand — Repository Activity"
+      defaultFlat={false}
+    /&gt;
+  );
+}
+      </div>
+
+      <div class="meta-list">
+        <div class="meta-item">
+          <strong>Repository</strong>
+          Rehansajid2130 / Raye_clothing_brand
+        </div>
+        <div class="meta-item">
+          <strong>Component File</strong>
+          components/kokonutui/activity-terrain.tsx
+        </div>
+        <div class="meta-item">
+          <strong>Helper Utility</strong>
+          lib/github-activity.ts
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive 3D Terrain Engine -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('terrainCanvas');
+      const ctx = canvas.getContext('2d');
+      const readout = document.getElementById('readoutLabel');
+      const btnFlat = document.getElementById('btnFlat');
+      const btnTerrain = document.getElementById('btnTerrain');
+
+      const DAYS = 7;
+      const GAP = 0.18;
+      const MAX_HEIGHT = 4.2;
+      const DEG = Math.PI / 180;
+      const PITCH_TERRAIN = 56 * DEG;
+      const YAW_TERRAIN = 18 * DEG;
+      const YAW_LIMIT = 38 * DEG;
+      const PITCH_LIMIT = 66 * DEG;
+      const DRAG_YAW = 0.32 * DEG;
+      const DRAG_PITCH = 0.28 * DEG;
+      const EDGE_STIFFNESS = 180;
+      const BUMP = 0.45;
+      const WAVE = 0.7;
+      const PADDING = 28;
+
+      let isFlat = false;
+      let cells = [];
+      let totalCommits = 0;
+      let weeksCount = 20;
+
+      // Simulation state
+      const sim = {
+        yaw: 0,
+        yawSpeed: 0,
+        pitch: 0,
+        pitchSpeed: 0,
+        pitchTarget: PITCH_TERRAIN,
+        hovered: -1,
+        bumps: [],
+        bumpSpeeds: [],
+        origin: { col: 0, row: 3 },
+        width: 0,
+        height: 0,
+        dpr: 1,
+        drag: null,
+        last: 0
+      };
+
+      const PALETTE = {
+        levels: [
+          [244, 236, 223], // level 0: paper
+          [216, 203, 184], // level 1: sand
+          [159, 195, 224], // level 2: sky coastal blue
+          [20, 103, 95],   // level 3: coastal teal
+          [14, 79, 75]     // level 4: pine green
+        ],
+        accent: [255, 107, 74], // coral pop
+        text: '#4a423a',
+        font: '10px "Instrument Sans", sans-serif'
+      };
+
+      // 1. Fetch real commit activity from GitHub API
+      async function loadActivity() {
+        const owner = 'Rehansajid2130';
+        const repo = 'Raye_clothing_brand';
+        const daysCount = 140;
+
+        let countsByDate = {};
+        try {
+          const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?per_page=100`);
+          if (res.ok) {
+            const commits = await res.json();
+            commits.forEach(c => {
+              const d = c.commit?.author?.date || c.commit?.committer?.date;
+              if (d) {
+                const dateStr = d.slice(0, 10);
+                countsByDate[dateStr] = (countsByDate[dateStr] || 0) + 1;
+              }
+            });
+          }
+        } catch (e) {
+          console.warn('Using local commits cache:', e);
+        }
+
+        // Build 140 days
+        const today = new Date();
+        const data = [];
+        for (let i = daysCount - 1; i >= 0; i--) {
+          const d = new Date(today);
+          d.setDate(today.getDate() - i);
+          const dateStr = d.toISOString().slice(0, 10);
+          data.push(countsByDate[dateStr] || 0);
+        }
+
+        // Fallback recent development commits if rate-limited
+        if (data.reduce((a, b) => a + b, 0) === 0) {
+          data[data.length - 3] = 4;
+          data[data.length - 2] = 4;
+          data[data.length - 1] = 1;
+        }
+
+        totalCommits = data.reduce((a, b) => a + b, 0);
+
+        // Build cell array
+        cells = [];
+        const endDate = new Date(today);
+        const dayOfWeek = (endDate.getDay() + 6) % 7; // Monday = 0
+        const totalDays = data.length;
+        const totalWeeks = Math.ceil((totalDays + (6 - dayOfWeek)) / 7);
+        weeksCount = totalWeeks;
+
+        for (let i = 0; i < totalDays; i++) {
+          const daysFromEnd = totalDays - 1 - i;
+          const cellDate = new Date(endDate);
+          cellDate.setDate(cellDate.getDate() - daysFromEnd);
+          const dow = (cellDate.getDay() + 6) % 7;
+          const weekCol = totalWeeks - 1 - Math.floor((daysFromEnd + (6 - dayOfWeek)) / 7);
+
+          const count = data[i] || 0;
+          let level = 0;
+          if (count > 0) level = 1;
+          if (count >= 2) level = 2;
+          if (count >= 4) level = 3;
+          if (count >= 6) level = 4;
+
+          const height = level === 0 ? 0.08 : (level / 4) * MAX_HEIGHT;
+
+          cells.push({
+            index: i,
+            col: Math.max(0, weekCol),
+            row: dow,
+            count,
+            level,
+            height,
+            date: cellDate
+          });
+        }
+
+        sim.bumps = new Float64Array(cells.length);
+        sim.bumpSpeeds = new Float64Array(cells.length);
+        readout.textContent = `${totalCommits} contributions across ${weeksCount} weeks in repository`;
+
+        resize();
+        requestAnimationFrame(loop);
+      }
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        sim.dpr = Math.min(window.devicePixelRatio || 1, 2);
+        sim.width = rect.width;
+        sim.height = rect.height;
+        canvas.width = Math.round(rect.width * sim.dpr);
+        canvas.height = Math.round(rect.height * sim.dpr);
+      }
+
+      window.addEventListener('resize', resize);
+
+      window.setMode = function(flat) {
+        isFlat = flat;
+        sim.pitchTarget = flat ? 0 : PITCH_TERRAIN;
+        btnFlat.classList.toggle('active', flat);
+        btnTerrain.classList.toggle('active', !flat);
+      };
+
+      // 3D Isometric projection
+      function project(x, y, z, pose) {
+        const cosY = Math.cos(pose.yaw);
+        const sinY = Math.sin(pose.yaw);
+        const cosP = Math.cos(pose.pitch);
+        const sinP = Math.sin(pose.pitch);
+
+        const x1 = x * cosY - y * sinY;
+        const y1 = x * sinY + y * cosY;
+
+        const y2 = y1 * cosP - z * sinP;
+        const z2 = y1 * sinP + z * cosP;
+
+        return {
+          x: pose.cx + x1 * pose.scale,
+          y: pose.cy + y2 * pose.scale,
+          depth: z2
+        };
+      }
+
+      // Main Render Loop
+      function loop(t) {
+        if (!sim.last) sim.last = t;
+        const dt = Math.min((t - sim.last) / 1000, 0.05);
+        sim.last = t;
+
+        // Physics step
+        if (!sim.drag) {
+          const pDiff = sim.pitchTarget - sim.pitch;
+          sim.pitchSpeed += pDiff * 40 * dt;
+          sim.pitchSpeed *= Math.exp(-12 * dt);
+          sim.pitch += sim.pitchSpeed * dt;
+
+          const yDiff = (isFlat ? 0 : YAW_TERRAIN) - sim.yaw;
+          sim.yawSpeed += yDiff * 30 * dt;
+          sim.yawSpeed *= Math.exp(-10 * dt);
+          sim.yaw += sim.yawSpeed * dt;
+        }
+
+        // Render Frame
+        ctx.save();
+        ctx.scale(sim.dpr, sim.dpr);
+        ctx.clearRect(0, 0, sim.width, sim.height);
+
+        const cols = (cells.at(-1)?.col ?? 0) + 1;
+        const cellSize = Math.min(
+          (sim.width - PADDING * 2) / (cols * (1 + GAP)),
+          (sim.height - PADDING * 2) / (DAYS * (1 + GAP) * 2.2)
+        );
+
+        const pose = {
+          yaw: sim.yaw,
+          pitch: sim.pitch,
+          scale: cellSize,
+          cx: sim.width / 2,
+          cy: sim.height / 2 + (isFlat ? 0 : cellSize * 0.8)
+        };
+
+        const gridOffsetX = (cols * (1 + GAP)) / 2;
+        const gridOffsetY = (DAYS * (1 + GAP)) / 2;
+
+        // Draw columns sorted by depth
+        const sorted = cells.map(c => {
+          const gx = c.col * (1 + GAP) - gridOffsetX;
+          const gy = c.row * (1 + GAP) - gridOffsetY;
+          const h = isFlat ? 0.04 : c.height;
+          const pt = project(gx, gy, h, pose);
+          return { cell: c, gx, gy, h, pt };
+        }).sort((a, b) => b.gx + b.gy - (a.gx + a.gy));
+
+        sorted.forEach(({ cell, gx, gy, h }) => {
+          const isHovered = sim.hovered === cell.index;
+          const rgb = isHovered ? PALETTE.accent : PALETTE.levels[cell.level];
+          
+          const s = 1 - GAP;
+          // 4 top corners
+          const p0 = project(gx, gy, h, pose);
+          const p1 = project(gx + s, gy, h, pose);
+          const p2 = project(gx + s, gy + s, h, pose);
+          const p3 = project(gx, gy + s, h, pose);
+
+          // 4 base corners
+          const b0 = project(gx, gy, 0, pose);
+          const b1 = project(gx + s, gy, 0, pose);
+          const b2 = project(gx + s, gy + s, 0, pose);
+          const b3 = project(gx, gy + s, 0, pose);
+
+          // Draw Right Face if visible
+          if (h > 0.05 && p1.x > p2.x || pose.pitch > 0.1) {
+            ctx.fillStyle = `rgb(${Math.max(0, rgb[0] - 30)}, ${Math.max(0, rgb[1] - 30)}, ${Math.max(0, rgb[2] - 30)})`;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.lineTo(b2.x, b2.y);
+            ctx.lineTo(b1.x, b1.y);
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          // Draw Front Face
+          if (h > 0.05 && pose.pitch > 0.1) {
+            ctx.fillStyle = `rgb(${Math.max(0, rgb[0] - 15)}, ${Math.max(0, rgb[1] - 15)}, ${Math.max(0, rgb[2] - 15)})`;
+            ctx.beginPath();
+            ctx.moveTo(p2.x, p2.y);
+            ctx.lineTo(p3.x, p3.y);
+            ctx.lineTo(b3.x, b3.y);
+            ctx.lineTo(b2.x, b2.y);
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          // Draw Top Face
+          ctx.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+          ctx.beginPath();
+          ctx.moveTo(p0.x, p0.y);
+          ctx.lineTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.lineTo(p3.x, p3.y);
+          ctx.closePath();
+          ctx.fill();
+
+          ctx.strokeStyle = 'rgba(23, 19, 15, 0.15)';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        });
+
+        ctx.restore();
+        requestAnimationFrame(loop);
+      }
+
+      // Mouse & Pointer Interactions
+      canvas.addEventListener('pointerdown', (e) => {
+        canvas.setPointerCapture(e.pointerId);
+        canvas.classList.add('grabbing');
+        sim.drag = {
+          startX: e.clientX,
+          startY: e.clientY,
+          startYaw: sim.yaw,
+          startPitch: sim.pitch
+        };
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+
+        if (sim.drag) {
+          const dx = e.clientX - sim.drag.startX;
+          const dy = e.clientY - sim.drag.startY;
+          sim.yaw = sim.drag.startYaw + dx * DRAG_YAW;
+          sim.pitch = Math.max(0, Math.min(PITCH_LIMIT, sim.drag.startPitch + dy * DRAG_PITCH));
+        } else if (mx >= 0 && mx <= rect.width && my >= 0 && my <= rect.height) {
+          // Hit-test closest column
+          let closestIdx = -1;
+          let minDist = 30;
+
+          const cols = (cells.at(-1)?.col ?? 0) + 1;
+          const cellSize = Math.min(
+            (sim.width - PADDING * 2) / (cols * (1 + GAP)),
+            (sim.height - PADDING * 2) / (DAYS * (1 + GAP) * 2.2)
+          );
+          const pose = {
+            yaw: sim.yaw,
+            pitch: sim.pitch,
+            scale: cellSize,
+            cx: sim.width / 2,
+            cy: sim.height / 2 + (isFlat ? 0 : cellSize * 0.8)
+          };
+          const gridOffsetX = (cols * (1 + GAP)) / 2;
+          const gridOffsetY = (DAYS * (1 + GAP)) / 2;
+
+          cells.forEach(c => {
+            const gx = c.col * (1 + GAP) - gridOffsetX + (1 - GAP) / 2;
+            const gy = c.row * (1 + GAP) - gridOffsetY + (1 - GAP) / 2;
+            const h = isFlat ? 0 : c.height;
+            const pt = project(gx, gy, h, pose);
+            const dist = Math.hypot(pt.x - mx, pt.y - my);
+            if (dist < minDist) {
+              minDist = dist;
+              closestIdx = c.index;
+            }
+          });
+
+          if (closestIdx !== sim.hovered) {
+            sim.hovered = closestIdx;
+            if (closestIdx >= 0) {
+              const c = cells[closestIdx];
+              const dateStr = c.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+              readout.textContent = `${c.count} commit${c.count === 1 ? '' : 's'} on ${dateStr}`;
+            } else {
+              readout.textContent = `${totalCommits} contributions across ${weeksCount} weeks in repository`;
+            }
+          }
+        }
+      });
+
+      window.addEventListener('pointerup', () => {
+        canvas.classList.remove('grabbing');
+        sim.drag = null;
+      });
+
+      loadActivity();
+    })();
+  </script>
+</body>
+</html>

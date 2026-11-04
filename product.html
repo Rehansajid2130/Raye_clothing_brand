@@ -357,7 +357,7 @@
     /* Reviews Section */
     .reviews-section { padding: 60px 0; border-bottom: 1.5px solid rgba(20,20,12,0.15); }
     .reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
     .review-card {
       background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 20px;
       box-shadow: 3px 3px 0px var(--color-jet);
@@ -551,7 +551,7 @@
 
     /* Mobile Drawer */
     .mobile-menu-drawer {
-      position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 320px;
+      position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: min(320px, 86vw);
       background: var(--color-cream); border-right: 2px solid var(--color-jet);
       box-shadow: 8px 0px 0px rgba(20, 20, 12, 0.15); z-index: 101; display: flex;
       flex-direction: column; transform: translate3d(-100%, 0, 0); will-change: transform; transition: transform 0.35s var(--ease-spring);
@@ -1248,7 +1248,7 @@
 
     @media (max-width: 380px) {
       .sizes-row {
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         gap: 6px !important;
       }
       .action-group {
@@ -1570,7 +1570,7 @@
           <div style="font-size: 11px; font-weight: 800; margin-top: 4px;" id="recChestText">100 cm across chest</div>
           <div style="font-size: 10px; color: var(--color-charcoal);" id="recDrapeText">For a ~88 cm chest, relaxed drape</div>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;" id="modalPillRow">
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px;" id="modalPillRow">
           <!-- Injected by script -->
         </div>
       </div>
