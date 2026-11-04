@@ -127,11 +127,14 @@
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 0 14px !important;
+        padding: 0 12px !important;
         height: 58px !important;
         position: sticky !important;
         top: 0 !important;
-        z-index: 90 !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .nav-links {
@@ -164,20 +167,21 @@
       }
 
       .nav-logo, .nav-brand {
-        position: static !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 28px !important;
+        font-size: 30px !important;
         line-height: 1 !important;
         margin: 0 !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
-        flex-shrink: 0 !important;
         white-space: nowrap !important;
+        z-index: 5 !important;
+        pointer-events: auto !important;
       }
 
       .nav-actions, .nav-tools {

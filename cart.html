@@ -276,6 +276,7 @@
 
     /* Page Container */
     .page-cart {
+      box-sizing: border-box;
       max-width: 1200px;
       margin: 0 auto;
       padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 40px);
@@ -1017,19 +1018,87 @@
       }
     }
     @media (max-width: 860px) {
+      .page-cart {
+        padding: 16px 12px 60px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+      #cartView {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
       .freeship-card, .cart-grid, .cart-lines, .cart-line, .summary-card {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
       }
-      .cart-line {
-        grid-template-columns: 74px 1fr !important;
+      .freeship-card {
+        padding: 12px 14px !important;
+        margin-bottom: 16px !important;
+        box-shadow: 2px 2px 0 var(--ink) !important;
+      }
+      .cart-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+      .cart-grid > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+      }
+      .cart-lines {
+        display: flex !important;
+        flex-direction: column !important;
         gap: 12px !important;
-        padding: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+      }
+      .cart-line {
+        display: grid !important;
+        grid-template-columns: 64px minmax(0, 1fr) !important;
+        gap: 10px !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+        box-shadow: 2px 2px 0 var(--ink) !important;
+        overflow: hidden !important;
       }
       .line-img {
-        width: 74px !important;
-        height: 84px !important;
+        width: 64px !important;
+        height: 72px !important;
+        border-radius: 8px !important;
+        flex-shrink: 0 !important;
+      }
+      .line-info {
+        min-width: 0 !important;
+        overflow: hidden !important;
+      }
+      .line-info h3 {
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        margin-bottom: 2px !important;
+      }
+      .line-meta {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        margin-bottom: 6px !important;
+      }
+      .line-stepper button {
+        width: 26px !important;
+        height: 26px !important;
+      }
+      .line-stepper span {
+        width: 20px !important;
+        font-size: 12px !important;
       }
       .line-price-col {
         grid-column: 1 / -1 !important;
@@ -1039,10 +1108,11 @@
         align-items: center !important;
         width: 100% !important;
         border-top: 1px dashed rgba(23, 19, 15, 0.2) !important;
-        padding-top: 10px !important;
-        margin-top: 6px !important;
+        padding-top: 8px !important;
+        margin-top: 4px !important;
+        box-sizing: border-box !important;
       }
-      .line-title {
+      .line-price {
         font-size: 15px !important;
       }
     }
@@ -1062,11 +1132,14 @@
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 0 14px !important;
+        padding: 0 12px !important;
         height: 58px !important;
         position: sticky !important;
         top: 0 !important;
-        z-index: 90 !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .nav-links {
@@ -1099,20 +1172,21 @@
       }
 
       .nav-logo, .nav-brand {
-        position: static !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 28px !important;
+        font-size: 30px !important;
         line-height: 1 !important;
         margin: 0 !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
-        flex-shrink: 0 !important;
         white-space: nowrap !important;
+        z-index: 5 !important;
+        pointer-events: auto !important;
       }
 
       .nav-actions, .nav-tools {
