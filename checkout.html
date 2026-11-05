@@ -730,7 +730,7 @@
     .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 820px) {
@@ -739,7 +739,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 12px !important;
-        height: 58px !important;
+        height: 56px !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
@@ -755,17 +755,18 @@
       .nav-brand-group {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         z-index: 2 !important;
       }
 
       .mobile-menu-btn {
         display: inline-flex !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         border-radius: 50% !important;
         border: 1.5px solid var(--color-jet, var(--ink, #17130F)) !important;
         background: var(--color-pine, var(--teal, #0E4F4B)) !important;
@@ -778,15 +779,13 @@
       }
 
       .nav-logo, .nav-brand {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important;
+        transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1 !important;
-        margin: 0 !important;
+        margin: 0 0 0 6px !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
@@ -802,27 +801,40 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
-        padding-right: 6px !important;
+      }
+
+      /* Hide redundant Search & Account buttons on mobile screens to prevent crowding */
+      .nav-search-btn,
+      .nav-account-btn,
+      .nav-actions .nav-search-btn,
+      .nav-actions .nav-account-btn,
+      .nav-tools .nav-search-btn,
+      .nav-tools .nav-account-btn {
+        display: none !important;
       }
 
       .nav-actions .icon-btn,
       .nav-tools .round-btn,
       .nav-actions a.icon-btn,
-      .nav-tools a.round-btn {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
+      .nav-tools a.round-btn,
+      #wishlistNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
         border-radius: 50% !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .bag-pill-btn {
-        height: 38px !important;
-        min-height: 38px !important;
-        padding: 0 12px !important;
-        gap: 5px !important;
-        font-size: 12px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 10px !important;
+        gap: 4px !important;
+        font-size: 11px !important;
         font-weight: 800 !important;
         border-radius: 9999px !important;
         display: inline-flex !important;
@@ -832,65 +844,56 @@
         flex-shrink: 0 !important;
         background: var(--color-jet, var(--ink, #17130F)) !important;
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
-      }
-
-      }
-
-    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-    @media (max-width: 640px) {
-      .nav-search-btn,
-      .nav-account-btn {
-        display: none !important;
+        white-space: nowrap !important;
       }
     }
 
-    /* Cart Summary & Order Receipt Fix for mobile viewports */
+    /* Checkout mobile rules */
     @media (max-width: 860px) {
-      .page-cart, .order-main, .checkout-wrap {
-        padding: 16px 12px !important;
+      .checkout-main, .page-cart {
+        padding: 16px 12px 60px !important;
         box-sizing: border-box !important;
         width: 100% !important;
-        max-width: 100% !important; width: 100% !important; box-sizing: border-box !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
       }
-      .cart-grid, .checkout-grid {
-        grid-template-columns: 1fr !important;
-        gap: 18px !important;
+      .checkout-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
         width: 100% !important;
-      }
-      .summary-card {
-        padding: 18px 14px !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
+      }
+      .checkout-grid > * {
         width: 100% !important;
-        box-shadow: 3px 3px 0 var(--color-jet, var(--ink, #17130F)) !important;
-      }
-      .summary-dl div {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        gap: 12px !important;
-      }
-      .summary-dl dd, .summary-total span:last-child {
-        white-space: nowrap !important;
-        text-align: right !important;
-      }
-      .promo-row {
-        display: flex !important;
-        gap: 6px !important;
-        width: 100% !important;
-      }
-      .promo-input {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
         min-width: 0 !important;
-        flex: 1 !important;
       }
-      .promo-btn {
-        flex-shrink: 0 !important;
-        padding: 0 16px !important;
-      }
-      .btn-checkout {
-        padding: 14px 16px !important;
-        font-size: 15px !important;
+      .card {
+        padding: 16px 14px !important;
         box-sizing: border-box !important;
         width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: 2px 2px 0 var(--ink) !important;
+        overflow: hidden !important;
+      }
+      .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      .radio-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .radio-card {
+        padding: 12px 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
     }
 
@@ -963,15 +966,23 @@
           <div class="field-row">
             <div class="field">
               <label for="cArea">Area / Thana</label>
-              <input type="text" id="cArea" required placeholder="e.g. Banani">
+              <input type="text" id="cArea" required placeholder="e.g. DHA Phase 5, Gulberg, Clifton">
             </div>
             <div class="field">
               <label for="cDistrict">District</label>
               <select id="cDistrict" required onchange="updateDeliveryOptions()">
-                <option value="Dhaka" selected>Dhaka</option>
-                <option value="Chattogram">Chattogram</option>
-                <option value="Cox's Bazar">Cox's Bazar</option>
-                <option value="Sylhet">Sylhet</option>
+                <option value="Lahore" selected>Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Rawalpindi">Rawalpindi</option>
+                <option value="Faisalabad">Faisalabad</option>
+                <option value="Multan">Multan</option>
+                <option value="Peshawar">Peshawar</option>
+                <option value="Quetta">Quetta</option>
+                <option value="Sialkot">Sialkot</option>
+                <option value="Gujranwala">Gujranwala</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Other">Other City / District</option>
                 <option value="Khulna">Khulna</option>
                 <option value="Rajshahi">Rajshahi</option>
                 <option value="Barishal">Barishal</option>
@@ -979,7 +990,7 @@
                 <option value="Mymensingh">Mymensingh</option>
                 <option value="Cumilla">Cumilla</option>
                 <option value="Gazipur">Gazipur</option>
-                <option value="Narayanganj">Narayanganj</option>
+                <option value="Faisalabad">Faisalabad</option>
                 <option value="Bogura">Bogura</option>
                 <option value="Jashore">Jashore</option>
                 <option value="Noakhali">Noakhali</option>
@@ -997,28 +1008,28 @@
         <div class="form-panel">
           <h2>3. Delivery method</h2>
           <div class="radios-group" id="deliveryGroup">
-            <label class="radio-card active" onclick="selectDelivery('dhaka', 80, this)">
+            <label class="radio-card active" onclick="selectDelivery('lahore', 150, this)">
               <div>
                 <input type="radio" name="delMethod" checked>
-                <strong>Inside Dhaka</strong> · 1–2 working days
+                <strong>Lahore / Karachi</strong> · 1–2 working days
               </div>
-              <span id="delCostDhaka" style="font-weight: 800; font-family: var(--font-display);">৳80</span>
+              <span id="delCostLocal" style="font-weight: 800; font-family: var(--font-display);">Rs. 150</span>
             </label>
 
             <label class="radio-card" onclick="selectDelivery('outside', 150, this)">
               <div>
                 <input type="radio" name="delMethod">
-                <strong>Outside Dhaka</strong> · 3–5 working days
+                <strong>All Across Pakistan</strong> · 3–5 working days (TCS / Trax)
               </div>
-              <span id="delCostOutside" style="font-weight: 800; font-family: var(--font-display);">৳150</span>
+              <span id="delCostOutside" style="font-weight: 800; font-family: var(--font-display);">Rs. 150</span>
             </label>
 
             <label class="radio-card" onclick="selectDelivery('express', 250, this)">
               <div>
                 <input type="radio" name="delMethod">
-                <strong>Express Delivery (Dhaka)</strong> · Next day before 8 pm
+                <strong>Express Delivery</strong> · Lahore / Karachi next day before 8 pm
               </div>
-              <span style="font-weight: 800; font-family: var(--font-display);">৳250</span>
+              <span style="font-weight: 800; font-family: var(--font-display);">Rs. 250</span>
             </label>
           </div>
         </div>
@@ -1035,20 +1046,22 @@
               <span>💵</span>
             </label>
 
-            <label class="radio-card" onclick="selectPayment('bkash', this)">
-              <div>
-                <input type="radio" name="payMethod">
-                <strong>bKash</strong> · You'll get an automated payment request
-              </div>
-              <span style="color: #D12053; font-weight: 800;">bKash</span>
+            <label class="radio-card" onclick="selectPayment('jazzcash', this)">
+                <input type="radio" name="pay" value="jazzcash">
+                <div class="radio-content">
+                  <strong>JazzCash</strong> · Send via 0300-1234567 or App Request
+                  <small>Instant digital confirmation</small>
+                </div>
+                <span style="color: #DE2128; font-weight: 800;">JazzCash</span>
             </label>
 
-            <label class="radio-card" onclick="selectPayment('nagad', this)">
-              <div>
-                <input type="radio" name="payMethod">
-                <strong>Nagad</strong> · Instant digital payment
-              </div>
-              <span style="color: #F7931E; font-weight: 800;">Nagad</span>
+            <label class="radio-card" onclick="selectPayment('easypaisa', this)">
+                <input type="radio" name="pay" value="easypaisa">
+                <div class="radio-content">
+                  <strong>Easypaisa</strong> · Send via 0300-1234567 / QR code
+                  <small>No additional transaction fee</small>
+                </div>
+                <span style="color: #00A859; font-weight: 800;">Easypaisa</span>
             </label>
 
             <label class="radio-card" onclick="selectPayment('card', this)">
@@ -1077,19 +1090,19 @@
           <dl class="summary-dl">
             <div>
               <dt>Subtotal</dt>
-              <dd id="subtotalVal">৳0</dd>
+              <dd id="subtotalVal">Rs. 0</dd>
             </div>
             <div id="discountRow" style="display: none; color: var(--teal);">
               <dt>Discount</dt>
-              <dd id="discountVal">−৳0</dd>
+              <dd id="discountVal">−Rs. 0</dd>
             </div>
             <div>
               <dt>Delivery</dt>
-              <dd id="shippingVal">৳80</dd>
+              <dd id="shippingVal">Rs. 80</dd>
             </div>
             <div class="total-row">
               <dt>Total payable</dt>
-              <dd id="totalVal">৳0</dd>
+              <dd id="totalVal">Rs. 0</dd>
             </div>
           </dl>
         </div>
@@ -1102,7 +1115,7 @@
     const activePromo = localStorage.getItem('raye_promo') || null;
 
     let selectedDeliveryFee = 80;
-    let selectedDeliveryName = 'Inside Dhaka (1-2 days)';
+    let selectedDeliveryName = 'Lahore / Karachi (1-2 days)';
     let selectedPayment = 'Cash on delivery';
 
     function initCheckout() {
@@ -1116,7 +1129,7 @@
       list.innerHTML = cart.map(item => `
         <li class="order-item-row">
           <span>${item.name} (${item.size || 'M'}) × ${item.qty || 1}</span>
-          <span style="font-family: var(--font-display);">৳${(item.price * (item.qty || 1)).toLocaleString('en-IN')}</span>
+          <span style="font-family: var(--font-display);">Rs. ${(item.price * (item.qty || 1)).toLocaleString('en-PK')}</span>
         </li>
       `).join('');
 
@@ -1133,15 +1146,15 @@
 
       const total = Math.max(0, subtotal - discount + shipping);
 
-      document.getElementById('subtotalVal').textContent = '৳' + subtotal.toLocaleString('en-IN');
-      document.getElementById('shippingVal').textContent = shipping === 0 ? 'Free' : '৳' + shipping;
+      document.getElementById('subtotalVal').textContent = 'Rs. ' + subtotal.toLocaleString('en-PK');
+      document.getElementById('shippingVal').textContent = shipping === 0 ? 'Free' : 'Rs. ' + shipping;
 
       if (discount > 0) {
         document.getElementById('discountRow').style.display = 'flex';
-        document.getElementById('discountVal').textContent = '−৳' + discount.toLocaleString('en-IN');
+        document.getElementById('discountVal').textContent = '−Rs. ' + discount.toLocaleString('en-PK');
       }
 
-      document.getElementById('totalVal').textContent = '৳' + total.toLocaleString('en-IN');
+      document.getElementById('totalVal').textContent = 'Rs. ' + total.toLocaleString('en-PK');
     }
 
     function selectDelivery(type, fee, el) {
@@ -1149,7 +1162,7 @@
       el.classList.add('active');
       el.querySelector('input').checked = true;
       selectedDeliveryFee = fee;
-      selectedDeliveryName = type === 'dhaka' ? 'Inside Dhaka' : type === 'outside' ? 'Outside Dhaka' : 'Express Dhaka';
+      selectedDeliveryName = type === 'lahore' ? 'Lahore / Karachi (TCS)' : type === 'nationwide' ? 'All Across Pakistan (TCS)' : 'Express Delivery';
       calculateTotals();
     }
 
@@ -1162,12 +1175,12 @@
 
     function updateDeliveryOptions() {
       const dist = document.getElementById('cDistrict').value;
-      const isDhaka = dist === 'Dhaka';
+      const isLocal = dist === 'Lahore' || dist === 'Karachi';
       // Auto-toggle appropriate default
-      if (!isDhaka) {
+      if (!isLocal) {
         selectDelivery('outside', 150, document.querySelectorAll('#deliveryGroup .radio-card')[1]);
       } else {
-        selectDelivery('dhaka', 80, document.querySelectorAll('#deliveryGroup .radio-card')[0]);
+        selectDelivery('lahore', 150, document.querySelectorAll('#deliveryGroup .radio-card')[0]);
       }
     }
 
@@ -1346,8 +1359,8 @@
       </nav>
 
       <div style="margin-top: auto; padding: 20px; border-top: 1.5px solid rgba(23, 19, 15, 0.15); background: var(--color-paper, var(--paper, #F4ECDF));">
-        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN IN BANGLADESH</p>
-        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Dhaka · Chittagong · Sylhet</span>
+        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN in Pakistan</p>
+        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Karachi · Lahore · Islamabad</span>
       </div>
     </aside>
   </div>

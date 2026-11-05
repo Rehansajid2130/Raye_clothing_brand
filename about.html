@@ -813,7 +813,7 @@
     .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 820px) {
@@ -822,7 +822,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 12px !important;
-        height: 58px !important;
+        height: 56px !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
@@ -838,17 +838,18 @@
       .nav-brand-group {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         z-index: 2 !important;
       }
 
       .mobile-menu-btn {
         display: inline-flex !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         border-radius: 50% !important;
         border: 1.5px solid var(--color-jet, var(--ink, #17130F)) !important;
         background: var(--color-pine, var(--teal, #0E4F4B)) !important;
@@ -861,15 +862,13 @@
       }
 
       .nav-logo, .nav-brand {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important;
+        transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1 !important;
-        margin: 0 !important;
+        margin: 0 0 0 6px !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
@@ -885,27 +884,40 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
-        padding-right: 6px !important;
+      }
+
+      /* Hide redundant Search & Account buttons on mobile screens to prevent crowding */
+      .nav-search-btn,
+      .nav-account-btn,
+      .nav-actions .nav-search-btn,
+      .nav-actions .nav-account-btn,
+      .nav-tools .nav-search-btn,
+      .nav-tools .nav-account-btn {
+        display: none !important;
       }
 
       .nav-actions .icon-btn,
       .nav-tools .round-btn,
       .nav-actions a.icon-btn,
-      .nav-tools a.round-btn {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
+      .nav-tools a.round-btn,
+      #wishlistNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
         border-radius: 50% !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .bag-pill-btn {
-        height: 38px !important;
-        min-height: 38px !important;
-        padding: 0 12px !important;
-        gap: 5px !important;
-        font-size: 12px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 10px !important;
+        gap: 4px !important;
+        font-size: 11px !important;
         font-weight: 800 !important;
         border-radius: 9999px !important;
         display: inline-flex !important;
@@ -915,15 +927,7 @@
         flex-shrink: 0 !important;
         background: var(--color-jet, var(--ink, #17130F)) !important;
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
-      }
-
-      }
-
-    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-    @media (max-width: 640px) {
-      .nav-search-btn,
-      .nav-account-btn {
-        display: none !important;
+        white-space: nowrap !important;
       }
     }
 
@@ -983,7 +987,7 @@
 <body>
   <!-- Announcement Bar -->
   <aside class="announce" role="region" aria-label="Announcement">
-    <p>Free delivery on orders over ৳3,000 across Bangladesh</p>
+    <p>Free delivery on orders over Rs. 3,000 across Pakistan</p>
   </aside>
 
   <!-- Sticky Navbar -->
@@ -1052,7 +1056,7 @@
     <div class="hero-media-box">
       <img src="images/about-loom.jpg" alt="Rolls of striped cotton-linen fabric in a weaving workshop">
       <div class="media-caption">
-        <span>Handloom weaving workshop outside Narayanganj, Bangladesh</span>
+        <span>Handloom weaving workshop outside Faisalabad, Pakistan</span>
         <span style="font-family: var(--font-display);">23°48'N 90°30'E</span>
       </div>
     </div>
@@ -1061,9 +1065,9 @@
     <section class="story-split">
       <div class="story-copy">
         <span class="eyebrow">Where we’re from</span>
-        <h2>Woven an hour from <em>Dhaka.</em></h2>
+        <h2>Woven an hour from <em>Lahore.</em></h2>
         <p>
-          Our shirts are woven, cut and sewn in a family workshop outside Narayanganj that has made cloth for three generations. We work with the same eleven people on every batch, and we pay above the industry wage because good shirts come from people who aren’t rushed.
+          Our shirts are woven, cut and sewn in a family workshop outside Faisalabad that has made cloth for three generations. We work with the same eleven people on every batch, and we pay above the industry wage because good shirts come from people who aren’t rushed.
         </p>
         <p>
           The name is French for “striped”. The colours are borrowed from home: terracotta from local clay, faded teal from coastal ferries, yellow from mustard blossoms in winter.
@@ -1117,7 +1121,7 @@
       <div class="pillar-card">
         <div class="icon">☀️</div>
         <h3>Made for the heat</h3>
-        <p>Cotton-linen blend chosen for Bangladeshi summers: it breathes, dries fast, and softens with every single wash.</p>
+        <p>Cotton-linen blend chosen for Pakistani summers: it breathes, dries fast, and softens with every single wash.</p>
       </div>
 
       <div class="pillar-card">
@@ -1273,8 +1277,8 @@
       </nav>
 
       <div style="margin-top: auto; padding: 20px; border-top: 1.5px solid rgba(23, 19, 15, 0.15); background: var(--color-paper, var(--paper, #F4ECDF));">
-        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN IN BANGLADESH</p>
-        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Dhaka · Chittagong · Sylhet</span>
+        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN in Pakistan</p>
+        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Karachi · Lahore · Islamabad</span>
       </div>
     </aside>
   </div>

@@ -974,7 +974,7 @@
     .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 820px) {
@@ -983,7 +983,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 12px !important;
-        height: 58px !important;
+        height: 56px !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
@@ -999,17 +999,18 @@
       .nav-brand-group {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         z-index: 2 !important;
       }
 
       .mobile-menu-btn {
         display: inline-flex !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         border-radius: 50% !important;
         border: 1.5px solid var(--color-jet, var(--ink, #17130F)) !important;
         background: var(--color-pine, var(--teal, #0E4F4B)) !important;
@@ -1022,15 +1023,13 @@
       }
 
       .nav-logo, .nav-brand {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important;
+        transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1 !important;
-        margin: 0 !important;
+        margin: 0 0 0 6px !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
@@ -1046,27 +1045,40 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
-        padding-right: 6px !important;
+      }
+
+      /* Hide redundant Search & Account buttons on mobile screens to prevent crowding */
+      .nav-search-btn,
+      .nav-account-btn,
+      .nav-actions .nav-search-btn,
+      .nav-actions .nav-account-btn,
+      .nav-tools .nav-search-btn,
+      .nav-tools .nav-account-btn {
+        display: none !important;
       }
 
       .nav-actions .icon-btn,
       .nav-tools .round-btn,
       .nav-actions a.icon-btn,
-      .nav-tools a.round-btn {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
+      .nav-tools a.round-btn,
+      #wishlistNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
         border-radius: 50% !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .bag-pill-btn {
-        height: 38px !important;
-        min-height: 38px !important;
-        padding: 0 12px !important;
-        gap: 5px !important;
-        font-size: 12px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 10px !important;
+        gap: 4px !important;
+        font-size: 11px !important;
         font-weight: 800 !important;
         border-radius: 9999px !important;
         display: inline-flex !important;
@@ -1076,15 +1088,7 @@
         flex-shrink: 0 !important;
         background: var(--color-jet, var(--ink, #17130F)) !important;
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
-      }
-
-      }
-
-    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-    @media (max-width: 640px) {
-      .nav-search-btn,
-      .nav-account-btn {
-        display: none !important;
+        white-space: nowrap !important;
       }
     }
 
@@ -1152,7 +1156,7 @@
 <body>
 
   <div class="announcement-bar">
-    FREE DELIVERY ON ORDERS OVER ৳3,000 ✦ CASH ON DELIVERY ACROSS BANGLADESH
+    FREE DELIVERY ON ORDERS OVER RS. 3,000 ✦ CASH ON DELIVERY ACROSS PAKISTAN
   </div>
 
   <header class="navbar">
@@ -1223,7 +1227,7 @@
     <div class="shop-header">
       <p class="shop-kicker">12 SHIRTS, ALL STRIPED</p>
       <h1 class="shop-title">The <span class="script">shop.</span></h1>
-      <p class="shop-subhead">Every shirt is yarn-dyed cotton-linen, pre-washed for a true fit, and made in Bangladesh.</p>
+      <p class="shop-subhead">Every shirt is yarn-dyed cotton-linen, pre-washed for a true fit, and made in Pakistan.</p>
 
       <div class="category-pills">
         <button class="cat-btn active" onclick="setCategory('all', this)">All shirts</button>
@@ -1303,7 +1307,7 @@
   <footer>
     <div class="footer-inner">
       <span style="font-family: var(--font-serif); font-style: italic; font-size: 32px; color: var(--color-coral);">Rayé</span>
-      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em;">© 2026 RAYÉ · WOVEN & SEWN IN BANGLADESH</span>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em;">© 2026 RAYÉ · WOVEN & SEWN in Pakistan</span>
       <a href="index.html" style="color: var(--color-cream); font-size: 12px; font-weight: 700;">Back to Home -></a>
     </div>
   </footer>
@@ -1349,7 +1353,7 @@
       </div>
       <div id="accountTrackTab" class="account-tab-content">
         <p style="font-size: 12px; color: var(--color-charcoal); line-height: 1.5;">
-          Enter your order number to track parcel dispatch with Steadfast Express courier across Bangladesh.
+          Enter your order number to track parcel dispatch with TCS Express courier across Pakistan.
         </p>
         <form onsubmit="handleTrackOrder(event)">
           <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;">
@@ -1373,10 +1377,10 @@
             <span style="background: var(--color-butter); border: 1.2px solid var(--color-jet); font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">IN TRANSIT</span>
           </div>
           <div class="stepper-timeline">
-            <div class="timeline-step completed"><strong>Order Placed & Confirmed</strong><span style="font-size: 11px; color: #666;">Studio Narayanganj · 10:30 AM</span></div>
+            <div class="timeline-step completed"><strong>Order Placed & Confirmed</strong><span style="font-size: 11px; color: #666;">Studio Faisalabad · 10:30 AM</span></div>
             <div class="timeline-step completed"><strong>Pre-Washed & Quality Checked</strong><span style="font-size: 11px; color: #666;">Garment washed for true fit · 2:15 PM</span></div>
-            <div class="timeline-step current"><strong>Steadfast Courier Delivery Hub</strong><span style="font-size: 11px; color: var(--color-coral); font-weight: 800;">Dhaka Central Hub · Out for Delivery Tomorrow</span></div>
-            <div class="timeline-step"><strong>Delivered to Your Doorstep</strong><span style="font-size: 11px; color: #888;">Dhanmondi, Dhaka · Cash on Delivery</span></div>
+            <div class="timeline-step current"><strong>TCS Courier Delivery Hub</strong><span style="font-size: 11px; color: var(--color-coral); font-weight: 800;">Lahore Central Hub · Out for Delivery Tomorrow</span></div>
+            <div class="timeline-step"><strong>Delivered to Your Doorstep</strong><span style="font-size: 11px; color: #888;">DHA, Lahore · Cash on Delivery</span></div>
           </div>
         </div>
       </div>
@@ -1404,12 +1408,12 @@
             <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-butter); border: 1.5px solid var(--color-jet); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px;">RC</div>
             <div>
               <p style="font-size: 14px; font-weight: 800;">Rahat Chowdhury</p>
-              <span style="font-size: 11px; color: var(--color-charcoal);">VIP Rayé Member ✦ Dhaka</span>
+              <span style="font-size: 11px; color: var(--color-charcoal);">VIP Rayé Member ✦ Lahore</span>
             </div>
           </div>
           <div style="font-size: 12px; display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: 1px solid #eee;">
             <p><strong>Saved Sizing:</strong> Size L (Relaxed Fit)</p>
-            <p><strong>Primary Address:</strong> Flat 4B, Dhanmondi 27, Dhaka</p>
+            <p><strong>Primary Address:</strong> House 42, Street 12, Phase 5, DHA, Lahore</p>
           </div>
           <button onclick="handleSignOut()" style="margin-top: 16px; width: 100%; padding: 8px; border: 1.5px solid var(--color-jet); border-radius: 8px; background: #FAF7F0; font-weight: 800; font-size: 11px; cursor: pointer;">
             Sign Out
@@ -1450,8 +1454,8 @@
       </div>
       <div style="padding: 14px 20px 6px; background: #FFFFFF; border-bottom: 1px solid rgba(20,20,12,0.1);">
         <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 800;">
-          <span id="freeShippingNotice">Add ৳3,000 for FREE Shipping</span>
-          <span id="freeShippingTarget">৳3,000 goal</span>
+          <span id="freeShippingNotice">Add Rs. 3,000 for FREE Shipping</span>
+          <span id="freeShippingTarget">Rs. 3,000 goal</span>
         </div>
         <div class="progress-track">
           <div id="freeShippingBar" class="progress-fill" style="width: 0%;"></div>
@@ -1465,15 +1469,15 @@
         <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
           <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
             <span style="color: var(--color-charcoal);">Subtotal</span>
-            <span id="cartSubtotal" style="font-weight: 800;">৳0</span>
+            <span id="cartSubtotal" style="font-weight: 800;">Rs. 0</span>
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
-            <span style="color: var(--color-charcoal);">Delivery (Bangladesh)</span>
+            <span style="color: var(--color-charcoal);">Delivery (Pakistan)</span>
             <span id="cartShipping" style="font-weight: 800; color: var(--color-pine);">Calculated</span>
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 900; border-top: 1.5px dashed rgba(20,20,12,0.2); padding-top: 8px;">
             <span>Estimated Total</span>
-            <span id="cartTotal">৳0</span>
+            <span id="cartTotal">Rs. 0</span>
           </div>
         </div>
         <button id="checkoutBtn" onclick="openCheckout()" style="width: 100%; height: 44px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
@@ -1495,7 +1499,7 @@
           <div style="background: #FFFFFF; border: 1.5px solid var(--color-jet); border-radius: 12px; padding: 14px; margin-bottom: 16px; box-shadow: 2px 2px 0px var(--color-jet);">
             <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; margin-bottom: 4px;">
               <span>Total to Pay:</span>
-              <span id="checkoutOrderTotal" style="font-size: 15px; font-weight: 900; color: var(--color-coral);">৳0</span>
+              <span id="checkoutOrderTotal" style="font-size: 15px; font-weight: 900; color: var(--color-coral);">Rs. 0</span>
             </div>
             <span id="checkoutItemsBrief" style="font-size: 11px; color: #666;">Order summary loading...</span>
           </div>
@@ -1506,8 +1510,8 @@
               <input type="tel" id="custPhone" placeholder="Mobile Number (+880...)" value="+880 1712 345678" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
               <input type="text" id="custAddress" placeholder="Street Address, Area" value="House 14, Road 7, Sector 3, Uttara" required style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 700; font-size: 13px; background: #fff;">
               <select id="custCity" onchange="calculateCart()" style="padding: 10px 14px; border: 1.5px solid var(--color-jet); border-radius: 8px; font-weight: 800; font-size: 13px; background: #fff; cursor: pointer;">
-                <option value="dhaka">Inside Dhaka (Steadfast Express · ৳60 or Free over ৳3,000)</option>
-                <option value="outside">Outside Dhaka (All 64 Districts · ৳100 or Free over ৳3,000)</option>
+                <option value="lahore">Lahore / Karachi (TCS Express · Rs. 150 or Free over Rs. 3,000)</option>
+                <option value="nationwide">All Across Pakistan (TCS / Trax · Rs. 250 or Free over Rs. 3,000)</option>
               </select>
             </div>
             <h3 style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">2. Payment Method</h3>
@@ -1517,8 +1521,8 @@
                 <span>💵 Cash on Delivery (COD) — Inspect upon receipt</span>
               </label>
               <label style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fff; border: 1.5px solid var(--color-jet); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 800;">
-                <input type="radio" name="paymentMethod" value="bkash" style="accent-color: var(--color-coral);">
-                <span>📱 bKash / Nagad Instant Mobile Banking</span>
+                <input type="radio" name="paymentMethod" value="jazzcash" style="accent-color: var(--color-coral);">
+                <span>📱 JazzCash / Easypaisa Instant Mobile Banking</span>
               </label>
             </div>
             <button type="submit" style="width: 100%; height: 44px; border-radius: 9999px; background: var(--color-coral); color: #fff; font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer;">
@@ -1531,7 +1535,7 @@
           <h3 style="font-family: var(--font-serif); font-size: 24px; font-style: italic; margin-bottom: 6px;">Order Confirmed!</h3>
           <p style="font-size: 12px; color: var(--color-charcoal); line-height: 1.5; margin-bottom: 16px;">
             Thank you, Rahat! Your order reference is <strong style="color: var(--color-jet); background: var(--color-butter); padding: 1px 6px; border-radius: 4px;">#RY-84920</strong>.<br>
-            We're packaging your striped shirts in Narayanganj. Delivery within 24-48 hours.
+            We're packaging your striped shirts in Faisalabad. Delivery within 24-48 hours.
           </p>
           <button onclick="closeCheckout(); openAccount('track');" style="width: 100%; height: 42px; border-radius: 9999px; background: var(--color-jet); color: var(--color-cream); font-size: 13px; font-weight: 800; border: 1.5px solid var(--color-jet); cursor: pointer; margin-bottom: 8px;">
             Track Order #RY-84920
@@ -1827,8 +1831,8 @@
             </div>
 
             <div class="price-row">
-              <span class="price-current">৳${p.price.toLocaleString('en-IN')}</span>
-              ${p.origPrice || p.was ? `<span class="price-original">৳${(p.origPrice || p.was).toLocaleString('en-IN')}</span>` : ''}
+              <span class="price-current">Rs. ${p.price.toLocaleString('en-PK')}</span>
+              ${p.origPrice || p.was ? `<span class="price-original">Rs. ${(p.origPrice || p.was).toLocaleString('en-PK')}</span>` : ''}
             </div>
           </div>
         </article>
@@ -1943,12 +1947,12 @@
 
       if (subtotal >= threshold && subtotal > 0) {
         if (freeBar) { freeBar.style.width = '100%'; freeBar.style.backgroundColor = 'var(--color-pine)'; }
-        if (freeNotice) freeNotice.innerHTML = '🎉 <strong style="color: var(--color-pine);">You unlocked FREE Shipping across Bangladesh!</strong>';
+        if (freeNotice) freeNotice.innerHTML = '🎉 <strong style="color: var(--color-pine);">You unlocked FREE Shipping across Pakistan!</strong>';
       } else {
         const remaining = threshold - subtotal;
         const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
         if (freeBar) { freeBar.style.width = pct + '%'; freeBar.style.backgroundColor = 'var(--color-pine)'; }
-        if (freeNotice) freeNotice.textContent = `Add ৳${remaining.toLocaleString()} for FREE Delivery`;
+        if (freeNotice) freeNotice.textContent = `Add Rs. ${remaining.toLocaleString()} for FREE Delivery`;
       }
 
       if (cartItems.length === 0) {
@@ -1961,9 +1965,9 @@
             </div>
           `;
         }
-        if (subtotalEl) subtotalEl.textContent = '৳0';
-        if (shippingEl) shippingEl.textContent = '৳0';
-        if (totalEl) totalEl.textContent = '৳0';
+        if (subtotalEl) subtotalEl.textContent = 'Rs. 0';
+        if (shippingEl) shippingEl.textContent = 'Rs. 0';
+        if (totalEl) totalEl.textContent = 'Rs. 0';
         if (checkoutBtn) checkoutBtn.disabled = true;
         return;
       }
@@ -1978,7 +1982,7 @@
             </div>
             <div>
               <p style="font-weight: 800; font-size: 13px; color: var(--color-jet);">${item.name}</p>
-              <p style="font-size: 11px; color: var(--color-charcoal); margin-top: 2px;">Size ${item.size} · ৳${item.price.toLocaleString()}</p>
+              <p style="font-size: 11px; color: var(--color-charcoal); margin-top: 2px;">Size ${item.size} · Rs. ${item.price.toLocaleString()}</p>
               <div style="margin-top: 8px;">
                 <div class="qty-stepper">
                   <button class="qty-btn" onclick="updateCartQty(${idx}, -1)">−</button>
@@ -1988,20 +1992,20 @@
               </div>
             </div>
             <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-              <span style="font-weight: 900; font-size: 13px;">৳${(item.price * item.qty).toLocaleString()}</span>
+              <span style="font-weight: 900; font-size: 13px;">Rs. ${(item.price * item.qty).toLocaleString()}</span>
               <button class="item-delete-btn" onclick="removeFromCart(${idx})">✕</button>
             </div>
           </div>
         `).join('');
       }
 
-      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
-      const shippingCost = subtotal >= threshold ? 0 : (city === 'dhaka' ? 60 : 100);
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'lahore';
+      const shippingCost = subtotal >= threshold ? 0 : (city === 'lahore' ? 150 : 250);
       const total = subtotal + shippingCost;
 
-      if (subtotalEl) subtotalEl.textContent = `৳${subtotal.toLocaleString()}`;
-      if (shippingEl) shippingEl.textContent = shippingCost === 0 ? 'FREE' : `৳${shippingCost}`;
-      if (totalEl) totalEl.textContent = `৳${total.toLocaleString()}`;
+      if (subtotalEl) subtotalEl.textContent = `Rs. ${subtotal.toLocaleString()}`;
+      if (shippingEl) shippingEl.textContent = shippingCost === 0 ? 'FREE' : `Rs. ${shippingCost}`;
+      if (totalEl) totalEl.textContent = `Rs. ${total.toLocaleString()}`;
     }
 
     function updateCartQty(idx, delta) {
@@ -2073,7 +2077,7 @@
           <div class="cart-item-thumb" style="background-image: repeating-linear-gradient(90deg, ${shirt.hex} 0px, ${shirt.hex} 4px, transparent 4px, transparent 10px);"></div>
           <div>
             <p style="font-weight: 800; font-size: 13px; color: var(--color-jet);">${shirt.name}</p>
-            <p style="font-size: 11px; font-weight: 700; color: var(--color-coral); margin-top: 2px;">৳${shirt.price.toLocaleString()}</p>
+            <p style="font-size: 11px; font-weight: 700; color: var(--color-coral); margin-top: 2px;">Rs. ${shirt.price.toLocaleString()}</p>
             <button onclick="quickAdd(event, '${shirt.id}', '${shirt.name}', 'M', ${shirt.price}, '${shirt.hex}', null)" style="margin-top: 8px; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; background: var(--color-butter); border: 1.2px solid var(--color-jet); cursor: pointer;">
               + Move to Bag (M)
             </button>
@@ -2161,7 +2165,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 10px;">
             ${shirt.badge ? `<span style="font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 9999px; background: var(--color-butter); border: 1px solid var(--color-jet);">${shirt.badge}</span>` : ''}
-            <span style="font-size: 13px; font-weight: 800;">৳${shirt.price.toLocaleString()}</span>
+            <span style="font-size: 13px; font-weight: 800;">Rs. ${shirt.price.toLocaleString()}</span>
             →
           </div>
         </a>
@@ -2197,7 +2201,7 @@
       event.preventDefault();
       const orderNum = document.getElementById('trackOrderInput').value;
       document.getElementById('trackingResult').style.display = 'block';
-      showToast(`Showing live Steadfast status for #${orderNum}`);
+      showToast(`Showing live TCS Express status for #${orderNum}`);
     }
 
     function handleSignIn(event) {
@@ -2217,12 +2221,12 @@
     function openCheckout() {
       closeCart();
       const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
-      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
-      const shipping = subtotal >= 3000 ? 0 : (city === 'dhaka' ? 60 : 100);
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'lahore';
+      const shipping = subtotal >= 3000 ? 0 : (city === 'lahore' ? 150 : 250);
       const total = subtotal + shipping;
 
-      document.getElementById('checkoutOrderTotal').textContent = `৳${total.toLocaleString()}`;
-      document.getElementById('checkoutItemsBrief').textContent = `${cartItems.length} shirt item(s) · Delivery: ${shipping === 0 ? 'FREE' : '৳' + shipping}`;
+      document.getElementById('checkoutOrderTotal').textContent = `Rs. ${total.toLocaleString()}`;
+      document.getElementById('checkoutItemsBrief').textContent = `${cartItems.length} shirt item(s) · Delivery: ${shipping === 0 ? 'FREE' : 'Rs. ' + shipping}`;
 
       document.getElementById('checkoutFormContainer').style.display = 'block';
       document.getElementById('checkoutSuccessContainer').style.display = 'none';
@@ -2245,11 +2249,11 @@
     function calculateCart() {
       renderCart();
       const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
-      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'dhaka';
-      const shipping = subtotal >= 3000 ? 0 : (city === 'dhaka' ? 60 : 100);
+      const city = document.getElementById('custCity') ? document.getElementById('custCity').value : 'lahore';
+      const shipping = subtotal >= 3000 ? 0 : (city === 'lahore' ? 150 : 250);
       const total = subtotal + shipping;
       const out = document.getElementById('checkoutOrderTotal');
-      if (out) out.textContent = `৳${total.toLocaleString()}`;
+      if (out) out.textContent = `Rs. ${total.toLocaleString()}`;
     }
 
     // Mobile Menu

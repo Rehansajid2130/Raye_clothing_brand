@@ -696,7 +696,7 @@
     .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 820px) {
@@ -705,7 +705,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 12px !important;
-        height: 58px !important;
+        height: 56px !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
@@ -721,17 +721,18 @@
       .nav-brand-group {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         z-index: 2 !important;
       }
 
       .mobile-menu-btn {
         display: inline-flex !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         border-radius: 50% !important;
         border: 1.5px solid var(--color-jet, var(--ink, #17130F)) !important;
         background: var(--color-pine, var(--teal, #0E4F4B)) !important;
@@ -744,15 +745,13 @@
       }
 
       .nav-logo, .nav-brand {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important;
+        transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1 !important;
-        margin: 0 !important;
+        margin: 0 0 0 6px !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
@@ -768,27 +767,40 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
-        padding-right: 6px !important;
+      }
+
+      /* Hide redundant Search & Account buttons on mobile screens to prevent crowding */
+      .nav-search-btn,
+      .nav-account-btn,
+      .nav-actions .nav-search-btn,
+      .nav-actions .nav-account-btn,
+      .nav-tools .nav-search-btn,
+      .nav-tools .nav-account-btn {
+        display: none !important;
       }
 
       .nav-actions .icon-btn,
       .nav-tools .round-btn,
       .nav-actions a.icon-btn,
-      .nav-tools a.round-btn {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
+      .nav-tools a.round-btn,
+      #wishlistNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
         border-radius: 50% !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .bag-pill-btn {
-        height: 38px !important;
-        min-height: 38px !important;
-        padding: 0 12px !important;
-        gap: 5px !important;
-        font-size: 12px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 10px !important;
+        gap: 4px !important;
+        font-size: 11px !important;
         font-weight: 800 !important;
         border-radius: 9999px !important;
         display: inline-flex !important;
@@ -798,15 +810,7 @@
         flex-shrink: 0 !important;
         background: var(--color-jet, var(--ink, #17130F)) !important;
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
-      }
-
-      }
-
-    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-    @media (max-width: 640px) {
-      .nav-search-btn,
-      .nav-account-btn {
-        display: none !important;
+        white-space: nowrap !important;
       }
     }
 
@@ -920,11 +924,11 @@
       <div class="meta-row">
         <div>
           <strong>Shipping address</strong>
-          <span id="orderAddress">House 42, Banani, Dhaka</span>
+          <span id="orderAddress">House 42, Street 12, Phase 5, DHA, Lahore</span>
         </div>
         <div>
           <strong>Delivery & Payment</strong>
-          <span id="orderDeliveryPay">Inside Dhaka · Cash on delivery</span>
+          <span id="orderDeliveryPay">Lahore / Karachi (TCS Express) · Cash on delivery</span>
         </div>
       </div>
     </div>
@@ -949,8 +953,8 @@
       name: 'Friend',
       email: 'you@example.com',
       phone: '01700000000',
-      address: 'Dhaka, Bangladesh',
-      deliveryMethod: 'Inside Dhaka',
+      address: 'Lahore, Pakistan',
+      deliveryMethod: 'Lahore / Karachi (TCS Express)',
       paymentMethod: 'Cash on delivery',
       items: [{ name: 'Lido Stripe', size: 'M', qty: 1, price: 2890 }],
       total: 2890 + 80
@@ -966,12 +970,12 @@
     table.innerHTML = (order.items || []).map(item => `
       <tr>
         <td>${escapeHtml(item.name)} (${escapeHtml(item.size || 'M')}) × ${parseInt(item.qty || 1, 10)}</td>
-        <td>৳${(item.price * (item.qty || 1)).toLocaleString('en-IN')}</td>
+        <td>Rs. ${(item.price * (item.qty || 1)).toLocaleString('en-PK')}</td>
       </tr>
     `).join('') + `
       <tr style="border-top: 2px solid var(--ink);">
         <td><strong>Total Paid / Due</strong></td>
-        <td><strong>৳${(order.total || 0).toLocaleString('en-IN')}</strong></td>
+        <td><strong>Rs. ${(order.total || 0).toLocaleString('en-PK')}</strong></td>
       </tr>
     `;
   </script>
@@ -1114,8 +1118,8 @@
       </nav>
 
       <div style="margin-top: auto; padding: 20px; border-top: 1.5px solid rgba(23, 19, 15, 0.15); background: var(--color-paper, var(--paper, #F4ECDF));">
-        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN IN BANGLADESH</p>
-        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Dhaka · Chittagong · Sylhet</span>
+        <p style="font-size: 11px; font-weight: 700; color: var(--color-charcoal, var(--ink-2, #4A423A)); margin-bottom: 6px;">SLOW LIVING · WOVEN in Pakistan</p>
+        <span style="font-size: 11px; font-weight: 600; color: var(--color-charcoal, var(--ink-2, #4A423A));">Karachi · Lahore · Islamabad</span>
       </div>
     </aside>
   </div>

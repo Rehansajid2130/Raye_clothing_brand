@@ -1985,7 +1985,7 @@
     .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 820px) {
@@ -1994,7 +1994,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 12px !important;
-        height: 58px !important;
+        height: 56px !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
@@ -2010,17 +2010,18 @@
       .nav-brand-group {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         z-index: 2 !important;
       }
 
       .mobile-menu-btn {
         display: inline-flex !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         border-radius: 50% !important;
         border: 1.5px solid var(--color-jet, var(--ink, #17130F)) !important;
         background: var(--color-pine, var(--teal, #0E4F4B)) !important;
@@ -2033,15 +2034,13 @@
       }
 
       .nav-logo, .nav-brand {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important;
+        transform: none !important;
         font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
         font-style: italic !important;
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1 !important;
-        margin: 0 !important;
+        margin: 0 0 0 6px !important;
         display: inline-block !important;
         color: var(--color-jet, var(--ink, #17130F)) !important;
         text-decoration: none !important;
@@ -2057,27 +2056,40 @@
         margin-left: auto !important;
         z-index: 2 !important;
         flex-shrink: 0 !important;
-        padding-right: 6px !important;
+      }
+
+      /* Hide redundant Search & Account buttons on mobile screens to prevent crowding */
+      .nav-search-btn,
+      .nav-account-btn,
+      .nav-actions .nav-search-btn,
+      .nav-actions .nav-account-btn,
+      .nav-tools .nav-search-btn,
+      .nav-tools .nav-account-btn {
+        display: none !important;
       }
 
       .nav-actions .icon-btn,
       .nav-tools .round-btn,
       .nav-actions a.icon-btn,
-      .nav-tools a.round-btn {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
+      .nav-tools a.round-btn,
+      #wishlistNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
         border-radius: 50% !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .bag-pill-btn {
-        height: 38px !important;
-        min-height: 38px !important;
-        padding: 0 12px !important;
-        gap: 5px !important;
-        font-size: 12px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0 10px !important;
+        gap: 4px !important;
+        font-size: 11px !important;
         font-weight: 800 !important;
         border-radius: 9999px !important;
         display: inline-flex !important;
@@ -2087,15 +2099,7 @@
         flex-shrink: 0 !important;
         background: var(--color-jet, var(--ink, #17130F)) !important;
         color: var(--color-cream, var(--cream, #FBF6EE)) !important;
-      }
-
-      }
-
-    /* Hide redundant Search & Account buttons on mobile screens <= 640px to prevent crowding */
-    @media (max-width: 640px) {
-      .nav-search-btn,
-      .nav-account-btn {
-        display: none !important;
+        white-space: nowrap !important;
       }
     }
 
@@ -2155,12 +2159,12 @@
 <body>
   <!-- Cycling Announcement Bar -->
   <aside class="announcement-bar" role="region" aria-label="Announcement">
-    <div id="announcementText" class="announcement-text">FREE DELIVERY ON ORDERS OVER ৳3,000</div>
+    <div id="announcementText" class="announcement-text">FREE DELIVERY ON ORDERS OVER RS. 3,000</div>
   </aside>
 
   <!-- Sticky Navbar -->
   <header class="navbar">
-    <div style="display: flex; align-items: center; gap: 14px;">
+    <div class="nav-brand-group">
       <!-- Mobile Menu Button -->
       <button class="icon-btn mobile-menu-btn" onclick="openMobileMenu()" aria-label="Open mobile menu">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
@@ -2279,8 +2283,8 @@
       <div class="drawer-footer" id="cartDrawerFooter">
         <div class="shipping-meter">
           <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;">
-            <span id="shippingMeterMsg">Add ৳1,110 more for free delivery</span>
-            <span id="shippingMeterTarget">৳3,000</span>
+            <span id="shippingMeterMsg">Add Rs. 1,110 more for free delivery</span>
+            <span id="shippingMeterTarget">Rs. 3,000</span>
           </div>
           <div class="shipping-bar-bg">
             <div id="shippingMeterBar" class="shipping-bar-fill" style="width: 60%;"></div>
@@ -2290,7 +2294,7 @@
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;">
           <span style="font-size: 13px; font-weight: 700; color: var(--color-charcoal);">Subtotal</span>
           <span id="cartDrawerSubtotal"
-            style="font-family: var(--font-mono); font-size: 20px; font-weight: 800;">৳0</span>
+            style="font-family: var(--font-mono); font-size: 20px; font-weight: 800;">Rs. 0</span>
         </div>
 
         <button onclick="location.href='checkout.html'" class="btn-action-primary"
@@ -2345,7 +2349,7 @@
           ➔</a>
         <a href="product.html#sizing" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Find Your Size</span>
           <span style="font-size: 11px; color: var(--color-coral); font-weight: 800;">Calculator</span></a>
-        <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Our Story (Narayanganj)</span>
+        <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Our Story (Faisalabad)</span>
           ➔</a>
         <a href="journal.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Journal & Essays</span> ➔</a>
         <a href="help.html" class="mobile-nav-link" onclick="closeMobileMenu()"><span>Help & FAQs</span> ➔</a>
@@ -2366,7 +2370,7 @@
         <span
           style="font-family: var(--font-serif); font-style: italic; font-size: 38px; color: var(--color-coral); display: block; margin-bottom: 12px;">Rayé</span>
         <p style="font-size: 13px; line-height: 1.6; max-width: 280px; opacity: 0.85; margin-bottom: 20px;">
-          Woven in Narayanganj, sewn for long, slow summers. 140 GSM cotton-linen blend tailored for hot, humid days.
+          Woven in Faisalabad, sewn for long, slow summers. 140 GSM cotton-linen blend tailored for hot, humid days.
         </p>
         <div style="display: flex; gap: 8px;">
           <input type="email" placeholder="Your email for drops..."
@@ -2418,13 +2422,13 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 RAYÉ. WOVEN & SEWN IN NARAYANGANJ, BANGLADESH.</span>
+      <span>© 2026 RAYÉ. WOVEN & SEWN IN NARAYANGANJ, PAKISTAN.</span>
       <div style="display: flex; gap: 14px; align-items: center;">
         <span>CASH ON DELIVERY</span>
         <span>•</span>
-        <span>BKASH</span>
+        <span>JAZZCASH</span>
         <span>•</span>
-        <span>NAGAD</span>
+        <span>EASYPAISA</span>
         <span>•</span>
         <span>VISA / MASTERCARD</span>
       </div>
@@ -2620,8 +2624,8 @@
             </div>
 
             <div class="price-row">
-              <span class="price-current">৳${p.price.toLocaleString('en-IN')}</span>
-              ${p.was ? `<span class="price-original">৳${p.was.toLocaleString('en-IN')}</span>` : ''}
+              <span class="price-current">Rs. ${p.price.toLocaleString('en-PK')}</span>
+              ${p.was ? `<span class="price-original">Rs. ${p.was.toLocaleString('en-PK')}</span>` : ''}
             </div>
           </div>
         </article>
@@ -2775,9 +2779,9 @@
 
       footer.style.display = 'block';
       const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-      subtotalEl.textContent = `৳${subtotal.toLocaleString()}`;
+      subtotalEl.textContent = `Rs. ${subtotal.toLocaleString()}`;
 
-      // Shipping Meter towards ৳3,000
+      // Shipping Meter towards Rs. 3,000
       const threshold = 3000;
       const meterBar = document.getElementById('shippingMeterBar');
       const meterMsg = document.getElementById('shippingMeterMsg');
@@ -2788,7 +2792,7 @@
         const remaining = threshold - subtotal;
         const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
         meterBar.style.width = `${pct}%`;
-        meterMsg.textContent = `Add ৳${remaining.toLocaleString()} more for free delivery`;
+        meterMsg.textContent = `Add Rs. ${remaining.toLocaleString()} more for free delivery`;
       }
 
       body.innerHTML = cart.map((item, idx) => `
@@ -2799,7 +2803,7 @@
           <div>
             <h4 style="font-size: 13px; font-weight: 800; margin-bottom: 2px;">${item.name}</h4>
             <div style="font-size: 11px; color: var(--color-charcoal); font-weight: 700; margin-bottom: 4px;">Size: ${item.size}</div>
-            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 800;">৳${item.price.toLocaleString()}</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 800;">Rs. ${item.price.toLocaleString()}</div>
           </div>
           <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
             <div class="qty-stepper">
@@ -2866,7 +2870,7 @@
             <span style="font-size: 13px; font-weight: 800;">${p.name}</span>
             <span style="font-size: 11px; color: var(--color-charcoal);">${p.sleeve}</span>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 13px; font-weight: 800;">৳${p.price.toLocaleString()}</span>
+          <span style="font-family: var(--font-mono); font-size: 13px; font-weight: 800;">Rs. ${p.price.toLocaleString()}</span>
         </a>
       `).join('');
     }
@@ -2900,8 +2904,8 @@
 
     // 13. Cycling Announcement Bar Ticker
     const PROMOS = [
-      'FREE DELIVERY ON ORDERS OVER ৳3,000',
-      'CASH ON DELIVERY ACROSS BANGLADESH',
+      'FREE DELIVERY ON ORDERS OVER RS. 3,000',
+      'CASH ON DELIVERY ACROSS PAKISTAN',
       'USE RAYE10 FOR 10% OFF YOUR FIRST ORDER'
     ];
     let promoIdx = 0;
